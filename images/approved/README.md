@@ -1,6 +1,19 @@
-# 已確認的圖片式樣本
+# 圖片式樣本｜完整確認紀錄已補正
 
-以下 10 張是本次保留的圖片式投影片樣本，皆為 1672 × 941 PNG。此目錄刻意排除早期 State Machine／Cost Chain 圖、所有 GIF、後來退回的 Prompt vs Code，以及所有齒輪版本。
+重查原始對話後已補回 S01、S02、S03、S10、S12。原先排除 Image-first State Machine／Cost Chain 是整理錯誤；它們在 9/2 已明確通過。現在有 15 張歷史保留 PNG：12 張有使用者明確肯定紀錄，3 張沿用既有保留狀態。
+
+- [完整圖片總覽](gallery.html)
+- [逐張確認證據與更正說明](confirmation-index-2026-09-07.md)
+
+## 補回的五張已確認樣本
+
+- [S01｜Claim–Evidence](sample-S01-claim-evidence.png)
+- [S02｜Agent 成本執行鏈](sample-S02-cost-chain.png)
+- [S03｜狀態機與 Runtime](sample-S03-state-machine.png)
+- [S10｜Context Shaping v4](sample-S10-context-shaping-v4.png)
+- [S12｜Three Record Layers v4](sample-S12-three-record-layers-v4.png)
+
+## 以下為先前 GitHub 十張集合（不是完整確認集合）
 
 | Slide 04 | Slide 14 |
 | --- | --- |
