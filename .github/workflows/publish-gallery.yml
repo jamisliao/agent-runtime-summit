@@ -1,11 +1,6 @@
 name: Publish slide galleries
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "images/**"
-      - ".github/workflows/publish-gallery.yml"
   workflow_dispatch:
 
 permissions:
