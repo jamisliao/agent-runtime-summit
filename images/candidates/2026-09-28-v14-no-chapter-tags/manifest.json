@@ -1,0 +1,489 @@
+{
+  "version": "v14",
+  "count": 60,
+  "created": "2026-09-28",
+  "status": "pending_user_review",
+  "change": "Remove the redundant top-left chapter/section marker from 58 slide images. Keep slides 40 and 60 unchanged.",
+  "entries": [
+    {
+      "n": 1,
+      "title": "自己刻 Agent 框架，最難的不是呼叫 LLM",
+      "file": "slide-01.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-01.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 2,
+      "title": "我以為，把這三步接起來就好",
+      "file": "slide-02.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-02.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 3,
+      "title": "幾行程式碼，真的可以跑起來",
+      "file": "slide-03.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-03.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 4,
+      "title": "你以為這樣就結束了嗎？",
+      "file": "slide-04.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-04.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 5,
+      "title": "會動之後，六個問題攤開了",
+      "file": "slide-05.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-05.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 6,
+      "title": "為什麼選擇自己刻？",
+      "file": "slide-06.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-06.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 7,
+      "title": "第一個問題：工具結果，怎麼交回模型？",
+      "file": "slide-07.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-07.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 8,
+      "title": "Tool 回什麼，我就塞什麼",
+      "file": "slide-08.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-08.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 9,
+      "title": "幾輪之後，Context 裡堆了什麼？",
+      "file": "slide-09.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-09.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 10,
+      "title": "這些內容，下一步真的都需要嗎？",
+      "file": "slide-10.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-10.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 11,
+      "title": "每次放進 Context 前，先決定要留下什麼",
+      "file": "slide-11.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-11.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 12,
+      "title": "要分析 Log，卻查回一大包原始紀錄",
+      "file": "slide-12.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-12.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 13,
+      "title": "分析 Log，先挑出這次需要的內容",
+      "file": "slide-13.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-13.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 14,
+      "title": "交給下一個工具，不必先讓模型讀完整包資料",
+      "file": "slide-14.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-14.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 15,
+      "title": "Data Ref 讓工具取回完整資料",
+      "file": "slide-15.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-15.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 16,
+      "title": "Context 越重，越吃模型能力",
+      "file": "slide-16.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-16.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 17,
+      "title": "30k Context，迫使我換成更大的模型",
+      "file": "slide-17.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-17.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 18,
+      "title": "Context 管理會影響需要多大的模型",
+      "file": "slide-18.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-18.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 19,
+      "title": "Working Context 不是越短越好",
+      "file": "slide-19.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-19.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 20,
+      "title": "怎麼證明整理 Context 有幫助？",
+      "file": "slide-20.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-20.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 21,
+      "title": "資訊給對了，流程仍可能走錯",
+      "file": "slide-21.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-21.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 22,
+      "title": "流程寫進 Skill，模型真的會照做嗎？",
+      "file": "slide-22.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-22.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 23,
+      "title": "同一個任務，多跑幾次才看得出問題",
+      "file": "slide-23.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-23.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 24,
+      "title": "答案都有產生，執行路徑卻不一樣",
+      "file": "slide-24.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-24.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 25,
+      "title": "其中一次：模型跳過 Builder，自己交摘要",
+      "file": "slide-25.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-25.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 26,
+      "title": "看起來完成，實際少了必要交付",
+      "file": "slide-26.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-26.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 27,
+      "title": "Evaluation 不只評答案，也要評執行過程",
+      "file": "slide-27.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-27.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 28,
+      "title": "十次執行，有幾次真的照 Skill 走完？",
+      "file": "slide-28.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-28.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 29,
+      "title": "Evaluation 100%，仍然不是零風險",
+      "file": "slide-29.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-29.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 30,
+      "title": "錯誤能不能放行？",
+      "file": "slide-30.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-30.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 31,
+      "title": "把不可接受的錯，變成可檢查的條件",
+      "file": "slide-31.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-31.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 32,
+      "title": "LLM 可以提出，不能自己放行",
+      "file": "slide-32.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-32.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 33,
+      "title": "查到錯誤，就能判定根因嗎？",
+      "file": "slide-33.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-33.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 34,
+      "title": "證據不足，就不能說成確定結論",
+      "file": "slide-34.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-34.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 35,
+      "title": "有些決定，不能讓 Agent 自己確認",
+      "file": "slide-35.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-35.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 36,
+      "title": "執行前，讓使用者確認 Agent 理解的目標與範圍",
+      "file": "slide-36.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-36.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 37,
+      "title": "一開始理解錯，後面全部成功也沒有用",
+      "file": "slide-37.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-37.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 38,
+      "title": "寫入、扣款或對外通知，執行前要先批准",
+      "file": "slide-38.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-38.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 39,
+      "title": "批准後，執行前仍要重新檢查條件",
+      "file": "slide-39.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-39.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 40,
+      "title": "為什麼這次沒有呼叫 Builder？",
+      "file": "slide-40.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-40.png",
+      "mode": "retained",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 41,
+      "title": "做了什麼、怎麼走、憑什麼說？",
+      "file": "slide-41.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-41.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 42,
+      "title": "把同一次 Run 的紀錄連起來",
+      "file": "slide-42.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-42.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 43,
+      "title": "停下來時，有哪些可追查的依據？",
+      "file": "slide-43.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-43.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 44,
+      "title": "歷史 Run，要綁定當時的 Skill",
+      "file": "slide-44.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-44.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 45,
+      "title": "從追查依據，提出候選修改",
+      "file": "slide-45.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-45.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 46,
+      "title": "驗證修改，要看整次任務",
+      "file": "slide-46.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-46.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 47,
+      "title": "報告，有沒有交付必要內容？",
+      "file": "slide-47.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-47.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 48,
+      "title": "答案像對的，路徑也要檢查",
+      "file": "slide-48.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-48.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 49,
+      "title": "呼叫了 Builder，傳入的資料也對嗎？",
+      "file": "slide-49.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-49.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 50,
+      "title": "哪些檢查用程式，哪些需要 Judge？",
+      "file": "slide-50.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-50-r2.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 51,
+      "title": "踩過的坑，留進回歸測試",
+      "file": "slide-51.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-51.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 52,
+      "title": "同一個案例，要重跑看穩定性",
+      "file": "slide-52.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-52.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 53,
+      "title": "修好這次，其他情境有沒有退步？",
+      "file": "slide-53.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-53.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 54,
+      "title": "Skill 交給 AI 寫，再用 Evaluation 驗證",
+      "file": "slide-54.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-54.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 55,
+      "title": "把失敗紀錄交給 AI，修完再跑回歸",
+      "file": "slide-55.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-55.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 56,
+      "title": "人定義成功標準，修改用測試結果驗收",
+      "file": "slide-56.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-56.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 57,
+      "title": "每輪產生、測試與修正，都要留下成本紀錄",
+      "file": "slide-57.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-57.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 58,
+      "title": "模型會越來越聰明，但是你的口袋沒有越來越深",
+      "file": "slide-58.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-58.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 59,
+      "title": "六個問題，長成一套 Runtime",
+      "file": "slide-59.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-59.png",
+      "mode": "chapter_tag_removed",
+      "status": "pending_user_review"
+    },
+    {
+      "n": 60,
+      "title": "Tool Loop 讓它跑起來",
+      "file": "slide-60.png",
+      "source": "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-09-27-v13-slides-01-60/slide-60.png",
+      "mode": "retained",
+      "status": "pending_user_review"
+    }
+  ]
+}
