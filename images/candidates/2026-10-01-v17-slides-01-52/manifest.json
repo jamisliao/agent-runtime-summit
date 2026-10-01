@@ -1,0 +1,1540 @@
+{
+  "version": "v17-52pages-publication",
+  "date": "2026-10-01",
+  "count": 52,
+  "status": "pending_user_review",
+  "numberingNotice": "文件與檔名使用新52頁順序；44張沿用圖片仍有舊60頁圖內頁碼，以本文件標頭為準。圖片仍是候選；發佈不代表全頁核准或字級通過投影驗收。目前60頁播放器未更換。",
+  "sourceStoryboard": "../../../storyboard/60-slide-storyboard-v13-review.md",
+  "integratedStoryboard": "../../../storyboard/52-slide-storyboard-v17-integrated.md",
+  "entries": [
+    {
+      "n": 1,
+      "title": "自己刻 Agent 框架，最難的不是呼叫 LLM",
+      "chapter": "開場：Tool Loop 與六個問題",
+      "oldPages": [
+        1
+      ],
+      "file": "slide-01.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 1,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-01.png"
+      ],
+      "points": [
+        "Tool Loop 能讓模型呼叫工具，但還不足以承接真實任務。",
+        "今天沿著實作遇到的問題，說明如何走到可交付的 Runtime。"
+      ],
+      "核心訊息": "用親身失敗與修正經驗，說明從 Tool Loop 到可交付 Runtime 的過程。",
+      "畫面文字": "從 while loop，到可交付的 Runtime",
+      "畫面設計": "大字題名置中，下方一個小循環連向一個尚未展開的系統輪廓。副句靠近主題，不放底緣。底線：最難的不是呼叫 LLM。",
+      "搭配講稿": "我一開始只想讓模型反覆呼叫工具。真的接上企業流程後，才陸續遇到漏步驟、錯誤結論與難以追查的問題。今天用這些經驗，說明循環之外需要哪些執行責任。",
+      "接下一頁": "先看我一開始以為的 Agent 長什麼樣。",
+      "readability": "projection_check",
+      "readabilityNote": "Tool 與箭頭標籤、副標是相對較小的必要文字。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-01.png",
+      "sha256": "faebcd8a529729bd085f7f7c00daa83850f4da7ed90f6d125169f675531108c5"
+    },
+    {
+      "n": 2,
+      "title": "這個 Tool Loop，幾行程式碼就能跑起來",
+      "chapter": "開場：Tool Loop 與六個問題",
+      "oldPages": [
+        2,
+        3
+      ],
+      "file": "slide-02.png",
+      "mode": "revised_generated",
+      "embeddedPageNumber": 2,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-02.png",
+        "../2026-09-28-v14-no-chapter-tags/slide-03.png"
+      ],
+      "points": [
+        "模型要求工具時才執行；結果交回 Context，繼續問模型。",
+        "最小循環確實能跑，但還沒承接真實任務的責任。"
+      ],
+      "核心訊息": "LLM 選動作、Tool 執行、結果交回 Context，形成最小可運作循環；能跑起來仍不是可交付。",
+      "畫面文字": "LLM 選下一步｜要求工具｜Tool 執行操作｜結果放回 Context｜完成時回答",
+      "畫面設計": "恢復三個大型語意 icon 的循環。Context 結果回到 LLM；回答出口由 LLM 分出，不直接從 Context 回答。",
+      "搭配講稿": "LLM 是理解文字、判斷下一步的模型；Tool 是查資料或執行操作的程式。我最初的做法很簡單：呼叫模型，模型要求工具就執行，把結果 append 回 Context，再問一次；模型交出答案就結束。這幾行概念碼真的可以跑起來，所以當時我以為主要工作完成了。但這只是最小循環，還沒處理真實任務需要的可靠性。",
+      "接下一頁": "直到它開始碰到真實任務：工具會動、模型會答，就代表可以交付嗎？",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v16-five-page-revision/slide-02.png",
+      "sha256": "bc6d586136fd9aa994b1ac7a8f9966aeb11daaeff43a8ac6ecaf2155bf20664b"
+    },
+    {
+      "n": 3,
+      "title": "你以為這樣就結束了嗎？",
+      "chapter": "開場：Tool Loop 與六個問題",
+      "oldPages": [
+        4
+      ],
+      "file": "slide-03.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 4,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-04.png"
+      ],
+      "points": [
+        "工具會動、模型會回答，只是 Demo 成功。",
+        "企業任務可能沒有 exception，卻仍交出錯誤結果。"
+      ],
+      "核心訊息": "從 Demo 成功，轉入真實任務帶來的責任。",
+      "畫面文字": "真正的問題，現在才開始。",
+      "畫面設計": "暖米色留白，大句放中央偏上。「現在才開始」珊瑚色，只有這一處手畫底線。無 icon。",
+      "搭配講稿": "工具會動、模型會回答，很快就能看到。但一進企業流程，我開始遇到那些不會直接報 exception，卻會交出錯誤結果的問題。",
+      "接下一頁": "這些問題，慢慢長成六項必須承接的責任。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-03.png",
+      "sha256": "307a4a9c7a055bcbe4e8287bc5af6c7fa2a2d3523704136febce2904904942f3"
+    },
+    {
+      "n": 4,
+      "title": "會動之後，六個問題攤開了",
+      "chapter": "開場：Tool Loop 與六個問題",
+      "oldPages": [
+        5
+      ],
+      "file": "slide-04.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 5,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-05.png"
+      ],
+      "points": [
+        "六個問題：給什麼資訊、怎麼完成流程、哪些錯不能放行。",
+        "出錯如何追查、修改如何驗證、每次執行與測試的成本在哪裡。",
+        "這是全場的問題地圖，最後會回扣整套 Runtime。"
+      ],
+      "核心訊息": "建立全場問題地圖，讓結尾能逐一回扣。",
+      "畫面文字": "Tool Loop｜給模型看什麼？｜流程怎麼完成？｜哪些錯必須擋？｜出錯怎麼追查？｜修改怎麼驗證？｜成本能否負擔？",
+      "畫面設計": "中央小循環，六個問題攤成六角，依序搭配文件、流程、閘門、路徑放大鏡、清單、計量表。無箭頭短線表示責任關聯；新 51 沿用位置。底線：無。",
+      "搭配講稿": "從資訊與流程開始，接著是哪些錯不能通過。出了問題，要能追查、驗證修改，也要付得起反覆測試的成本。等一下會依這些問題一路往下走。",
+      "接下一頁": "在展開之前，先交代我為什麼選擇自己刻。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-04.png",
+      "sha256": "651b23d22434eec12aea8d08a8c95c02d1242f8a7e6433beeace5363a1d9e61b"
+    },
+    {
+      "n": 5,
+      "title": "為什麼選擇自己刻？",
+      "chapter": "開場：Tool Loop 與六個問題",
+      "oldPages": [
+        6
+      ],
+      "file": "slide-05.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 6,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-06.png"
+      ],
+      "points": [
+        "自己刻的理由：掌握模型替換、特殊流程與既有企業治理整合。",
+        "這場聚焦單次任務的執行與驗證，不展開模型介接及跨 Session 記憶。"
+      ],
+      "核心訊息": "自研動機在於掌握模型選擇、執行邊界與企業整合。",
+      "畫面文字": "模型選擇｜執行邊界｜企業治理整合｜本場：單次任務的 Runtime",
+      "畫面設計": "三個等大的線稿 icon 配三個短語，中央以開放括號連到 Runtime。範圍句放主圖下方安全區。底線：執行邊界。",
+      "搭配講稿": "現成框架有價值。我自己刻，是希望掌握模型替換、特殊流程與既有治理整合。今天集中在一次任務怎麼執行與驗證，模型介接細節和跨 Session 記憶另外再談。",
+      "接下一頁": "所以我決定自己把這個 Runtime 接起來。最初就是前面那個循環：模型選工具、工具執行、結果交回模型。接著，第一個需要我做決定的地方出現了：工具回來的這一大包資料，該怎麼交回去？",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-05.png",
+      "sha256": "63ab8d6c539b5c5c0f56d3ab2e12f20901b4731985c55104efd45e7eeb4defa9"
+    },
+    {
+      "n": 6,
+      "title": "第一個問題：工具結果，怎麼交回模型？",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        7
+      ],
+      "file": "slide-06.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 7,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-07.png"
+      ],
+      "points": [
+        "回到 Tool Loop：工具已經執行完，結果要怎麼交回模型？",
+        "Context 是這一輪給模型看的內容，包含使用者要求、規則與工具資料。"
+      ],
+      "核心訊息": "接回開場的 Tool Loop，指出「工具結果交回模型」是第一個要處理的決定，帶入 Context 的用途。",
+      "畫面文字": "模型選工具｜工具執行｜結果交回模型｜Context：這一輪給模型看的內容｜整包放進去？",
+      "畫面設計": "保留段落入口的留白與主問題，重新出現開場三步循環：模型選工具 → 工具執行 → 結果交回模型。模型用對話泡泡，工具用文件搭扳手，回傳結果用資料文件。前兩步用低彩度線條，「結果交回模型」這一步以重點色突出，旁邊標「整包放進去？」；Context 的短解釋緊鄰該步。三步標籤維持大字，不加模組或小型架構圖。底線：怎麼交回。",
+      "搭配講稿": "先停在這個位置：工具已經執行完，現在要把結果交回模型。這一輪交給模型看的內容，就是 Context；裡面也包含使用者要求與任務規則。那工具回來的一大包資料，要怎麼放進去？",
+      "接下一頁": "當時我的做法很直覺：工具回什麼，我就全部加進去。下一頁就是我最初的接法。",
+      "readability": "needs_enlargement",
+      "readabilityNote": "右側「Context：這一輪給模型看的內容」說明偏小。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-06.png",
+      "sha256": "c546cd0ea6a239ada5d62012a9c5ecef4180341f4d660c4bb14d8f7455b8b1d5"
+    },
+    {
+      "n": 7,
+      "title": "每輪都 append，Context 越堆越多",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        8,
+        9
+      ],
+      "file": "slide-07.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 7,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-08.png",
+        "../2026-09-28-v14-no-chapter-tags/slide-09.png"
+      ],
+      "points": [
+        "每輪直接 append，使舊結果、新結果與欄位持續累積。",
+        "累積更多資料，不等於每一項都對下一步有用。"
+      ],
+      "核心訊息": "直接加入每輪工具結果，會累積舊結果、新結果與無關欄位；內容多不代表下一步更有用。",
+      "畫面文字": "一輪後｜多輪後｜Context｜任務與規則｜工具結果｜舊結果＋新結果｜直接 append",
+      "畫面設計": "同一 Context 從左側一輪到右側多輪逐步展開；兩邊任務與規則都保留，工具結果增加。以同樣語意文件與位置建立連續性，不畫容量爆炸或規則被證實遺忘。",
+      "搭配講稿": "第一版工具回什麼，我就把它全部 append。一次回傳看起來很自然，幾輪之後，舊結果還在、新結果又加入，每份結果裡還有大量欄位。任務要求和流程規則也一起帶給模型。這不是說模型一定會忘記規則，而是每次呼叫都帶上更多內容，卻還沒判斷它們對下一步是否有用。",
+      "接下一頁": "不再每輪全部append後，完整工具結果要放哪裡？下一頁先交代資料如何保存，再決定這輪給模型什麼。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-07.png",
+      "sha256": "6eff6236e1ef00480d68c2dcd4530d162c0fa35b3d7092a0b55c4049fb3a4d07"
+    },
+    {
+      "n": 8,
+      "title": "工具結果留完整，給模型的內容按需準備",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        10,
+        11
+      ],
+      "file": "slide-08.png",
+      "mode": "revised_generated",
+      "embeddedPageNumber": 8,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-10.png",
+        "../2026-09-28-v14-no-chapter-tags/slide-11.png"
+      ],
+      "points": [
+        "先保存工具的原始完整結果，後續工具仍可取用。",
+        "給模型的本輪Context按下一步需要準備，不等於把資料全部塞入。"
+      ],
+      "核心訊息": "工具先回傳完整結果，Runtime保存原始完整資料，供後續工具使用；交給模型的本輪內容則按下一步需要準備。",
+      "畫面文字": "Tool 回傳｜完整結果｜保留原始結果｜Runtime 保存｜原始完整資料｜只取本輪需要｜交給模型｜本輪 Context｜後續工具仍可取用完整資料",
+      "畫面設計": "由左至右三組大型語意icon：工具文件與厚疊結果→系統儲存與原始資料→少量本輪Context。資料庫不再憑空出現；先畫出資料來源與保存動作，再對比完整保留與按需交付。下方一句交代保存理由，虛線是說明連結，不是新執行步驟。",
+      "搭配講稿": "工具回傳一大包結果時，我不會因為模型這一輪只需要其中一部分，就把其餘資料丟掉。這個Runtime會先保存原始完整結果，因為後續工具可能還需要取用完整資料；再依下一步用途，準備這一輪給模型看的內容。資料不是一开始就在資料庫裡，是工具回傳後，由Runtime刻意留下來的。完整保存和全部塞進Context是兩件不同的事；這是本案例的設計選擇，不是所有工具都會自動入庫。",
+      "接下一頁": "用分析Log的實際場景來看：工具一查，就可能回來一大包原始紀錄。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "修訂圖已目視核對，必要文字未見明顯偏小；未驗證實際pt或投影。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v16-five-page-revision/slide-08-origin-v2.png",
+      "sha256": "63ad37ae08bd2f0db87f16beca49eddf179afa4d935e5467d6676d55073ea02e"
+    },
+    {
+      "n": 9,
+      "title": "要分析 Log，卻查回一大包原始紀錄",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        12
+      ],
+      "file": "slide-09.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 12,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-12.png"
+      ],
+      "points": [
+        "用分析系統 Log 當例子：工具查回一大包原始紀錄。",
+        "模型要讀相關 Log 才能找線索，但不必直接讀完整包。"
+      ],
+      "核心訊息": "先建立一個需要模型閱讀 Log 的具體任務，讓觀眾看見「工具取得完整資料」與「本輪模型需要閱讀的內容」之間仍有選擇。",
+      "畫面文字": "任務：分析系統 Log｜Tool 回來：一大包原始 Log｜下一步：模型要找線索｜哪些內容該進 Context？",
+      "畫面設計": "左側是一張清楚的任務卡「分析系統 Log」，中央工具文件 icon 回來一大疊原始 Log，右側是模型對話泡泡與空白的 Context 區。用一段留白和問號隔開 Log 堆與 Context；不畫直接灌入模型的箭頭，也不先畫篩選方法。文字集中在上半部與圖旁，底部保持留白；只強調「一大包」與「哪些內容」。底線：哪些內容該進 Context？",
+      "搭配講稿": "假設我請 Agent 分析一段時間的系統 Log。工具查回來的可能是一大包原始紀錄。下一步要分析問題，模型確實需要讀到相關內容，不能完全不給它看；但也不能只因為工具回來了，就把整包資料原封不動塞進 Context。這個案例要問的第一件事是：這次的問題，需要模型看哪些 Log？",
+      "接下一頁": "先把這次的問題釐清，再決定原始 Log 要怎麼整理給模型。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-09.png",
+      "sha256": "ea90dff4243749e7f8ea1c65f4a4bf3b03a43667372f670a6e04ae896b2320a4"
+    },
+    {
+      "n": 10,
+      "title": "分析 Log，先挑出這次需要的內容",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        13
+      ],
+      "file": "slide-10.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 13,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-13.png"
+      ],
+      "points": [
+        "依問題縮小時間範圍、挑必要欄位，或分類取代表片段、做摘要。",
+        "這些是可選方法，不是固定四步；原始 Log 仍留在系統可供追查。"
+      ],
+      "核心訊息": "依問題選擇資料處理方式，減少不相關資訊。",
+      "畫面文字": "原始 Log｜依問題選用｜時間範圍｜必要欄位｜分類與代表片段｜摘要｜分析用 Context",
+      "畫面設計": "左側 Log 資料堆，中間四個可選處理方式平行排列，右側較小的 Context 文件。四者不串成固定四步。底線：依問題選用。",
+      "搭配講稿": "回到剛剛的 Log 分析任務：如果問題只涉及某段時間，就先縮小時間範圍；分析只用得到部分欄位，就保留那些欄位；有許多重複紀錄時，可以分類後取代表片段，需要時再做摘要。這些做法依問題選用，不是每次都必須做完四步。原始 Log 仍保留在系統，後續需要細節時能再查。這就是把「下一步需要什麼」落實到工具結果的整理。",
+      "接下一頁": "還有另一種情況：下一個操作根本不需要模型讀懂整包資料。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-10.png",
+      "sha256": "11532a14e50ab806b6ecdc9ce1f72d338090c9df6aab3a6fdd0150ffa9d027cb"
+    },
+    {
+      "n": 11,
+      "title": "模型傳 Ref，工具取完整資料",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        14,
+        15
+      ],
+      "file": "slide-11.png",
+      "mode": "revised_generated",
+      "embeddedPageNumber": 11,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-14.png",
+        "../2026-09-28-v14-no-chapter-tags/slide-15.png"
+      ],
+      "points": [
+        "模型接收狀態和 Ref，資料搬運由工具與系統處理。",
+        "取件請求與完整資料回傳分開；Ref 的使用權限仍由系統檢查。"
+      ],
+      "核心訊息": "模型判斷只需 status 與 data_ref；完整 API 資料由系統保存，下一個工具在服務端依 Ref 取回。",
+      "畫面文字": "Tool A｜完整資料｜系統儲存｜status + data_ref｜LLM 選下一步｜Tool B｜依 Ref 取資料｜資料回傳",
+      "畫面設計": "保留原語意與構圖。請求為藍色虛線從 Tool B 指向系統儲存；回傳為藍色實線從系統儲存指向 Tool B。兩線分離、箭頭方向明確，不用紅色暗示錯誤。",
+      "搭配講稿": "上一頁是模型需要閱讀的 Log。另一種情況是 API 回傳很大，但下一步只需要判斷成功與否，再把資料交給另一個工具。這時 Tool A 把完整結果存進系統，交給模型的是 status 和 data_ref。模型選好下一步，Tool B 在服務端依 Ref 取回完整資料；大腦看燈號，管線傳重貨。Ref 是取件參照，不是權限，能不能讀、允許做什麼，仍由系統檢查。",
+      "接下一頁": "Ref 減少模型需要閱讀的內容，不只是省 Token。即使 Context 還沒滿，增加負擔也可能讓流程跑偏。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v16-five-page-revision/slide-11.png",
+      "sha256": "eeb7f39687da32d1abb7207e940193de3c4bbbd9e7fb4af9f622d83763a477d4"
+    },
+    {
+      "n": 12,
+      "title": "Context 越重，越吃模型能力",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        16
+      ],
+      "file": "slide-12.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 16,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-16.png"
+      ],
+      "points": [
+        "Context 裡的資料、規則與流程狀態越多，模型要同時顧到的事情越多。",
+        "即使沒超過容量上限，同一模型也可能漏步驟或提早停止。"
+      ],
+      "核心訊息": "Context 裡的資料、規則與流程狀態越多，模型要維持工作流的難度越高；原本能完成任務的輕量模型，也可能開始漏步驟或提早停止。",
+      "畫面文字": "Context 負載｜資料｜規則｜工具結果｜流程狀態｜模型能力｜守住步驟｜漏步驟｜提早停止",
+      "畫面設計": "畫面由左到右呈現同一條因果鏈：Context 容器逐漸加入資料、規則、工具結果與流程狀態；中間的模型對話泡泡承接這些內容；右側是一條需要守住的工作流。Context 較輕時路徑完整，較重時其中一個必要節點以珊瑚色虛線表示可能漏掉。不要把重點畫成「碰到容量上限」，也不畫虛構門檻；視覺焦點放在「同一個模型必須同時處理更多東西」。沿用使用者指定的語意 icon，以鋼筆線條與少量排線呈現，保留底部安全留白。底線：越吃模型能力。",
+      "搭配講稿": "Context 裡放得越多，模型就要同時顧到越多資料、規則、工具結果與流程狀態。問題不只是 Token 有沒有超過上限，而是這個模型還能不能在這個負載下守住整套 Workflow。原本能完成任務的輕量模型，Context 變重後可能開始漏看規則、跳過步驟或提早停止。",
+      "接下一頁": "接下來看同一個 Workflow 的實測：Context 從 10k 增加到 30k 後，原本的 MoE 模型發生什麼事？為什麼最後必須換成更大的 Dense 模型？",
+      "readability": "needs_enlargement",
+      "readabilityNote": "兩側資料、規則、工具結果、流程狀態等標籤偏小。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-12.png",
+      "sha256": "b1f472144567c85f0ea1d47abea79130759c5e43fba2a55a025375f2148f4616"
+    },
+    {
+      "n": 13,
+      "title": "30k Context，迫使我換成更大的模型",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        17
+      ],
+      "file": "slide-13.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 17,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-17.png"
+      ],
+      "points": [
+        "同一組測試：26B-A4B MoE 在 10k 成功 9/10，30k 降為 4/10。",
+        "30k 換成 31B Dense 後成功 9/10，呈現 Context 負載推高模型需求的觀察。",
+        "每組只有十次，不是通用模型排名，也不能把所有失敗都歸因於長度。"
+      ],
+      "核心訊息": "同一個 Workflow 在 Context 變重後，26B-A4B MoE 的完成率下降；換成 31B Dense 才恢復。這組觀察呈現的是 Context 負載如何推高模型需求，不是模型排行榜。",
+      "畫面文字": "```text\n同一 Skill、測資、Tool、temperature｜每組 10 次\n成功次數\n26B-A4B MoE・10k：9\n26B-A4B MoE・30k：4\n31B Dense・30k：9\n仍是同一個 Workflow\n有限樣本，非通用排名\n```",
+      "畫面設計": "正式直條圖：X 軸為三組模型與 Context 條件，Y 軸為十次執行中的成功次數，刻度用 0、5、10。柱頂標 9、4、9。前兩柱以同色表示同一個 26B-A4B MoE，其中 30k 的柱用珊瑚色框出下降；第三柱以較深色表示換成 31B Dense 後恢復。用一條清楚的閱讀路徑串起「Context 增加」與「換重模型」，旁邊以三個小型缺漏 icon 標出跳過 summary builder、漏 warning、提早停止。樣本限制放在圖旁的可讀位置，不放成底部小字。底線：被迫換重模型。",
+      "搭配講稿": "在同一 Skill、測資、Tool 與 temperature 下，gemma-4-26b-a4b-it-mlx 在 10k Context 成功九次，增加到 30k 後只成功四次；同樣是 30k，換成 gemma-4-31b-it 後又成功九次。失敗時會跳過 summary builder、漏掉 warning 或提早停止。這不是要證明 31B 永遠比較好，而是說明：Context 沒有控制好，原本較輕的模型可能撐不住同一套 Workflow，最後只能用更重的模型補足。這是每組十次的有限觀察，不作通用排名，也不把所有失敗都歸因於長度。",
+      "接下一頁": "但升級模型不是唯一解法。若 Runtime 先把 Working Context 控制好，還需要一開始就付出更大模型的成本嗎？",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-13.png",
+      "sha256": "7832548bb42c9d721f074d8fe72e7219a37fa0c263053149ff79d673ca48dad6"
+    },
+    {
+      "n": 14,
+      "title": "Context 管理會影響需要多大的模型",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        18
+      ],
+      "file": "slide-14.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 18,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-18.png"
+      ],
+      "points": [
+        "升級模型不是唯一選項，先整理 Working Context，再用原模型重跑。",
+        "若原模型已能穩定完成，就不必先付出升級的推論成本。",
+        "目前數據尚未證明整理後一定恢復；速度也受硬體、量化與框架影響。"
+      ],
+      "核心訊息": "Context 負載會影響完成 Workflow 所需的模型能力。遇到長 Context 失敗時，先整理 Working Context 並重跑，再判斷是否真的需要升級模型。",
+      "畫面文字": "整包放入｜Context 變重｜可能需要更重模型｜較高推論負擔｜依下一步需要｜Working Context｜原模型重新驗證｜再決定是否升級",
+      "畫面設計": "左右兩條清楚的決策路徑。上方路徑：完整資料與工具結果整包進 Context，容器變重，接著指向「可能需要更重模型」與較高推論負擔。下方路徑：完整資料留在 Runtime，summary、control signal 或 data_ref 進入 Working Context，接著回到原模型與同一個 Workflow，標示「重新驗證」。只有重跑仍不足時，箭頭才通往升級模型。兩條路徑共用同一個任務終點，避免讓人誤解成不同難度的任務；也不要畫成整理後 MoE 必然成功。底線：整理後再驗證。",
+      "搭配講稿": "換成 31B Dense 可以把這組測試的完成次數拉回來，但代價通常是更高的推論負擔，而且實際速度仍會受到硬體、量化與推論框架影響。另一個應先驗證的選項是整理 Context：完整資料留在 Runtime，只把這一步需要的內容、狀態與控制訊號交給模型。現有數據沒有直接證明整理後的 26B-A4B 一定能恢復，因此正確做法是用原模型重跑同一個任務；如果已能穩定完成，就不必先升級模型。Context Management 不只是省 Token，也可能降低完成任務所需的模型能力與算力。",
+      "接下一頁": "那麼，整理到什麼程度才算有效？判斷標準不能只是 Token 變少，而是同一個任務仍能穩定完成。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-14.png",
+      "sha256": "accb7c85cbe2c901ec287c75fcd48638043d7c2105b55ba92ea341a8edd9b779"
+    },
+    {
+      "n": 15,
+      "title": "Working Context 不是越短越好",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        19
+      ],
+      "file": "slide-15.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 19,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-19.png"
+      ],
+      "points": [
+        "Working Context 要留下完成下一步所需的資訊，不是刪到最少。",
+        "Token 減少是手段，同一任務能穩定完成才是驗收標準。"
+      ],
+      "核心訊息": "好的 Working Context 要同時做到兩件事：保留完成下一步需要的資訊，並讓指定模型能穩定完成同一個任務。",
+      "畫面文字": "完成下一步所需｜任務要求｜適用規則｜必要資料｜目前狀態｜不相關原文留在 Runtime｜指定模型｜同一任務｜穩定完成",
+      "畫面設計": "中央放一個清楚的 Working Context 容器，只保留任務要求、適用規則、必要資料與目前狀態；不相關原文以資料文件留在旁邊的 Runtime 儲存。右側不是 Token 計量表，而是指定模型走完同一條 Workflow。用兩個大型驗收記號標示「資訊足夠」與「任務完成」，不要把目標畫成越短越好，也不使用虛構的最佳 Token 數。底線：資訊足夠，任務完成。",
+      "搭配講稿": "Context Management 的目標不是把內容刪到最少，而是留下完成下一步需要的資訊，同時移除不必交給模型的負擔。最後仍要看指定模型能不能在同一個任務裡守住規則並完成 Workflow。Token 變少只是手段，任務能穩定完成才是驗收標準。",
+      "接下一頁": "要確認整理前後是否真的改善，就要用同一個任務重跑，並留下每次 Run 的條件與結果。",
+      "readability": "projection_check",
+      "readabilityNote": "Runtime 與小區塊內文字接近篩選界線。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-15.png",
+      "sha256": "4a10f40f9e0df18565ed876165f1bcab00dff41a8f88a45d64f69534c5b01044"
+    },
+    {
+      "n": 16,
+      "title": "怎麼證明整理 Context 有幫助？",
+      "chapter": "Context：什麼資訊給模型看？",
+      "oldPages": [
+        20
+      ],
+      "file": "slide-16.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 20,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-20.png"
+      ],
+      "points": [
+        "固定 Skill、測資、Tool 與 temperature，一次只改一個條件並重跑。",
+        "同一 Run 記錄模型、Context tokens、完成結果與失敗型態。",
+        "才能區分改善來自 Context 整理、模型升級，還是其他變動。"
+      ],
+      "核心訊息": "固定任務條件並重跑，才能比較 Context 整理是否讓原模型恢復穩定，或是否仍需要升級模型。",
+      "畫面文字": "同一個任務｜固定 Skill、測資、Tool、temperature｜Run A｜Run B｜模型｜Context tokens｜完成結果｜失敗型態｜一次改一個條件",
+      "畫面設計": "畫面以兩次並排的 Run 為主，不畫成抽象欄位清單。上方共用一條固定條件帶：同一 Skill、測資、Tool 與 temperature。Run A 與 Run B 各自列出模型、Context tokens、完成結果與失敗型態；只把這次刻意改變的條件用珊瑚色框出。若沒有整理後的實測值，就使用欄位模板或「待重跑」標籤，不捏造結果。底線：一次改一個條件。",
+      "搭配講稿": "只說模型怪怪的，無法判斷 Context 整理有沒有幫助。要固定 Skill、測資、Tool 與 temperature，用同一個任務重跑，並把模型、Context tokens、完成結果與失敗型態放在同一次 Run 裡。一次只改一個條件，才知道改善來自 Context 整理、模型升級，還是其他變動。Token 同時是成本紀錄與工作負載線索，後面談成本時會再回來。",
+      "接下一頁": "即使驗證後確認資訊已經足夠，Context Management 仍只能決定模型看到什麼；它不能保證必要步驟一定被執行。",
+      "readability": "needs_enlargement",
+      "readabilityNote": "「全部文件／精選文件／同一模型」比較標籤偏小；下方結論也偏低。",
+      "bottomNote": "下方結論進入底部安全區。",
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-16.png",
+      "sha256": "20b1c421b9fc0fd119dbf856c99e732d7da96f47254dea02fd633cbef07a35ef"
+    },
+    {
+      "n": 17,
+      "title": "資訊給對了，流程仍可能走錯",
+      "chapter": "Skill：流程真的會照做嗎？",
+      "oldPages": [
+        21
+      ],
+      "file": "slide-17.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 21,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-21.png"
+      ],
+      "points": [
+        "延續 Log 案例：資訊準備好，模型能開始分析，不代表任務已交付。",
+        "終點是一份有指定分類、warning、統計與明細的正式報告。"
+      ],
+      "核心訊息": "收束 Context 段落並延續同一個 Log 案例：資料準備正確，只代表模型能開始分析；任務是否完成，還要看正式交付流程有沒有走完。",
+      "畫面文字": "Working Context｜相關 Log｜必要規則｜分析差異｜正式報告尚未交付｜資訊準備完成｜任務仍未完成",
+      "畫面設計": "延續前面 Log 的語意 icon。左側是已整理好的 Working Context，包含相關 Log、任務要求與目前狀態；中間是「分析差異」節點；右側保留一份尚未完成的正式報告輪廓，標示「交付尚未完成」。不要在這頁提前介紹 Builder，也不重畫篩選、Ref 或模型比較。主視覺讓聽眾看見「資訊準備完成」與「任務完成」之間仍有距離。底線：任務仍未完成。",
+      "搭配講稿": "到這裡，Context Management 已經把這次分析需要的 Log、規則與狀態準備好，模型也能開始分析差異。但這個任務的終點不是一段分析文字，而是一份正式報告。報告必須包含指定的分類、warning、統計與明細。資訊準備完成，只代表模型看得到需要的材料；交付流程還沒有完成。",
+      "接下一頁": "既然任務還有一段正式交付流程，下一個問題就是：流程寫進 Skill 之後，模型是否每次都會照著完成？",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-17.png",
+      "sha256": "aadcae91c2378808bea5179b6824e3e68708f2057da11788fca395150897e5e4"
+    },
+    {
+      "n": 18,
+      "title": "流程寫進 Skill，模型真的會照做嗎？",
+      "chapter": "Skill：流程真的會照做嗎？",
+      "oldPages": [
+        22
+      ],
+      "file": "slide-18.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 22,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-22.png"
+      ],
+      "points": [
+        "Skill 用自然語言寫明步驟、停止條件與輸出格式。",
+        "一次成功只能證明這次成功，不能證明模型會穩定照 SOP 做。"
+      ],
+      "核心訊息": "Skill 能把 SOP 說清楚，但一次成功的示範不足以證明模型會穩定照流程完成任務。",
+      "畫面文字": "Skill 裡的 SOP｜步驟 1｜步驟 2｜必要 Operation｜退出條件｜模型每次都會照做嗎？",
+      "畫面設計": "入口版式採單一主構圖。左側是一張寫有清楚步驟的 Skill 文件，右側是一條尚未走完的手繪執行路徑，中央用一個大問號連接兩者。不要在這頁放 Builder、Guard 或失敗類型；讓視線只落在「寫下流程」與「實際執行」之間的落差。主標與問句維持大字，重要文字不得靠近底部分享介面。底線：每次都會照做嗎？",
+      "搭配講稿": "Context 準備好之後，模型已經看得到相關 Log、任務規則與目前狀態。接下來的問題是，它會不會照 Skill 把流程完成。我一開始以為，只要把第一步、第二步、停止條件與輸出格式寫清楚，模型就會照著走。但一次執行成功，只能證明這一次有成功，還不能證明流程穩定。",
+      "接下一頁": "要看見這種不穩定，不能只挑一個成功案例，而要固定條件反覆執行同一個任務。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-18.png",
+      "sha256": "4ef875b55b581bf8162423aa284c9e0c5dbdad57f69ee7ba9c7f8a5ba1d2a2d5"
+    },
+    {
+      "n": 19,
+      "title": "同一個任務，多跑幾次才看得出問題",
+      "chapter": "Skill：流程真的會照做嗎？",
+      "oldPages": [
+        23
+      ],
+      "file": "slide-19.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 23,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-23.png"
+      ],
+      "points": [
+        "固定同一版 Skill、測資、Tool 與模型設定，重跑同一 Scenario。",
+        "排除不同案例的干擾，觀察必要步驟是否能穩定完成。"
+      ],
+      "核心訊息": "固定測試條件並重複執行同一個 Scenario，才能觀察模型是否穩定完成指定流程。",
+      "畫面文字": "同一個 Scenario｜同一版 Skill｜同一組測資｜同一個 Tool｜同一個模型設定｜重複執行 10 次",
+      "畫面設計": "中央放一份 Scenario 測試文件，向右展開十條等距的手繪執行線，像同一個起跑點重跑十次。固定條件只放在起點周圍，以四個清楚的 icon 表示 Skill、測資、Tool 與模型設定，不做成小卡片矩陣。十條線的終點先保持模糊，下一頁再揭示差異。畫面留白充足，文字維持簡短且大於簡報最低可讀尺寸。底線：重複執行。",
+      "搭配講稿": "我用 LLM Evaluation 固定同一版 Skill、同一組測資、同一個 Tool 與同一組模型設定，再讓同一個 Scenario 重跑多次。這樣才能排除案例不同造成的干擾，觀察模型在相同條件下，是否每次都走完相同的必要步驟。",
+      "接下一頁": "當同一個任務重跑多次，問題才真正浮現：答案都有產生，執行過程卻不一致。",
+      "readability": "projection_check",
+      "readabilityNote": "「同一個 Skill／同一個 Tool」條件文字比主標明顯小。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-19.png",
+      "sha256": "63693bdea2147b31501468ac2f6ec9eb87a5ba8fa5f2f309347c0195b9803269"
+    },
+    {
+      "n": 20,
+      "title": "答案都有產生，執行路徑卻不一樣",
+      "chapter": "Skill：流程真的會照做嗎？",
+      "oldPages": [
+        24
+      ],
+      "file": "slide-20.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 24,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-24.png"
+      ],
+      "points": [
+        "有些 Run 跳步、順序錯、提早停止或繞過 fallback，仍有合理的 Final Answer。",
+        "不能只評最後文字；要把實際路徑與預期流程一起比較。"
+      ],
+      "核心訊息": "Final Answer 的存在會掩蓋流程偏離；Evaluation 必須比較實際執行路徑，而不只比較最後文字。",
+      "畫面文字": "正常完成｜跳過必要 Operation｜順序錯誤｜提早停止｜繞過 fallback｜每次都有 Final Answer",
+      "畫面設計": "沿用新 19 的十條執行線，這一頁把其中幾條攤開成不同路徑。正常路徑完整抵達終點；其餘路徑分別用缺口、交換節點、提前終止與繞路表示失敗類型。所有路徑右側都有同樣的 Final Answer 文件 icon，形成「看起來都有答案」的視覺反差。不要用密集表格，也不要將錯誤塞進小字註解。底線：路徑卻不一樣。",
+      "搭配講稿": "重跑後我看到的不是單純答對或答錯。有些 Run 正常完成，有些跳過必要 Operation，有些順序錯誤、提早停止，或者繞過 fallback。麻煩的是，它們最後常常都會產生一段看起來合理的 Final Answer。如果 Evaluation 只看最後文字，就會把流程錯誤當成成功。",
+      "接下一頁": "其中一個最典型的失敗，是模型跳過固定的 Summary Builder，自己交出摘要。",
+      "readability": "projection_check",
+      "readabilityNote": "分析與答案等路徑標籤較小，需實際投影比對。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-20.png",
+      "sha256": "0203a622e9f16d9ec6bdfd2ed54c4786cfab2787724063207d32e2c6c2c8cf5c"
+    },
+    {
+      "n": 21,
+      "title": "跳過 Builder，摘要有了，交付卻沒完成",
+      "chapter": "Skill：流程真的會照做嗎？",
+      "oldPages": [
+        25,
+        26
+      ],
+      "file": "slide-21.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 21,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-25.png",
+        "../2026-09-28-v14-no-chapter-tags/slide-26.png"
+      ],
+      "points": [
+        "有答案、沒有 exception，仍可能漏掉必要 Builder。",
+        "固定格式與必要資訊是交付要求，不是可自由省略的步驟。"
+      ],
+      "核心訊息": "必要 Builder 未執行，即使有 Final Answer，也可能少了指定格式或必要內容。",
+      "畫面文字": "預期路徑｜分析差異｜報告 Builder｜正式報告｜固定格式／必要內容｜實際路徑｜Builder 未呼叫｜LLM 自行摘要｜可能缺格式或內容",
+      "畫面設計": "同起點的上下路徑對照。上方分析→Builder→正式報告；下方分析繞過虛線 Builder 缺口，直接到自行摘要。兩個終點僅用短句標明規格與可能缺漏，不另加一整張報告比較表。",
+      "搭配講稿": "Skill 已經要求分析差異後呼叫 build_execution_summary，但某些 Run 會跳過 Builder，由模型自行摘要。它沒有 exception，畫面也有答案；對照路徑才看到必要 Operation 沒發生。Builder 用來收斂固定格式、完整分類、必要 warning、統計與明細，模型自由摘要則可能漏掉指定交付。這裡的問題不是文字通不通順，而是任務要求的交付是否完成。",
+      "接下一頁": "因此 Evaluation 不能只看答案，還要看必要操作是否真的發生，再透過重跑觀察穩定性。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-21.png",
+      "sha256": "42444c78794e53ba7a21f900e386f70a6dedd87a40d82bac850d2c7ad6fbf670"
+    },
+    {
+      "n": 22,
+      "title": "多跑幾次，檢查答案，也檢查步驟",
+      "chapter": "Skill：流程真的會照做嗎？",
+      "oldPages": [
+        27,
+        28
+      ],
+      "file": "slide-22.png",
+      "mode": "revised_generated",
+      "embeddedPageNumber": 22,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-27.png",
+        "../2026-09-28-v14-no-chapter-tags/slide-28.png"
+      ],
+      "points": [
+        "答案和必要操作要一起檢查，才能辨識看似成功的漏步驟。",
+        "重複 Run 與多 Scenario 衡量目前樣本的遵守程度，不保證未來零錯誤。"
+      ],
+      "核心訊息": "用 Skill、實際 Trace 和最終輸出比對，多 Scenario 與重複 Run 衡量目前測試範圍內的遵守程度。",
+      "畫面文字": "同條件重複執行｜Run A／Run B／Run C｜對照 Skill｜Evaluation｜答案是否符合要求？｜必要步驟是否完成？｜看這批測試有多常照做",
+      "畫面設計": "以三份執行紀錄匯入同一個 Evaluation，另由 Skill 提供判準。每份 Run 留步驟與答案兩類紀錄；圖示是示意，不代表三次實測或成功比例。不是固定流程或執行閘門。",
+      "搭配講稿": "Skill 仍然是給模型看的自然語言說明，不是一定會執行的程式。我會在相同條件下重跑，也用不同情境測試；對照 Skill 檢查最後答案是否符合要求，以及必要步驟是否真的做完。Evaluation 告訴我們這批測試有多常照做，讓修改有依據；不代表下一次執行不可能出錯。",
+      "接下一頁": "通過率可以很高，甚至目前全部通過；但這仍是測試結果，不是未來每一次執行的保證。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": "新圖結語已上移；OCR字框下緣約86.1%高，仍略超過嚴格的85%安全線，待投影確認。",
+      "sourceFile": "images/candidates/2026-10-01-v16-five-page-revision/slide-22.png",
+      "sha256": "340b1e2e146c8c25130e745018667e49aa81a87773088848538ff2f51b422154"
+    },
+    {
+      "n": 23,
+      "title": "Evaluation 100%，仍然不是零風險",
+      "chapter": "Skill：流程真的會照做嗎？",
+      "oldPages": [
+        29
+      ],
+      "file": "slide-23.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 29,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-29.png"
+      ],
+      "points": [
+        "Evaluation 衡量已覆蓋場景的表現，可用失敗案例持續降低錯誤。",
+        "即使目前測試 100% 通過，也不保證未來機率模型永遠照 Skill 做。"
+      ],
+      "核心訊息": "Evaluation 能驗證模型在已覆蓋 Scenario 中的遵守率，卻無法消除機率模型在未來執行中偏離 Skill 的可能性。",
+      "畫面文字": "已測 Scenario｜Evaluation：100% Pass｜未來輸入與不同 Context｜LLM 仍可能偏離｜測試通過率不是執行保證",
+      "畫面設計": "左側是一個清楚圈起的 Evaluation 測試範圍，範圍內多個 Scenario 全部為綠色，中央大字寫「100% Pass」。右側是測試範圍之外的一次未來執行，新的輸入、不同 Context 與模型判斷匯入同一條路徑，其中保留一條細小但清楚的偏離分支。不要使用骰子或誇張故障圖示，以免把機率模型畫成純隨機。底線：100% 是測試結果，不是零風險。",
+      "搭配講稿": "Evaluation 做得越完整，我們越能知道模型在大部分場景中有多高的機率按照 Skill 執行，也能透過失敗案例持續修改 Skill、模型或 Context，降低觀察到的錯誤率。但 Skill 始終是自然語言說明，LLM 也始終是機率模型。即使 Evaluation 在目前案例中得到 100%，未來某次執行仍然可能不準，或者沒有按照 Skill 的說明做判斷。",
+      "接下一頁": "因此下一個設計問題不是「Evaluation 還能不能再多做一點」，而是「這種錯誤偶爾發生一次，我能不能接受」。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-23.png",
+      "sha256": "8f14c6d60a1a3e7675716ddc50f4775638f56020315ef7fe4e860ff6ec08f97d"
+    },
+    {
+      "n": 24,
+      "title": "錯誤能不能放行？",
+      "chapter": "Guard、Evidence 與人工確認",
+      "oldPages": [
+        30
+      ],
+      "file": "slide-24.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 30,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-30.png"
+      ],
+      "points": [
+        "可接受偶發錯誤：用 Skill 引導，再用 Evaluation 量測與改善。",
+        "一次都不能接受的錯：交給 Guardrail 或 HITL 在系統邊界阻止放行。"
+      ],
+      "核心訊息": "可以接受偶發錯誤的行為，可用 Skill 引導並以 Evaluation 持續驗證；一次都不能接受的錯誤，必須交給 Guardrail 或人阻止它通過。",
+      "畫面文字": "可以接受偶發錯誤｜Skill＋Evaluation｜一次都不能接受｜Guardrail／HITL｜錯誤可以通過嗎？",
+      "畫面設計": "入口版式用一條垂直分界線形成兩個寬鬆區域，不做成卡片。左側是 Skill 文件、Evaluation 放大鏡與可重試箭頭，標示「可以接受偶發錯誤」；右側是實際閘門與人工確認 icon，標示「一次都不能接受」。中央只放一個大問題「錯誤可以通過嗎？」。底線：可容錯用 Skill，不可容錯用 Guardrail。",
+      "搭配講稿": "這就是我的分界。可以接受偶發錯誤的，用 Skill 說明，再透過 Evaluation 量測與改善穩定度。如果某個錯誤一次都不能接受，就不能只期待 LLM 每次都遵守說明，而要用 Guardrail 或 HITL 把它擋在真正的系統邊界上。",
+      "接下一頁": "先用三個具體例子，看看一條寫在 Skill 裡的規則，如何變成系統真正能檢查的條件。",
+      "readability": "projection_check",
+      "readabilityNote": "HITL、LLM 英文標籤較小。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-24.png",
+      "sha256": "8e298a44c78efe4c7fe427ac3dce4e823668e8cb71217d2689753d3ffbd02b09"
+    },
+    {
+      "n": 25,
+      "title": "把不可接受的錯，變成可檢查的條件",
+      "chapter": "Guard、Evidence 與人工確認",
+      "oldPages": [
+        31
+      ],
+      "file": "slide-25.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 31,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-31.png"
+      ],
+      "points": [
+        "不能算錯的日期交給 deterministic tool，不只提醒模型仔細。",
+        "根因結論要查 Evidence；修改資料要由後端檢查 Authorization。",
+        "把不可接受的錯落成實際檢查機制，不只停在文字規則。"
+      ],
+      "核心訊息": "當錯誤不能被接受，Skill 裡的提醒要落到 deterministic tool、Evidence Check 或 Authorization 等實際機制。",
+      "畫面文字": "日期不能算錯｜由 Tool 計算｜沒有證據不能宣稱根因｜檢查 Evidence｜未授權不能修改資料｜檢查 Authorization",
+      "畫面設計": "畫面中央用一道明顯分界區分「Skill 裡的說明」與「系統的實際檢查」。左側沿垂直方向放三句自然語言規則，分別搭配日曆、Claim、正式資料 icon；每一句以水平線連到右側對應的 Tool、Evidence Check 與 Authorization。三組關係共用同一道分界，不畫成卡片牆，也不在這頁加入 Approval、Retry Budget 或精確執行時序。底線：從提醒變成檢查。",
+      "搭配講稿": "如果日期不能算錯，就不要只在 Skill 裡提醒模型仔細計算，而是交給 deterministic tool。沒有 Evidence 不能宣稱根因，就要讓 Claim 在成為正式輸出前接受 Evidence Check。未授權不能修改資料，就要由後端根據使用者、資源與動作檢查 Authorization。共同原則是：不可接受的錯誤，不能只停留在自然語言說明。",
+      "接下一頁": "這三個例子看起來不同，但底層其實是同一件事：LLM 可以提出結果，卻不擁有最後的放行權。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-25.png",
+      "sha256": "33b41092c162f8cbd98496a1f1ccc3d4354500e2a9b39a4844e724355ec6b7f8"
+    },
+    {
+      "n": 26,
+      "title": "LLM 可以提出，不能自己放行",
+      "chapter": "Guard、Evidence 與人工確認",
+      "oldPages": [
+        32
+      ],
+      "file": "slide-26.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 32,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-32.png"
+      ],
+      "points": [
+        "LLM 可提出 Tool Call、Claim 或操作建議，但不能自行宣告安全。",
+        "格式、業務規則、Evidence、Authorization 與當下條件通過後，才能正式放行。"
+      ],
+      "核心訊息": "LLM 產生的 Tool Call、Claim 與操作都只是候選提案；系統完成相應檢查後，才允許它變成正式輸出或實際影響。",
+      "畫面文字": "LLM 提出｜Tool Call｜Claim｜高風險操作｜系統檢查｜格式與業務規則｜Evidence｜Authorization｜符合才執行或輸出",
+      "畫面設計": "左側是一個 LLM 對話泡泡，提出三個大型語意物件：Tool Call 文件、Claim 對話卡與高風險操作提案。三者走向中央同一道系統邊界，但在邊界上分別標示「格式／業務規則」「Evidence」「Authorization」。右側才是 Tool 執行、正式回答與實際寫入；未通過的提案停在邊界前。不要畫四座連續閘門，也不在這頁提前展開人工 Approval。底線：最終放行權不在 LLM。",
+      "搭配講稿": "Skill 告訴 LLM 應該怎麼做；Guardrail 改變的是最後的決定權。LLM 可以提出 Tool Call、形成 Claim，或者建議一個操作，但不能自己宣告它們已經安全。Tool Call 要先符合格式與業務規則，Claim 要有 Evidence 支持，實際操作則要通過 Authorization 與當下條件。只有檢查通過，提案才會成為正式輸出或產生實際影響。",
+      "接下一頁": "回到前面分析 Log 的案例。當時我們處理的是要給模型哪些資料；現在看模型讀完後提出的根因結論，是否有足夠證據支持。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-26.png",
+      "sha256": "5afbd864e138a5a6d4c177d34a5d853357e15b6491ce96df440dd1ba79c18730"
+    },
+    {
+      "n": 27,
+      "title": "查到錯誤，就能判定根因嗎？",
+      "chapter": "Guard、Evidence 與人工確認",
+      "oldPages": [
+        33
+      ],
+      "file": "slide-27.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 33,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-33.png"
+      ],
+      "points": [
+        "回到 ELK Log 分析：現在討論結論的證據，不是哪些資料進 Context。",
+        "查到錯誤、時間接近只是線索，不能直接證明根因。"
+      ],
+      "核心訊息": "回到 ELK Log 分析案例：這次檢查模型的根因結論是否有證據，不再討論 Context 選材。",
+      "畫面文字": "回到案例①｜ELK Log 分析\n前面：哪些 Log 要給模型看？\n現在：結論有沒有證據？\n服務錯誤｜逾時增加｜這個服務是根因？\n查到錯誤 ≠ 找到根因",
+      "畫面設計": "上方放可見且足夠大的案例回扣標籤，左側沿用 Log 文件 icon 兩張，右側是模型的根因 Claim。資料與結論之間用放大鏡及大問號，不用肯定的因果箭頭。以一條簡潔前面／現在的對比句交代視角改變。下方安全區以珊瑚底線強調查到錯誤不等於找到根因。",
+      "搭配講稿": "回到前面的 ELK Log 分析。前面處理哪些內容該進 Context；現在改看模型讀完後下的結論。真實錯誤和時間接近只能提供線索，不自動證明根因，必須檢查支持關係。",
+      "接下一頁": "證據只能支持可能性，就不能把它說成確定結論。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-27.png",
+      "sha256": "0855a001b3574495e97871cf9d7619d42fec73395de5da873749710be4f9c591"
+    },
+    {
+      "n": 28,
+      "title": "證據不足，就不能說成確定結論",
+      "chapter": "Guard、Evidence 與人工確認",
+      "oldPages": [
+        34
+      ],
+      "file": "slide-28.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 34,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-34.png"
+      ],
+      "points": [
+        "區分已觀察事實、待驗證假設與證據不足。",
+        "允許提出推論，但不把沒有足夠支持的猜測包裝成確定結論。"
+      ],
+      "核心訊息": "Evidence Boundary 要求模型區分已觀察事實、待驗證假設與證據不足，避免把推測包裝成確定原因。",
+      "畫面文字": "已觀察事實｜待驗證假設｜證據不足｜缺少哪些證據？｜不能升格為確定結論",
+      "畫面設計": "將一個 Claim 文件放在中央，往右只有三個清楚的大型出口：事實、假設、證據不足。確定結論的出口前放一道 Evidence 閘門；Evidence 不足時，路徑轉向假設或缺口說明。不要畫成真假二選一，也不要使用評分儀表板。用珊瑚色手繪底線只強調「不能升格」。底線：不能升格為確定結論。",
+      "搭配講稿": "時間接近可以成為調查線索，但還不能證明因果。若目前資料只能支持可能性，就把它保留為待驗證假設；若證據不足，就清楚說明還缺什麼。Evidence Boundary 要阻止的不是所有推論，而是沒有足夠支持卻被包裝成確定結論的輸出。",
+      "接下一頁": "系統可以檢查規則與證據，但任務是不是使用者真正要的、某次操作是否允許，有些情況需要把決定交回給人。這不是讓人把證據不足的推測批准成事實。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-28.png",
+      "sha256": "8792ebcdd008d3fa53f891c89dabbf602f32ae19b1f5d4046a44f871a81eb3ff"
+    },
+    {
+      "n": 29,
+      "title": "有些決定，不能讓 Agent 自己確認",
+      "chapter": "Guard、Evidence 與人工確認",
+      "oldPages": [
+        35
+      ],
+      "file": "slide-29.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 35,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-35.png"
+      ],
+      "points": [
+        "系統查規則與證據；有些決定需要人確認意圖或批准操作。",
+        "兩種人工責任不同，也不是請人替缺乏證據的結論背書。"
+      ],
+      "核心訊息": "把系統檢查轉接到人的意圖確認與操作批准；不是請人把不足的證據蓋章變成事實。",
+      "畫面文字": "任務開始前｜這是你要我做的事嗎？｜Intent Validation\n操作執行前｜這個操作允許執行嗎？｜Execution Approval\n確認理解 ≠ 批准操作",
+      "畫面設計": "同一位簡單人形線稿居中，左右兩份不同文件：左為 Agent 整理的目標與範圍，右為操作提案與影響範圍。各用一個大型問題顯示人要確認什麼。畫面不是兩個依序通過的機械門，不畫證據不足經人確認變事實。底線只畫在標題的自己確認。",
+      "搭配講稿": "前面談系統如何檢查規則和證據，但任務是不是使用者真正要的、某次操作是否允許，有些情況需要把決定交回給人。確認理解和批准操作是兩種不同責任，不是讓人為缺乏證據的結論背書。",
+      "接下一頁": "先看任務開始前：讓使用者確認 Agent 理解的目標與範圍。",
+      "readability": "needs_enlargement",
+      "readabilityNote": "目標、範圍、不包含、操作內容、可能影響、涉及系統資料等紙張內欄位偏小，宜減欄位而非縮字。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-29.png",
+      "sha256": "faa49dd7a568d2d951f8d90e134f1838d378ea3e397a7fa983173aee46970ada"
+    },
+    {
+      "n": 30,
+      "title": "先確認理解，避免做完錯誤的任務",
+      "chapter": "Guard、Evidence 與人工確認",
+      "oldPages": [
+        36,
+        37
+      ],
+      "file": "slide-30.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 30,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-36.png",
+        "../2026-09-28-v14-no-chapter-tags/slide-37.png"
+      ],
+      "points": [
+        "執行前先確認目標、排除與範圍，避免後面成功完成錯任務。",
+        "意圖確認不是操作批准；兩者解決不同問題。"
+      ],
+      "核心訊息": "先讓使用者確認 Agent 理解的目標、排除、範圍與狀態；工具全部成功仍可能執行錯誤任務。",
+      "畫面文字": "Agent 理解的任務｜目標：A 類｜排除：B 類｜範圍：最近三天｜狀態：失敗項目｜確認／修改／退回｜再開始呼叫工具｜工具成功 ≠ 任務正確",
+      "畫面設計": "以中央大型任務確認文件為焦點，列出四個具體條件；右側短線交接到工具。關鍵範圍只有一處圈選，旁邊一句工具成功不等於任務正確。沒有小人物、按鈕牆或兩條完整流程。",
+      "搭配講稿": "像「找 A 類、排除 B，只處理最近三天失敗項目」，同時包含目標、排除條件、時間範圍與狀態。先把 Agent 理解的內容整理成可閱讀的確認摘要，讓使用者確認、修改或退回，再依確認後版本開始。這裡是在確認有沒有理解對，不是在批准扣款或寫入。如果範圍一開始錯了，後面每個 Tool Call 都成功，仍可能完成錯誤任務。",
+      "接下一頁": "確認理解以外，寫入、扣款或對外通知還需要另一種確認：批准這次操作。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-30.png",
+      "sha256": "578d02073207cd4dfd7e5c7f157aed9b04cfab1c6eb93ce596dfa39cb5ef7b95"
+    },
+    {
+      "n": 31,
+      "title": "寫入、扣款或對外通知，執行前要先批准",
+      "chapter": "Guard、Evidence 與人工確認",
+      "oldPages": [
+        38
+      ],
+      "file": "slide-31.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 38,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-38.png"
+      ],
+      "points": [
+        "寫入、扣款、開單或對外通知，系統要在執行前停下等批准。",
+        "讓人先看懂提案、影響範圍與預覽，留下批准者、時間和批准版本。"
+      ],
+      "核心訊息": "Execution Approval 必須讓人先看懂要做什麼、影響範圍與預覽結果，再決定是否允許執行。",
+      "畫面文字": "操作提案｜做什麼｜影響範圍｜預覽｜批准｜拒絕｜批准紀錄",
+      "畫面設計": "放大一份操作提案文件，文件內只保留「做什麼」「影響範圍」「預覽」三個大區塊。批准與拒絕放在文件下方同一安全區，右側執行工具停在人工閘門後。批准紀錄以小型簽章 icon 表示，不塞入姓名或時間細節。底線：先看懂再批准。",
+      "搭配講稿": "寫入、開單、扣款或對外通知等高風險操作，不能只靠 Skill 裡一句「請先取得批准」。系統要停在人工 Gate 前，讓人看懂提案與影響範圍，再批准或拒絕。紀錄還要保留誰批准、何時批准，以及當時看到哪一份預覽。",
+      "接下一頁": "即使人已經批准，真正執行前仍然不能直接沿用舊狀態。",
+      "readability": "projection_check",
+      "readabilityNote": "「批准紀錄」次要標籤較小。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-31.png",
+      "sha256": "4a6ddef0c6eaf308ab82014856478e452e03d1ff111c907d0e0d5e96da56e5c1"
+    },
+    {
+      "n": 32,
+      "title": "批准後，執行前仍要重新檢查條件",
+      "chapter": "Guard、Evidence 與人工確認",
+      "oldPages": [
+        39
+      ],
+      "file": "slide-32.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 39,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-39.png"
+      ],
+      "points": [
+        "批准到執行可能相隔一段時間，資料、任務或權限狀態可能已變。",
+        "執行前重新檢查 Precondition，將批准內容與檢查結果留在 Trace。"
+      ],
+      "核心訊息": "批准與執行之間可能出現狀態變化；Runtime 必須在真正執行前重新檢查前置條件。",
+      "畫面文字": "操作提案｜人工批准｜等待期間｜狀態可能改變｜重新檢查 Precondition｜執行或退回",
+      "畫面設計": "主畫面是一條清楚的水平時間線。左側為操作提案與人工批准，中間以大型時鐘與變動中的狀態文件製造時間間隔，右側在執行工具前放第二道「Precondition」閘門。閘門分向執行與退回兩條路，批准印章停留在左側，不可直接跨越右側閘門。底線：執行前重新檢查。",
+      "搭配講稿": "Approval 會把一次 Agent Run 切成提案與執行兩段，中間可能隔幾分鐘或幾小時。資料可能已被別人處理，任務可能已關閉，帳務或權限狀態也可能改變。因此批准不是永久通行證。Runtime 在真正執行前仍要重新檢查 Precondition，並把批准內容與檢查結果留在 Trace。",
+      "接下一頁": "流程偏離、Guardrail 攔截與 HITL 決策都必須留下可追查的紀錄。下一章回到那份缺漏摘要，看看如何從 Trace 找出它在哪一步走錯。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-32.png",
+      "sha256": "6a721dbdc16e451ca89050c6914dd04566d7e14957988c79980ebd67710870de"
+    },
+    {
+      "n": 33,
+      "title": "為什麼這次沒有呼叫 Builder？",
+      "chapter": "Trace：出錯如何追查？",
+      "oldPages": [
+        40
+      ],
+      "file": "slide-33.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 40,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-40.png"
+      ],
+      "points": [
+        "回到模型跳過 Builder 的案例，切換到開發者追查視角。",
+        "看 Agent 的執行紀錄、當時可見資料與 Skill 版本，不是業務系統的 ELK Log。"
+      ],
+      "核心訊息": "回到跳過摘要 Builder 的已知失敗，切換為開發者的追查視角。",
+      "畫面文字": "回到案例②｜跳過摘要 Builder\n前面：發現漏步驟\n現在：追查當時怎麼走\n缺漏摘要｜當次 Run｜Builder 未呼叫",
+      "畫面設計": "沿用缺漏報告和 Builder 文件圖示。左邊缺漏報告有清楚空白欄位，右邊是歷史 Run 路徑，Builder 位置留虛線缺口，放大鏡回看缺口附近紀錄。回扣標籤置於標題上方，不用成功勾號，不畫成新一輪失敗；追查用虛線參照，非執行因果。",
+      "搭配講稿": "現在換成開發者的角度，回到先前模型跳過 Builder 自行摘要的案例。我們已知道漏了哪一步，接著看當次執行紀錄、可見資料和 Skill 版本來分析。這裡的紀錄是 Agent 的執行紀錄，不是前面拿來分析的業務 Log。",
+      "接下一頁": "追查時，Log、Trace、Evidence 分別回答不同問題。",
+      "readability": "needs_enlargement",
+      "readabilityNote": "示意 Log 的三行文字與五個步驟標籤偏小；不應只把大標題視為通過。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-33.png",
+      "sha256": "3d0ec65b01af536d19fb1c52fe15e4c9c136c90269a335c8223da69cb0288930"
+    },
+    {
+      "n": 34,
+      "title": "做了什麼、怎麼走、憑什麼說？",
+      "chapter": "Trace：出錯如何追查？",
+      "oldPages": [
+        41
+      ],
+      "file": "slide-34.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 41,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-41.png"
+      ],
+      "points": [
+        "Operation Log 記錄做了什麼，Decision Trace 串起同次執行路徑。",
+        "Evidence Binding 連結結論的支持依據，三者用途不能混為一談。"
+      ],
+      "核心訊息": "區分 Operation Log、Decision Trace 與 Evidence Binding。",
+      "畫面文字": "Log｜做了什麼？｜Trace｜怎麼走到這一步？｜Evidence｜結論憑什麼？",
+      "畫面設計": "三欄對照：事件文件、連續路徑、Claim 連證據。每欄同樣的字級與 icon 大小，不用三個抽象資料庫。底線：無。",
+      "搭配講稿": "這裡的 Log 是 Agent 自己的執行紀錄，和前面查業務系統 ELK 的用途不同。Log 記錄事件，Trace 把同次執行的路徑串起來，Evidence 支撐輸出的結論。",
+      "接下一頁": "放回摘要案例，這些紀錄如何幫我們定位問題？",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-34.png",
+      "sha256": "93bd9586bcdccb415c500c665f9b9d05bad2fcb151afa9cae8bc95c6ef71ec09"
+    },
+    {
+      "n": 35,
+      "title": "追查漏步驟，要連回當時的 Run 與狀態",
+      "chapter": "Trace：出錯如何追查？",
+      "oldPages": [
+        42,
+        43
+      ],
+      "file": "slide-35.png",
+      "mode": "revised_generated",
+      "embeddedPageNumber": 35,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-42.png",
+        "../2026-09-28-v14-no-chapter-tags/slide-43.png"
+      ],
+      "points": [
+        "同次 Run 先定位漏步驟，再追查停止時的狀態與規則。",
+        "保留可見依據，不把它宣稱為內部思考或已證明根因。"
+      ],
+      "核心訊息": "先串同次 Run 定位 Builder 未呼叫，再回看停止當時的資料、狀態、規則與已輸出的理由；這些不是內部思考或已證明根因。",
+      "畫面文字": "追查示意｜同一次 Run｜分析→自行摘要→停止｜Builder 未呼叫｜當時紀錄：狀態與資料、Skill 規則、已輸出的理由",
+      "畫面設計": "實際已發生事件是一條簡單時間線；未呼叫的 Builder 用下方虛線 icon 指向缺步位置。追查連到同次 Run 的歷史可見紀錄，不畫成下一個執行步驟，也不宣稱讀到模型內部思考。",
+      "搭配講稿": "回到 Builder 漏步驟案例，把分析、摘要與停止事件連到同一次 Run，先定位 Builder 沒被呼叫。接著回看停止時的可見資料、當時狀態、Skill 規則和模型已輸出的理由。這些是可以保存與核對的追查依據，支持提出候選解釋；不等於模型內部思考，也不能直接說已找出根因。",
+      "接下一頁": "其中最容易被忽略的一份依據，是當時那一版 Skill，而不是現在已修改的版本。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v16-five-page-revision/slide-35.png",
+      "sha256": "72acb054673cae9ede6fe3545ab06008b1a263b8419568bebd7bf8cf32f256e7"
+    },
+    {
+      "n": 36,
+      "title": "歷史 Run，要綁定當時的 Skill",
+      "chapter": "Trace：出錯如何追查？",
+      "oldPages": [
+        44
+      ],
+      "file": "slide-36.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 44,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-44.png"
+      ],
+      "points": [
+        "歷史 Run 要綁定當時 Skill 版本或 Hash，避免拿新版解釋舊行為。",
+        "完整重建還需要對應資料、工具結果與執行環境，不只 Skill 版本。"
+      ],
+      "核心訊息": "版本資訊是歷史追查與回歸歸因的基礎。",
+      "畫面文字": "版本示意｜歷史 Run｜當時 Skill｜版本／Hash｜現在的 Skill",
+      "畫面設計": "歷史 Run 與當時 Skill 用鎖定連結相連；現在的 Skill 放在另一側，沒有替代連線。底線：當時的 Skill。",
+      "搭配講稿": "Skill 可能一直被修改。若沒有版本或 Hash，就容易拿新版規則解釋舊 Run，無法歸因。版本綁定是必要條件，完整重建還需要對應資料、工具結果與執行環境紀錄。",
+      "接下一頁": "找對當時的規則，才有辦法提出具體修改。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-36.png",
+      "sha256": "91eadec459771a9a78a2dae5344e637d14414b154e40b0b69df48f91506b9417"
+    },
+    {
+      "n": 37,
+      "title": "從追查依據，提出候選修改",
+      "chapter": "Trace：出錯如何追查？",
+      "oldPages": [
+        45
+      ],
+      "file": "slide-37.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 45,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-45.png"
+      ],
+      "points": [
+        "用 Trace 提出改善假設，例如補清楚必要 Builder 結果與停止條件。",
+        "候選修改仍要測試；追查線索不能直接證明原案一定由那條規則造成。"
+      ],
+      "核心訊息": "Trace 支持改善假設，修改是否有效仍待驗證。",
+      "畫面文字": "修改示意｜檢查停止條件｜必要 Builder 結果取得後，才可完成｜候選修改｜待驗證",
+      "畫面設計": "左側追查文件，右側候選 Skill 修改片段。新增完成條件用珊瑚色底線，候選文件帶「待驗證」大標籤。無通過勾號。",
+      "搭配講稿": "例如停止條件若不夠明確，可以提出補上必要 Builder 結果的修改。這是教學示意的改善假設，不宣稱原案一定由這條規則造成。候選版本還要用測試證明。",
+      "接下一頁": "那我們要測什麼，才知道 Agent 真的改善？",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-37.png",
+      "sha256": "6c31d09254042b9133ef408d2c9fb65d9377f6c7f6a32ff93d62b109ac60687e"
+    },
+    {
+      "n": 38,
+      "title": "驗證修改，要看整次任務",
+      "chapter": "Evaluation：修改如何驗證？",
+      "oldPages": [
+        46
+      ],
+      "file": "slide-38.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 46,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-46.png"
+      ],
+      "points": [
+        "Guard 在執行時攔截；Eval 在開發測試時驗證行為是否符合預期。",
+        "修改後要看整次任務的結果、路徑與工具使用，不只最後答案。"
+      ],
+      "核心訊息": "從 Trace 追查轉入 Eval，明示評估涵蓋結果與執行過程。",
+      "畫面文字": "Eval：檢查實際行為是否符合預期｜結果｜執行路徑｜工具與參數",
+      "畫面設計": "一條任務線上分別放輸出報告、操作路徑和參數文件，三個檢查窗口各有名稱。底線：整次任務。",
+      "搭配講稿": "現在是在開發測試中檢查 Agent。Guard 是執行時攔截，Eval 則檢查這次行為是否符合預期。結果、路徑、工具使用都要看，才能知道它是否用可靠方式完成。",
+      "接下一頁": "先從使用者最後拿到的報告看起。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": "「整次任務」位置偏低。",
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-38.png",
+      "sha256": "0147cc750554eed0be694c7727623313892c45d5ffa00ea77cb885f594af6e0b"
+    },
+    {
+      "n": 39,
+      "title": "報告，有沒有交付必要內容？",
+      "chapter": "Evaluation：修改如何驗證？",
+      "oldPages": [
+        47
+      ],
+      "file": "slide-39.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 47,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-47.png"
+      ],
+      "points": [
+        "Outcome Eval 看使用者收到的報告：格式、分類、必要 warning 是否完整。",
+        "結論是否有依據，也是交付品質的一部分。"
+      ],
+      "核心訊息": "Outcome Eval 檢查結果的完整性、格式與結論。",
+      "畫面文字": "Outcome｜固定格式｜完整分類｜必要 warning｜結論有根據",
+      "畫面設計": "重用摘要報告，放大四個檢查區塊，清單與報告一一對應。綠色只表示單項檢查通過，不在全頁蓋總 PASS。底線：必要內容。",
+      "搭配講稿": "第一層是結果：格式對不對、分類是否完整、必要 warning 有沒有出現、結論是否有根據。這些是使用者真正收到的交付內容。",
+      "接下一頁": "但報告剛好看起來正確，還不能證明流程走對了。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-39.png",
+      "sha256": "37beb89db2304e60d587563ffc5d84fb6b21ec303f2c6440701594e2d1e8b08f"
+    },
+    {
+      "n": 40,
+      "title": "答案像對的，路徑也要檢查",
+      "chapter": "Evaluation：修改如何驗證？",
+      "oldPages": [
+        48
+      ],
+      "file": "slide-40.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 48,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-48.png"
+      ],
+      "points": [
+        "Trajectory Eval 比對情境要求與實際路徑，確認必要操作是否發生。",
+        "允許合法分支，但要找出漏步驟、順序錯、重複呼叫與提早停止。"
+      ],
+      "核心訊息": "Trajectory Eval 比對該情境要求的必要操作與實際路徑。",
+      "畫面文字": "Trajectory｜預期｜分析 → 摘要 Builder → 報告｜實際｜分析 → 自行摘要｜跳過必要步驟",
+      "畫面設計": "上下對齊的預期與實際軌道，節點與22一致。Builder 位置在實際軌留下明顯缺口，珊瑚色標跳步。底線：必要步驟。",
+      "搭配講稿": "這個情境要求呼叫 Builder，就要檢查它是否真的發生。其他流程可以有合法分支，依各自契約驗證。重點是抓到漏步驟、順序錯、重複呼叫或提早停止。",
+      "接下一頁": "即使工具選對了，使用方式還可能出錯。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-40.png",
+      "sha256": "767bdf3c6b2effe036ece343cb1c41ff816786377d4705ccd075b8761a885eb0"
+    },
+    {
+      "n": 41,
+      "title": "呼叫了 Builder，傳入的資料也對嗎？",
+      "chapter": "Evaluation：修改如何驗證？",
+      "oldPages": [
+        49
+      ],
+      "file": "slide-41.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 49,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-49.png"
+      ],
+      "points": [
+        "叫對 Builder 還不夠，要檢查參數和資料引用。",
+        "Ref 是否對應本次分析結果？必要參數與使用條件是否正確？"
+      ],
+      "核心訊息": "延續同一摘要案例，必要工具被呼叫不代表參數與資料引用正確。",
+      "畫面文字": "Tool Usage\n摘要 Builder\ndata_ref｜本次分析結果\n必要參數｜有沒有漏？\n呼叫正確 ≠ 使用正確",
+      "畫面設計": "左側是本次分析結果文件及取件標籤，右側大型摘要 Builder 工具文件，將輸入的 data_ref 用放大鏡放大，比對是否指向本次分析結果。必要參數用未勾選檢查欄。不要新增 get_order、日期或新業務案例，不把正確參數臆造為已證實。",
+      "搭配講稿": "前一頁問該呼叫的工具有沒有發生。這一頁再往下看，傳入 Builder 的 Ref 是否對應本次分析結果，必要參數有沒有漏。工具名稱正確只是第一步，資料和使用條件也要正確。",
+      "接下一頁": "這些檢查要怎麼實作？哪些直接用程式，哪些需要語意判斷？",
+      "readability": "projection_check",
+      "readabilityNote": "data_ref 與必要參數的細項較小。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-41.png",
+      "sha256": "a011fd4ff0f775724b3901e4940d7587e61c1cc1adcfbad5d71905f29870dc44"
+    },
+    {
+      "n": 42,
+      "title": "哪些檢查用程式，哪些需要 Judge？",
+      "chapter": "Evaluation：修改如何驗證？",
+      "oldPages": [
+        50
+      ],
+      "file": "slide-42.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 50,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-50.png"
+      ],
+      "points": [
+        "可明確判定的規則用程式；需要理解語意的摘要或證據支持程度，用 Judge 或人工輔助。",
+        "Judge 也會出錯，不是保證器。"
+      ],
+      "核心訊息": "由檢查的對象轉到檢查方法；明確規則用程式，語意理解用 Judge 或人工輔助。",
+      "畫面文字": "明確規則 → 程式\nBuilder 有呼叫嗎？｜Ref 有效嗎？｜必要欄位齊全嗎？\n語意判斷 → Judge／人工\n摘要完整嗎？｜證據支持結論嗎？\nJudge 也可能判錯",
+      "畫面設計": "左右對照兩份同尺寸文件。左邊工具呼叫與參數清單，右邊摘要與證據對照加放大鏡。用大字二到三項例子，不畫保證通過印章。右下安全區可讀的提醒 Judge 也可能判錯。延續 Builder／摘要圖示。",
+      "搭配講稿": "到這裡我們知道要檢查結果、路徑和工具使用。接著是方法：能明確判定的規則用程式，摘要或證據支持程度需要理解內容，再由 Judge 或人工輔助。Judge 不是保證器。",
+      "接下一頁": "檢查方法確定後，還要持續累積測試情境。",
+      "readability": "projection_check",
+      "readabilityNote": "各項檢查文字較多，需實際投影確認。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-42.png",
+      "sha256": "46af52744201d088ab54fe7c229b0b2fbfd6202ea4d5afa66506b50c5adf85db"
+    },
+    {
+      "n": 43,
+      "title": "踩過的坑，留進回歸測試",
+      "chapter": "Evaluation：修改如何驗證？",
+      "oldPages": [
+        51
+      ],
+      "file": "slide-43.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 51,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-51.png"
+      ],
+      "points": [
+        "測試集從需求與 SOP 起步，持續加入真實失敗和邊界情境。",
+        "昨天踩過的坑要留在回歸測試，讓後續修改能自動檢查。"
+      ],
+      "核心訊息": "測試集由需求、真實失敗與補充邊界情境持續累積。",
+      "畫面文字": "需求與 SOP｜實際失敗｜未測到的分支｜Regression Suite｜每次修改，重測既有能力",
+      "畫面設計": "三份來源文件匯入測試集合。實際失敗文件帶珊瑚標記，入庫後保留同一標記，讓人看見「留下來」。底線：留進。",
+      "搭配講稿": "回歸測試就是修改後重查原本的能力。第一版情境可從需求與 SOP 拆出來；遇到真實失敗就補進去，也可讓 AI 找未測分支。昨天踩過的坑，明天應該能自動檢查。",
+      "接下一頁": "同一個案例測過一次，就能認為穩定嗎？",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-43.png",
+      "sha256": "4684cbfb5b59e4edf35fd9e3a68e90d8365a19b0e3622dde17fa4ae61c28f5e7"
+    },
+    {
+      "n": 44,
+      "title": "同一個案例，要重跑看穩定性",
+      "chapter": "Evaluation：修改如何驗證？",
+      "oldPages": [
+        52
+      ],
+      "file": "slide-44.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 52,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-52.png"
+      ],
+      "points": [
+        "同一 Scenario 重跑，觀察不同 Run 的穩定性。",
+        "通過門檻依風險與成本設定；有限次全過不保證未來永遠成功。"
+      ],
+      "核心訊息": "有限樣本重跑用來觀察穩定性，門檻依風險與成本決定。",
+      "畫面文字": "門檻示例，非新實測｜同一情境、固定條件｜10 次成功 9 次｜或 5 次全部成功｜依風險與成本設定",
+      "畫面設計": "兩組示例採清楚的十格與五格試驗列，不用機率公式。每組明示是門檻示例。底線：重跑。",
+      "搭配講稿": "同一情境也可能每次走得不同，所以要重跑觀察。主稿用十次九次、五次全過說明門檻選擇。有限次通過不保證未來永遠成功；要依風險和可負擔成本訂標準。",
+      "接下一頁": "而且原本失敗的案例穩了，還不代表這次修改就可以接受。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": "「依風險與成本設定」位置偏低。",
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-44.png",
+      "sha256": "1883d3cb901ba1d4b0314fa4c47b8668ddac386852df8437005196bae970f80c"
+    },
+    {
+      "n": 45,
+      "title": "修好這次，其他情境有沒有退步？",
+      "chapter": "Evaluation：修改如何驗證？",
+      "oldPages": [
+        53
+      ],
+      "file": "slide-45.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 53,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-53.png"
+      ],
+      "points": [
+        "修好一個失敗，其他原本通過的場景可能退步，要重跑回歸。",
+        "既然能驗證修改是否有效，就可以考慮讓 AI 協助寫與改 Skill。"
+      ],
+      "核心訊息": "Skill 修改可能影響原本通過的情境，接受修改不能只看原本的失敗是否修好。",
+      "畫面文字": "修改前｜修改後\n情境 A：漏步驟 → 修好\n情境 B：原本通過 → 退步\n修完，要重跑其他情境",
+      "畫面設計": "兩條案例軌道上下排列，前後對齊。同一候選 Skill 修改置於中間，A 由漏步驟到完整，B 由完整到缺口。文字明確標示教學示意，無捏造統計，綠色只對應該示例通過。視覺重點在同時看見修好與退步。",
+      "搭配講稿": "修好漏步驟不代表新版 Skill 整體更好。其他情境可能因同一句修改而退步，因此要重跑回歸。既然我們能驗證修改是否值得接受，撰寫與修改 Skill 還需要全部由人手工完成嗎？",
+      "接下一頁": "有了驗證標準，就可以讓 AI 產生 Skill，再用測試判斷差距。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-45.png",
+      "sha256": "e3e541d6c9072ab8a8dfcd713839a23b4b0f15e225fd2d1d1096753cb5d5aa08"
+    },
+    {
+      "n": 46,
+      "title": "Skill 交給 AI 寫，再用 Evaluation 驗證",
+      "chapter": "AI 協助撰寫與修正 Skill",
+      "oldPages": [
+        54
+      ],
+      "file": "slide-46.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 54,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-54.png"
+      ],
+      "points": [
+        "讓開發用 AI 讀 PRD、SOP 與程式碼，產生第一版 Skill。",
+        "用 Evaluation 找出實際行為與目標的差距；這個 AI 不是正式執行任務的 Agent。"
+      ],
+      "核心訊息": "人不必逐句手寫；開發用 AI 依需求產生候選 Skill，再依既定目標測試。",
+      "畫面文字": "PRD／SOP／程式碼\n開發用 AI｜候選 Skill\nEvaluation｜符合預期嗎？\n人定義目標，不必逐句手寫",
+      "畫面設計": "簡潔左至右三階段：來源文件進入開發用 AI 的文件加修訂筆圖示，輸出候選 Skill，最後進入依既定目標測試的 Evaluation。不要畫 AI 直接改寫測試標準或發布。使用文件與工具 icon，不用機器人。標題和主句足夠大，空白占至少三分之一。",
+      "搭配講稿": "前面建立了驗證結果、路徑和工具使用的方法。於是 Skill 不必由人逐句雕琢。我讓開發用 AI 讀 PRD、SOP 和程式碼產生第一版，再跑 Evaluation 找出和預期的差距。這裡的 AI 是協助開發的角色，不是正式任務的 Agent。",
+      "接下一頁": "測試沒有符合預期時，把執行紀錄交給 AI 分析並修改。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-46.png",
+      "sha256": "ab76591329fc5b53e43e3bd4b7174c06d6b96dd22754fce724cad14b4494b8b8"
+    },
+    {
+      "n": 47,
+      "title": "把失敗紀錄交給 AI，修完再跑回歸",
+      "chapter": "AI 協助撰寫與修正 Skill",
+      "oldPages": [
+        55
+      ],
+      "file": "slide-47.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 55,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-55.png"
+      ],
+      "points": [
+        "Evaluation 指出差距，Log 與 Trace 提供材料，讓 AI 分析並修改 Skill。",
+        "修完再跑回歸，符合接受條件才送審；不是無限盲目重試或只追分數。"
+      ],
+      "核心訊息": "Evaluation 與執行紀錄提供可檢查回饋，驅動 AI 分析、修改 Skill、再驗證的循環。",
+      "畫面文字": "Evaluation｜Log／Trace｜AI 分析修改｜候選 Skill｜Regression\n未符合 → 繼續修正\n符合接受條件 → 送交審查",
+      "畫面設計": "清楚開放回圈：測試回饋與 Log/Trace 交給 AI 分析修改，生成候選 Skill，再跑 Regression。失敗回到 AI 分析修改，不要回到不改規則的重跑。通過另有送交審查出口，不代表自動發布。大文件 icon、稀疏連線，最多五個主節點，不重複印完整流程句。",
+      "搭配講稿": "Evaluation 指出實際行為與目標的差距，Log 和 Trace 提供追查材料。AI 據此提出 Skill 修改，再跑回歸。尚未符合就繼續修正；符合接受條件再送審。這不是用分數證明完美，也不是讓 AI 無限盲目重試。",
+      "接下一頁": "人不再逐句撰寫，但仍然要定義成功與接受標準。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-47.png",
+      "sha256": "50f1383684882f61f2a88dbdf4e6065551118a8827d711c7d2d705b66348e257"
+    },
+    {
+      "n": 48,
+      "title": "人定義成功標準，修改用測試結果驗收",
+      "chapter": "AI 協助撰寫與修正 Skill",
+      "oldPages": [
+        56
+      ],
+      "file": "slide-48.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 56,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-56.png"
+      ],
+      "points": [
+        "人定義成功標準、要測的場景與不可接受的風險；AI 產生候選修改。",
+        "不能為過關放寬標準，驗收要看修改差異、測試結果與對應紀錄。"
+      ],
+      "核心訊息": "人掌握目標、情境與接受標準，AI 產生修改；候選版本用測試及紀錄驗收。",
+      "畫面文字": "人定義｜成功標準｜測試情境｜風險邊界\nAI 提出｜候選 Skill\n驗收依據｜修改差異｜測試結果｜對應 Trace",
+      "畫面設計": "左側人的標準文件，右側 AI 候選 Skill 文件，下方居中一份驗收依據夾。人的標準與候選成果以不同參照線進入驗收，不畫成雙方共同修改標準。沒有通過章，沒有 AI 自行批准。把版本與依據清楚連結，不做密集卡片牆。",
+      "搭配講稿": "人的重心轉為定義什麼算成功、該測哪些情境與哪些風險不能接受。AI 可以產生與修改 Skill，但不能為了過關任意放寬標準。接受候選修改時，要看修改差異、測試結果和對應紀錄。",
+      "接下一頁": "這個循環會反覆進行，因此成本也要一起被觀察。",
+      "readability": "projection_check",
+      "readabilityNote": "修改差異、測試結果、對應 Trace 是必要文字；版本 v1／v2／v3 不應同等判定。末列偏低。",
+      "bottomNote": "對應 Trace 等末列紀錄偏低。",
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-48.png",
+      "sha256": "3bd518e88c650ae6e62d2fe1916ec58e207a3375a1b5e8d267637b9782cb87d9"
+    },
+    {
+      "n": 49,
+      "title": "每輪產生、測試與修正，都要留下成本紀錄",
+      "chapter": "每輪迭代的成本",
+      "oldPages": [
+        57
+      ],
+      "file": "slide-49.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 57,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-57.png"
+      ],
+      "points": [
+        "成本包含 AI 讀紀錄、改 Skill、測試與回歸，也包含正式執行。",
+        "每輪記錄 Tokens、工具次數、重試與延遲，才能比較效果與代價。"
+      ],
+      "核心訊息": "成本觀測涵蓋開發改進循環與正式執行，不是暗示 AI 寫 Skill 一定省錢。",
+      "畫面文字": "AI 產生與修改｜測試與回歸\nTokens｜工具次數｜重試｜延遲\n知道成本在哪裡",
+      "畫面設計": "上半部兩個清楚活動：AI 修訂文件與測試/回歸文件，分別用記錄線連到下方同一張成本紀錄表。表內僅四個大欄位名稱，無數字或長短條。使用計量表與時鐘小icon，珊瑚底線只強調留下成本紀錄。不要畫錢包付不起、性能已提升或 AI 節省成本。",
+      "搭配講稿": "這個循環不是免費的。AI 讀紀錄和修 Skill、測試和回歸都需要資源。重點不是先問付不付得起，而是記錄每輪 Tokens、工具次數、重試和延遲，知道成本在哪裡，才能比較修改的效果與代價。",
+      "接下一頁": "不能每次遇到問題，就只靠更大的模型與更多重試。",
+      "readability": "projection_check",
+      "readabilityNote": "Tokens 與工具次數等成本細項較小。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-49.png",
+      "sha256": "d4ec85fc1b416e2fa3621ebb9d1192886d36abee4793c2b071c75a3c8bb26871"
+    },
+    {
+      "n": 50,
+      "title": "模型會越來越聰明，但是你的口袋沒有越來越深",
+      "chapter": "每輪迭代的成本",
+      "oldPages": [
+        58
+      ],
+      "file": "slide-50.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 58,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-58.png"
+      ],
+      "points": [
+        "模型會越來越聰明，但是你的口袋沒有越來越深。",
+        "改善不能只靠更大模型、更長 Context、更多重試或 Judge，要用紀錄判斷代價。"
+      ],
+      "核心訊息": "保留完整金句，提醒改善不能只靠無限擴大模型、Context、重試與 Judge。",
+      "畫面文字": "模型會越來越聰明，但是你的口袋沒有越來越深",
+      "畫面設計": "單句大字中央，逗號後換行，只有沒有越來越深用珊瑚色並畫底線。不重複標題、不放icon、無頁底文字；右上新頁碼50。",
+      "搭配講稿": "模型會越來越聰明，但是你的口袋沒有越來越深。不能每次遇到問題就只加大模型、加長Context或增加重試。能觀察、驗證並看見成本，才有依據決定怎麼改進。",
+      "接下一頁": "回頭看開場的六個問題，這些責任一起組成 Runtime。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-50.png",
+      "sha256": "ecddb13c8e957336697d8bdb2e324c42396a493b3610a72ec203eb1f8db17e4f"
+    },
+    {
+      "n": 51,
+      "title": "六個問題，長成一套 Runtime",
+      "chapter": "回扣與收尾",
+      "oldPages": [
+        59
+      ],
+      "file": "slide-51.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 59,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-59.png"
+      ],
+      "points": [
+        "回扣六個責任：資訊、流程、邊界、追查、驗證與成本。",
+        "人的確認與接受標準貫穿其中，依任務風險逐步補成可治理的 Runtime。"
+      ],
+      "核心訊息": "回扣開場問題地圖，整合已講過的責任。",
+      "畫面文字": "Tool Loop｜Context 給對資訊｜Skill 說清流程｜Guard 守住邊界｜Trace 追查過程｜Eval 驗證修改｜成本觀測 支持持續迭代｜執行觀測｜企業規則與接受標準",
+      "畫面設計": "完整沿用新 04 六角位置與 icon，問題換成責任與答案。Trace 與成本用開放括號標「執行觀測」；最外層是企業規則與接受標準。無齒輪，無新模組，無表示必經順序的箭頭。底線：無。",
+      "搭配講稿": "給必要資訊、說清流程、守住操作與結論邊界，再追查、驗證和觀察成本。人的確認與企業接受標準貫穿其中。這些責任隨任務風險逐步補上，讓一個循環成為可以治理的 Runtime。",
+      "接下一頁": "所以回到最初那幾行程式碼，我最後想留下的是這句話。",
+      "readability": "needs_enlargement",
+      "readabilityNote": "Skill、Guard、Eval、Trace 與「執行觀測」模組標籤偏小，末列位置也偏低。",
+      "bottomNote": "執行觀測末列偏低。",
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-51.png",
+      "sha256": "f7985262dc07e4edb48895aa9cba0b18d521f15fea6c2cf23d46777c9a8d3d40"
+    },
+    {
+      "n": 52,
+      "title": "Tool Loop 讓它跑起來",
+      "chapter": "回扣與收尾",
+      "oldPages": [
+        60
+      ],
+      "file": "slide-52.png",
+      "mode": "referenced_unchanged",
+      "embeddedPageNumber": 60,
+      "status": "pending_user_review",
+      "sourceImages": [
+        "../2026-09-28-v14-no-chapter-tags/slide-60.png"
+      ],
+      "points": [
+        "Tool Loop 讓它跑起來，Runtime 讓它可以交付。",
+        "Agent 不只是模型，還需要限制、觀察、驗證與持續改善的執行系統。"
+      ],
+      "核心訊息": "以從運作到交付的差別，收束整場經驗。",
+      "畫面文字": "Runtime 讓它可以交付。",
+      "畫面設計": "大字主句置中，留白呼應04。標題在上方，主句在中央，只有「可以交付」用珊瑚色並畫底線。無額外模組圖或底部口號。",
+      "搭配講稿": "Tool Loop 讓它跑起來，Runtime 讓它可以交付。Agent 是模型能力，加上一整套能限制、觀察、驗證並持續改善它的執行系統。這是我自己刻框架後，真正學到的事。",
+      "接下一頁": "分享結束，進入提問。",
+      "readability": "no_obvious_small_text",
+      "readabilityNote": "目視未見明顯偏小的必要文字；仍非實際字級或投影認證。",
+      "bottomNote": null,
+      "sourceFile": "images/candidates/2026-10-01-v15-slides-01-52/slide-52.png",
+      "sha256": "8bc2b3dfff74ff46a096252a62f22d1a0f7c113f6935405d26323342cdd81b71"
+    }
+  ]
+}

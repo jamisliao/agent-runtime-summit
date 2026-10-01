@@ -1,0 +1,25 @@
+{
+  "decision": "PASS_WITH_KNOWN_LIMITATIONS",
+  "scope": "52-page documents and image publication bundle; not typography/projection acceptance",
+  "pages": 52,
+  "images": 52,
+  "fullScripts": 52,
+  "oldPageCoverage": 60,
+  "totalImageBytes": 79868188,
+  "allLocalLinksResolve": true,
+  "trackedLinkCheck": true,
+  "legacyNumberedImages": 44,
+  "differentEmbeddedPageNumbers": 43,
+  "priorityTextPages": [
+    6,
+    12,
+    16,
+    29,
+    33,
+    51
+  ],
+  "page08Integrated": true,
+  "browserRender": "NOT_RUN",
+  "projection": "NOT_RUN",
+  "userApproval": "pending_user_review"
+}
