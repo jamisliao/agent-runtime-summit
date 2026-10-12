@@ -1,0 +1,15 @@
+{
+  "count": 56,
+  "originalOrderPreserved": true,
+  "insertedAt": 13,
+  "outsideMaskChangedPixels": 0,
+  "sourceFilesUnchanged": true,
+  "nativeDimensionsPreserved": true,
+  "linksExist": true,
+  "liveSiteUnchanged": true,
+  "visualReview": "All56 corner crops inspected; full slides02 and13 inspected. User acceptance pending.",
+  "decision": "PASS_WITH_KNOWN_LIMITATIONS",
+  "independentPixelCheck": "56/56 PASS",
+  "maxRepairedAreaPercent": 0.543,
+  "htmlImagesVerified": 168
+}

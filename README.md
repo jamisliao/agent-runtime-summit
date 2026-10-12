@@ -1,8 +1,51 @@
 # Agent Runtime Summit
 
-私人工作庫，保存講稿來源、最新 56 頁圖片候選，以及歷史分頁版本。
+私人工作庫，保存講稿來源、最新56頁無頁碼圖片，以及歷史分頁版本。
 
-## 最新56頁：Log與Context案例整合 v32（2026-10-08）
+## 最新發佈：v37・56頁・圖內無頁碼（2026-10-13）
+
+回到原55頁順序，只在原第12頁後加入 Lost in the Middle 圖表。全56張僅局部移除頁碼，其他像素完全不變；沒有重新生成整張圖片。投影站台同步為圖片v37／講稿v37，共56頁。
+
+- [56頁完整圖片與講稿（GitHub直接瀏覽）](images/candidates/2026-10-13-v37-slides-01-56-no-numbers/README.md)
+- [56頁純圖片HTML](images/candidates/2026-10-13-v37-slides-01-56-no-numbers/gallery-images-only.html)
+- [56頁分頁稿](storyboard/56-slide-storyboard-v37-integrated.md)
+- [講述重點](presenter/56-page-key-points.md)
+- [啟動與雙螢幕操作](presenter/README.md)
+- [發佈驗證](docs/verification/2026-10-13-v37-presenter-publish.md)
+
+在專案根目錄執行：
+
+```bash
+node presenter/build-deck.mjs
+python3 presenter/serve.py --port 8767
+```
+
+開啟 http://127.0.0.1:8767/ ，關閉舊投影後重新整理控制台，再開啟投影。GitHub只保存檔案，不會啟動本機服務；歷史PDF尚未更新為v37。
+
+以下均為歷史版本當時的紀錄；其中本機試作不一定發佈至GitHub，現行內容以上方v37為準。
+
+## 本機最新：Builder案例合併 v35（2026-10-12）
+
+原19頁的「格式不符、分類漏掉」併入18頁，移除獨立19頁。案例現在直接接「有回答，不代表流程正確完成」，再進Evaluation介紹，共55頁。其餘54張圖片沿用v34；封面與第5頁修改保留。
+
+依使用者選擇，圖片內仍保留原頁碼：播放順序1～18對應原圖1～18，播放順序19～55對應原圖20～56。分頁稿與含圖文件列出對照，不宣稱圖內頁碼已重編。投影站台現使用v35；未commit／push，PDF仍是v32的56頁。
+
+- [本機投影站台](http://127.0.0.1:8767/)
+- [55頁純圖片](images/candidates/2026-10-12-v35-slides-01-55-builder-merged/gallery-images-only.html)
+- [55頁含圖講稿](images/candidates/2026-10-12-v35-slides-01-55-builder-merged/README.md)
+- [55頁分頁稿v35](storyboard/55-slide-storyboard-v35-integrated.md)
+- [55頁講述重點](presenter/55-page-key-points.md)
+
+## 上一版：第5頁移除下方註記 v34（2026-10-12）
+
+第5頁移除下方括線及「本場：單次任務的 Runtime」，保留三組圖示、中英文標籤與排版。其餘55張圖片及所有講述內容與v33相同；第1頁仍為「從 while loop，到 Agent Runtime」。v34原版保留；現行站台版本以上方v35為準。
+
+- [本機投影站台](http://127.0.0.1:8767/)
+- [56頁純圖片](images/candidates/2026-10-12-v34-slides-01-56-slide05-clean/gallery-images-only.html)
+- [含圖講稿](images/candidates/2026-10-12-v34-slides-01-56-slide05-clean/README.md)
+- [分頁稿v34](storyboard/56-slide-storyboard-v34-integrated.md)
+
+## 已發佈56頁：Log與Context案例整合 v32（2026-10-08）
 
 第10、11頁替換為已確認的新圖，講清楚「分析線上問題→LLM先查Log→Tool回傳大量原始資料→整包塞回使Context爆量→先篩選再交回模型」。原稿、分頁稿、含圖文件、PDF與投影網站同步。其餘54張圖片及PDF頁面串流不變；已確認的第5頁和草寫姓名封面保留。本次發佈包含 v32 最新內容、播放器與必要回歸測試來源。
 
@@ -17,7 +60,7 @@
 - [本次站台與發佈驗證](docs/verification/2026-10-12-presenter-v32-publish.md)
 - [整合驗證](docs/verification/2026-10-08-log-context-10-11-integration.md)
 
-8769閱讀入口及8767投影網站使用v32。請重新整理講者控制台並重新開啟投影視窗；舊版圖集保留，不會自動換圖。
+v32發佈時8769閱讀入口及8767投影網站使用v32。現行8767已套用上方v35；8769仍是v32閱讀版本。請重新整理講者控制台並重新開啟投影視窗；舊版圖集保留，不會自動換圖。
 
 ### 啟動最新版投影站台
 
@@ -28,7 +71,7 @@ node presenter/build-deck.mjs
 python3 presenter/serve.py --port 8767
 ```
 
-以 Chrome 開啟 [講者控制台](http://127.0.0.1:8767/)，頁首應顯示「56頁・圖片v32／講稿v32」。投影視窗只有投影片，講稿只在控制台顯示。此站台是本機服務；push 到 GitHub 不等於公開部署。GitHub 上請使用上方「56頁含圖README」瀏覽圖片，HTML 需下載後在本機開啟。
+以 Chrome 開啟 [講者控制台](http://127.0.0.1:8767/)，目前本機頁首應顯示「55頁・圖片v35／講稿v35」。投影視窗只有投影片，講稿只在控制台顯示。此站台是本機服務；push 到 GitHub 不等於公開部署。GitHub仍為v32，請使用該版「56頁含圖README」瀏覽圖片，HTML需下載後在本機開啟。
 
 以下為歷史工作紀錄；其中未納入本次提交的舊試作與下載檔僅保留於原工作站，版本狀態及服務資訊以本節為準。
 

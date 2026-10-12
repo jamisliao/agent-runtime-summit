@@ -1,8 +1,8 @@
 {
-  "id": "v32-56pages-log-context-integrated",
-  "imageVersion": "v32",
-  "notesVersion": "v32",
+  "id": "v37-56pages-no-numbers",
+  "imageVersion": "v37",
+  "notesVersion": "v37",
   "count": 56,
-  "imageDirectory": "images/candidates/2026-10-08-v32-slides-01-56-log-context-integrated",
-  "storyboard": "storyboard/56-slide-storyboard-v32-integrated.md"
+  "imageDirectory": "images/candidates/2026-10-13-v37-slides-01-56-no-numbers",
+  "storyboard": "storyboard/56-slide-storyboard-v37-integrated.md"
 }
