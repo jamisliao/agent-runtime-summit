@@ -1,0 +1,11 @@
+{
+  "tool": "built-in image_gen",
+  "prompts": [
+    "Edit this existing 16:9 presentation image. Preserve its warm ivory square-grid paper, navy natural handwritten pen typography, semantic icon identities, blue/teal/purple pencil hatching, large readable text and restrained focus underline. No typeset fonts, no brush calligraphy. No page numbers, no badges, no additional content. Native highest available quality. Keep bottom 10% blank. Change the reading hierarchy so it introduces the problem, proposes a process, and ONLY THEN names Evaluation. Keep top title exactly \"怎麼知道 Agent 真的完成任務？\" and its underline. REMOVE the standalone purple \"Evaluation\" between title and diagram. Keep the three existing icons and arrows with original labels exactly \"定成功標準\" → \"執行測試任務\" → \"檢查是否達標\". Arrange these comfortably centered in the middle. BELOW the three steps, at around 80% height, add a single large centered handwritten conclusion exactly \"這個流程，叫做 Evaluation\"; navy Chinese, purple Evaluation. All text must be readable at projected slide size (body equivalent >30pt). Do not place the name before the process. Preserve all other visual elements as closely as possible.",
+    "Edit this existing 16:9 presentation image. Preserve its warm ivory square-grid paper, navy natural handwritten pen typography, semantic icon identities, blue/teal/purple pencil hatching, large readable text and restrained focus underline. No typeset fonts, no brush calligraphy. No page numbers, no badges, no additional content. Native highest available quality. Keep bottom 10% blank. Change ONLY the two-line title and keep all diagram icons, labels, arrows, takeaway and spacing unchanged. Current first line \"Evaluation 是什麼？\" must become exactly \"Evaluation\" (no question mark). Second line must be exactly \"實際測試 LLM 的表現\". The two lines should read as one assertion, continuing the previous page which just introduced the term. Keep coral underline under 實際測試. Keep the three labels exactly \"準備任務與成功標準\", \"讓 LLM 實際執行\", \"對照結果是否達標\". Keep bottom takeaway exactly \"不是猜它會不會，而是實際測它做得如何\". No extra text."
+  ],
+  "files": [
+    "process-introduction-v2.png",
+    "evaluation-01-v2.png"
+  ]
+}
