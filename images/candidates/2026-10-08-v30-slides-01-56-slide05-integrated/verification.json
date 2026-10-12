@@ -1,0 +1,15 @@
+{
+  "status": "PASS_WITH_KNOWN_LIMITATIONS",
+  "count": 56,
+  "updatedPages": [
+    5
+  ],
+  "userAcceptedPages": [
+    5
+  ],
+  "other55ImagesByteIdentical": true,
+  "oldV29ImagesPreserved": true,
+  "projection": "NOT_RUN",
+  "exactFontMatch": "NOT_VERIFIED",
+  "gitPush": "NOT_REQUESTED"
+}

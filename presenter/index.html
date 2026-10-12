@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Runtime · 講者控制台</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="presenter.mjs"></script>
+</head>
+<body class="presenter">
+  <a class="presenter__skip" href="#speaker-notes">跳到講稿</a>
+  <header class="masthead">
+    <div class="masthead__identity"><span class="masthead__eyebrow">AGENT RUNTIME / PRESENTER</span><h1 class="masthead__title">講者控制台</h1></div>
+    <div class="masthead__meta"><span class="masthead__edition" id="deck-edition">正在載入版本…</span><span class="masthead__badge">僅講者可見</span></div>
+  </header>
+  <section class="setup" aria-label="投影螢幕設定">
+    <div class="setup__field"><label for="screen-select">投影到哪個螢幕？</label><select id="screen-select"><option value="manual">手動移動投影視窗</option></select></div>
+    <button class="button button--secondary" id="detect-screens">偵測螢幕</button>
+    <button class="button button--primary" id="open-projection"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8M12 16v5"/></svg>開啟投影</button>
+    <button class="button button--secondary" id="projection-fullscreen" disabled>投影全螢幕</button>
+    <button class="button button--quiet" id="close-projection" disabled>關閉投影</button>
+    <p class="setup__hint" id="setup-hint" role="status">先偵測螢幕，或開啟投影後將視窗拖到第二個螢幕。</p>
+  </section>
+  <main class="workspace">
+    <section class="stage" aria-label="目前投影片">
+      <div class="stage__heading"><span class="stage__label" id="preview-label">目前選取</span><span class="stage__status" id="projection-status" role="status">尚未開啟投影</span></div>
+      <div class="stage__frame"><img class="stage__image" id="current-slide" alt="目前投影片"></div>
+      <div class="navigation">
+        <button class="button button--secondary" id="previous" aria-label="上一頁"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg>上一頁</button>
+        <div class="navigation__position"><label for="page-number">頁碼</label><input id="page-number" type="number" min="1" value="1" inputmode="numeric"><span id="page-total"></span></div>
+        <button class="button button--primary" id="next" aria-label="下一頁">下一頁<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+      </div>
+      <div class="upcoming"><img class="upcoming__image" id="next-slide" alt="下一張投影片"><div><span class="upcoming__label">接著說</span><p class="upcoming__title" id="next-title"></p></div></div>
+      <p class="stage__shortcut">← → / Page Up、Down 換頁 · Home、End 跳到首尾 · 投影視窗按 F 全螢幕</p>
+    </section>
+    <aside class="notes" aria-labelledby="notes-heading">
+      <div class="notes__toolbar"><h2 class="notes__label" id="notes-heading">講述重點與講稿</h2><div class="notes__sizes"><button class="button button--icon" id="notes-smaller" aria-label="縮小講稿文字">A−</button><button class="button button--icon" id="notes-larger" aria-label="放大講稿文字">A＋</button></div></div>
+      <span class="notes__chapter" id="chapter"></span><h3 class="notes__title" id="slide-title"></h3>
+      <section class="key-points" aria-labelledby="key-points-heading">
+        <h4 class="key-points__heading" id="key-points-heading">本頁主旨</h4>
+        <p class="key-points__message" id="slide-message"></p>
+        <h4 class="key-points__heading">講述重點</h4>
+        <ul class="key-points__list" id="slide-key-points"></ul>
+      </section>
+      <h4 class="notes__section-label">原講稿</h4>
+      <div class="notes__body" id="speaker-notes" tabindex="0"></div>
+      <div class="notes__transition"><span class="notes__transition-label">接下一頁</span><p id="transition"></p></div>
+      <p class="notes__source" id="notes-source">正在載入講稿來源…</p>
+    </aside>
+  </main>
+  <section class="overview" aria-labelledby="overview-title"><div class="overview__heading"><h2 id="overview-title">投影片總覽</h2><span>點選縮圖，直接切換</span></div><nav class="overview__slides" id="thumbnails" aria-label="選擇投影片"></nav></section>
+  <footer class="presenter__footer">投影片只傳圖片，講稿留在這裡。<span id="app-status" role="status">正在載入簡報…</span></footer>
+</body>
+</html>

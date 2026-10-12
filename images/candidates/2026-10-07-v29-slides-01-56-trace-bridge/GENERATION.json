@@ -1,0 +1,563 @@
+{
+  "version": "v29",
+  "date": "2026-10-07",
+  "count": 56,
+  "newSlide": 36,
+  "styleMother": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-43.png",
+  "entries": [
+    {
+      "n": 1,
+      "previous55Page": 1,
+      "mode": "unchanged_v28",
+      "file": "slide-01.png",
+      "sha256": "5b74e5120b0817f876fc46156d9961dd5bbe6e32f26ece5fdfc13af6ae3dc343",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-01.png"
+    },
+    {
+      "n": 2,
+      "previous55Page": 2,
+      "mode": "unchanged_v28",
+      "file": "slide-02.png",
+      "sha256": "d7865c1e1445ab4cf29942a254c68c99b9166de64faca20fee1ca54fb005eef8",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-02.png"
+    },
+    {
+      "n": 3,
+      "previous55Page": 3,
+      "mode": "unchanged_v28",
+      "file": "slide-03.png",
+      "sha256": "958615d2de929ce05b8359dc6487fbee6ba3c8995d9f973c984569572f82c1c8",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-03.png"
+    },
+    {
+      "n": 4,
+      "previous55Page": 4,
+      "mode": "unchanged_v28",
+      "file": "slide-04.png",
+      "sha256": "f1481e34a9f4ebd459e8643a3d8765aa8566303f05a744bf3e877e7745a69f14",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-04.png"
+    },
+    {
+      "n": 5,
+      "previous55Page": 5,
+      "mode": "unchanged_v28",
+      "file": "slide-05.png",
+      "sha256": "aa7c0bcbf6dd8df787369e08cd52171f69ac0215e27293903e25afc8a124f024",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-05.png"
+    },
+    {
+      "n": 6,
+      "previous55Page": 6,
+      "mode": "unchanged_v28",
+      "file": "slide-06.png",
+      "sha256": "329d5f11f235488b1a8ad9b44d88117db8d0dd07a0374128366906fa8959e391",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-06.png"
+    },
+    {
+      "n": 7,
+      "previous55Page": 7,
+      "mode": "unchanged_v28",
+      "file": "slide-07.png",
+      "sha256": "8398767fd40b6b0519618ee9d05c29aa1cc81c5ebc93f8de266db072e38be5a2",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-07.png"
+    },
+    {
+      "n": 8,
+      "previous55Page": 8,
+      "mode": "unchanged_v28",
+      "file": "slide-08.png",
+      "sha256": "da0b1647e22ea80da5025deb06479f7a3c99dc229a5d278cdf74cac7e645070a",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-08.png"
+    },
+    {
+      "n": 9,
+      "previous55Page": 9,
+      "mode": "unchanged_v28",
+      "file": "slide-09.png",
+      "sha256": "dded359c618c71b0a7a4506698ac362d0f39029400c204c955b00e180f4a89b5",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-09.png"
+    },
+    {
+      "n": 10,
+      "previous55Page": 10,
+      "mode": "unchanged_v28",
+      "file": "slide-10.png",
+      "sha256": "a39e7f2c4814dad052d78e83adfb91b4595eebbbd2eacffad3013e40956c2857",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-10.png"
+    },
+    {
+      "n": 11,
+      "previous55Page": 11,
+      "mode": "unchanged_v28",
+      "file": "slide-11.png",
+      "sha256": "c090d60ff37ec7ec1c2f2c296fe3b9899603ff5d6a46f7111db2c08053ae8fc6",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-11.png"
+    },
+    {
+      "n": 12,
+      "previous55Page": 12,
+      "mode": "unchanged_v28",
+      "file": "slide-12.png",
+      "sha256": "12b25ed6db3189abefe52370a1c6092b356983fb689a6f1fe39de3a4d6d17093",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-12.png"
+    },
+    {
+      "n": 13,
+      "previous55Page": 13,
+      "mode": "unchanged_v28",
+      "file": "slide-13.png",
+      "sha256": "3067320a914f1dc92bf47e546431d1ee9b2f38ea0a0f98cc698a9e30c742a74b",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-13.png"
+    },
+    {
+      "n": 14,
+      "previous55Page": 14,
+      "mode": "unchanged_v28",
+      "file": "slide-14.png",
+      "sha256": "d0a8b7b9d70993f161069556e9ad7355bd612a2b07a7bb75775764a86cd67894",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-14.png"
+    },
+    {
+      "n": 15,
+      "previous55Page": 15,
+      "mode": "unchanged_v28",
+      "file": "slide-15.png",
+      "sha256": "ee8595142d3fb3963d82f41fd9af4fff0b9d162ed5aabd32afde18c2f8b604c0",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-15.png"
+    },
+    {
+      "n": 16,
+      "previous55Page": 16,
+      "mode": "unchanged_v28",
+      "file": "slide-16.png",
+      "sha256": "ea16f3b3de9c489b881c5325011d10d751bb02a95d9d993a2968c71aeb599485",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-16.png"
+    },
+    {
+      "n": 17,
+      "previous55Page": 17,
+      "mode": "unchanged_v28",
+      "file": "slide-17.png",
+      "sha256": "09743092d8280aa962a568dfdf006bc8da91aaf3c0c10e5b013d5fb0555135f6",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-17.png"
+    },
+    {
+      "n": 18,
+      "previous55Page": 18,
+      "mode": "unchanged_v28",
+      "file": "slide-18.png",
+      "sha256": "b3c6d7eea81ce22b8ba8b09fe09d58c0aac325502ac1d40f1d5f82f67da7470a",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-18.png"
+    },
+    {
+      "n": 19,
+      "previous55Page": 19,
+      "mode": "unchanged_v28",
+      "file": "slide-19.png",
+      "sha256": "8826f762ac361724c3d80c69a4febe8386a67b9593819dcc44a40600383d70a0",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-19.png"
+    },
+    {
+      "n": 20,
+      "previous55Page": 20,
+      "mode": "unchanged_v28",
+      "file": "slide-20.png",
+      "sha256": "67babd4955a8ef9b614ae97cd7e209cced437d0e7c2ab6da8697d6cb53534e3c",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-20.png"
+    },
+    {
+      "n": 21,
+      "previous55Page": 21,
+      "mode": "unchanged_v28",
+      "file": "slide-21.png",
+      "sha256": "20e4f25d2efd5116356207372983a58edee80dabc06a843b54b878c11c6c0ab5",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-21.png"
+    },
+    {
+      "n": 22,
+      "previous55Page": 22,
+      "mode": "unchanged_v28",
+      "file": "slide-22.png",
+      "sha256": "0cb5c40d48c7ab3ace74e90c34f031fdbaffe57b62843795f2f35fa784aaa03f",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-22.png"
+    },
+    {
+      "n": 23,
+      "previous55Page": 23,
+      "mode": "unchanged_v28",
+      "file": "slide-23.png",
+      "sha256": "dbf3215cd5cdefe9dfb7483d67950932f1941a8cb484650ac397ab69fb7ce3c4",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-23.png"
+    },
+    {
+      "n": 24,
+      "previous55Page": 24,
+      "mode": "unchanged_v28",
+      "file": "slide-24.png",
+      "sha256": "ff79db1ec328f71c53236ae75f14bfcb79c3a56ee5729a9cd30f9a167fe8595c",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-24.png"
+    },
+    {
+      "n": 25,
+      "previous55Page": 25,
+      "mode": "unchanged_v28",
+      "file": "slide-25.png",
+      "sha256": "664950f83f2be6d82abb98e838dc8bb8b87de60e5496dd9f9e1a6f55fff4420b",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-25.png"
+    },
+    {
+      "n": 26,
+      "previous55Page": 26,
+      "mode": "unchanged_v28",
+      "file": "slide-26.png",
+      "sha256": "e58b941139b10d3639c5136390eb6dba042cd49fa21af71d7aa6bb5c47b7fc0f",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-26.png"
+    },
+    {
+      "n": 27,
+      "previous55Page": 27,
+      "mode": "unchanged_v28",
+      "file": "slide-27.png",
+      "sha256": "f86e404edbf90c33aaf7f9ae2dca3390390c63bdcff0af7bc6bbca76f7e9bc40",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-27.png"
+    },
+    {
+      "n": 28,
+      "previous55Page": 28,
+      "mode": "unchanged_v28",
+      "file": "slide-28.png",
+      "sha256": "918421f59172f97585bacf8ae84dec537b7a7869e1808f8a9ea83a7657b6a224",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-28.png"
+    },
+    {
+      "n": 29,
+      "previous55Page": 29,
+      "mode": "unchanged_v28",
+      "file": "slide-29.png",
+      "sha256": "3749bcbc512f6531674555c4eecfcd43fba301954b8651cd32eb0a5e58eb23da",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-29.png"
+    },
+    {
+      "n": 30,
+      "previous55Page": 30,
+      "mode": "unchanged_v28",
+      "file": "slide-30.png",
+      "sha256": "0fbca9278c35c1223e13204e61ad6c66ecd43e1acee81159b946d0c8b351ce5b",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-30.png"
+    },
+    {
+      "n": 31,
+      "previous55Page": 31,
+      "mode": "unchanged_v28",
+      "file": "slide-31.png",
+      "sha256": "6a6abb7fe9d39f16dd5a2672373d80f41ac131e0aab4c0f79016b71f242e49ee",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-31.png"
+    },
+    {
+      "n": 32,
+      "previous55Page": 32,
+      "mode": "unchanged_v28",
+      "file": "slide-32.png",
+      "sha256": "fa64cbf3aa2ce44ce37e5d8a7efabba77edda41753a6777c14313c1a4edc215b",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-32.png"
+    },
+    {
+      "n": 33,
+      "previous55Page": 33,
+      "mode": "unchanged_v28",
+      "file": "slide-33.png",
+      "sha256": "01bdbd305955ea8f97401c1925f49576c762aa74f46d8a72e921763e5983c25b",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-33.png"
+    },
+    {
+      "n": 34,
+      "previous55Page": 34,
+      "mode": "unchanged_v28",
+      "file": "slide-34.png",
+      "sha256": "3a837602e460e0aadbe0ba3fc32f64471708ce609db9b4da42f61ddba6543055",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-34.png"
+    },
+    {
+      "n": 35,
+      "previous55Page": 35,
+      "mode": "unchanged_v28",
+      "file": "slide-35.png",
+      "sha256": "e8e6e3df34b1ca62447347f10beeaa5412513bd10370bf059689914502927ba5",
+      "sourceFile": "images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-35.png"
+    },
+    {
+      "n": 36,
+      "previous55Page": null,
+      "mode": "new_trace_bridge",
+      "file": "slide-36.png",
+      "sha256": "2cef395f1b5921f9776d8d44f6540dd5e0655cc2f3f963c950a2970c686b17ca",
+      "old": null,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-43.png"
+      ],
+      "prompt": "Use case: productivity-visual. Generate ONE new landscape 16:9 slide image. Input image 1 is STYLE AND TYPOGRAPHY REFERENCE ONLY, not an edit target. Match exactly its Traditional Chinese and English dark-navy hand-lettered family, natural pen pressure and ink texture, warm ivory faint grid paper, thin navy pen icons with sparse blue/purple pencil hatching, accent underlines. Main title TWO very large centered lines in upper third: 「有人審核，」「任務仍可能出錯」 (without quotation brackets). Coral-red short pen underline only beneath 「仍可能出錯」. Middle: two SMALL simple semantic line icons with generous air, an approved clipboard with a checkmark and a separate output document with a small coral warning triangle. Labels exactly 「人工審核」 and 「執行結果」 beneath each icon, large legible. No arrow between icons; approval does not cause failure. Main lower-middle question in very large navy lettering: 「出了錯，我們要怎麼追查？」. Put small navy page number 「36」 in top right. Text is the subject; illustrations secondary and compact. Keep bottom 12% empty; no footer. This is a rhetorical transition: human review does not guarantee an entire task error-free, NOT a new measured failure claim, NOT saying the Builder example was human-approved. Do not add robots, humans, extra text, card wall, logos or watermark. Typography must remain the reference's handwriting, not printed sans serif, thin monoline or thick comic-marker letters. Do not borrow the reference's Builder diagram or its text.",
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-bc764ca2-873e-4319-9773-78594d7d1f17.png"
+    },
+    {
+      "n": 37,
+      "previous55Page": 36,
+      "mode": "edited_title_and_number",
+      "file": "slide-37.png",
+      "sha256": "efa9efd9f75f86f5c3f1e46fa73fb83b74ed1fd6449d27ba2ee9a57ed08f2378",
+      "old": 36,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-36.png",
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-43.png"
+      ],
+      "prompt": "Use case: text-localization. Input image 1 is the EDIT TARGET, image 2 is the established handwriting reference only. Change ONLY the top headline and top-right page number. New headline TWO centered lines exactly 「回到 Builder 案例：」「漏掉的步驟，怎麼追查？」. Replace top-right number 36 with 37, same handwriting, size and position. Preserve all other words, typography, layout, icons, arrows, hatching, accents, paper and aspect ratio EXACTLY. Keep 「回到漏 Builder 的案例」「缺漏報告」「已知：Builder 未呼叫」「分析」「自行摘要」「結束任務」「回看當時的執行紀錄」 unchanged. No additional wording. Do not shrink the main title; adjust line spacing in the existing title region only. Retain native navy pen handwriting, relative stroke weights, natural pen pressure and ink texture; no print font or altered icon type. Preserve bottom safe area. This returns to a prior Builder example; do not add human-approval symbols or imply human-approved Builder failure.",
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-8607b109-960c-4483-9220-a67dc3ffc515.png"
+    },
+    {
+      "n": 38,
+      "previous55Page": 37,
+      "mode": "renumbered_v28",
+      "file": "slide-38.png",
+      "sha256": "06039ffeaf19fab8940d067606658d3d3c34dbf61661d05cc4c95ba61eaedc56",
+      "old": 37,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-37.png"
+      ],
+      "prompt": "Use case: text-localization. Input image 1 is the edit target. Make a precise page-number-only edit: replace the top-right page number 37 with 38, same position, size, navy handwriting and paper behind it. EVERYTHING ELSE must remain unchanged: every Chinese and English letter and punctuation, title, icons, color, hatching, arrows, layout, whitespace and image dimensions. In particular retain the title 「完整 Trace，讓當時的執行過程可以回放」. No restyling or new text.",
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-6cb7e323-b32c-428c-b014-d3a26b6fc527.png"
+    },
+    {
+      "n": 39,
+      "previous55Page": 38,
+      "mode": "renumbered_v28",
+      "file": "slide-39.png",
+      "sha256": "69d2ceadbca94fdd61aa40ef08c2a64d98e7c41f00cf73991db9ca16ea981845",
+      "old": 38,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-38.png"
+      ],
+      "prompt": "Use case: text-localization. Input image 1 is the edit target. Make a precise page-number-only edit: replace the top-right page number 38 with 39, same position, size, navy handwriting and paper behind it. EVERYTHING ELSE must remain unchanged: every Chinese and English letter and punctuation, title, icons, color, hatching, arrows, layout, whitespace and image dimensions. In particular retain the title 「停止之前，Agent 看到了什麼？」. No restyling or new text.",
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-419dd04c-a7ff-4bc6-aac6-b414792afef4.png"
+    },
+    {
+      "n": 40,
+      "previous55Page": 39,
+      "mode": "renumbered_v28",
+      "file": "slide-40.png",
+      "sha256": "cd66232c5b7abdc55ba66d49d67038b01920724624af0f9365f47391b271808f",
+      "old": 39,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 39 with 40, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-39.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-9b9102fb-ff89-43a5-b046-9d31b4a60dbe.png"
+    },
+    {
+      "n": 41,
+      "previous55Page": 40,
+      "mode": "renumbered_v28",
+      "file": "slide-41.png",
+      "sha256": "d3d9a9c211f226067053f8279debd347f1c2f50e61f974f3dcfcb9d47150430f",
+      "old": 40,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 40 with 41, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-40.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-a6aec763-5b77-4138-ab7b-2e2834c03677.png"
+    },
+    {
+      "n": 42,
+      "previous55Page": 41,
+      "mode": "renumbered_v28",
+      "file": "slide-42.png",
+      "sha256": "05369e5b4d1fb53445513842858c601793fe9c549deff6e47823cb646d02040c",
+      "old": 41,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 41 with 42, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-41.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-4d05d428-9350-4158-af76-fcf76fadfbb4.png"
+    },
+    {
+      "n": 43,
+      "previous55Page": 42,
+      "mode": "renumbered_v28",
+      "file": "slide-43.png",
+      "sha256": "9dca66a1f31a876b1ce474d302ddf3be122cc85d43532dc53dfadc26eeaa10ca",
+      "old": 42,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 42 with 43, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-42.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-ba76c3b5-0aa5-4520-adef-9c8358d018d7.png"
+    },
+    {
+      "n": 44,
+      "previous55Page": 43,
+      "mode": "renumbered_v28",
+      "file": "slide-44.png",
+      "sha256": "6bfdee2dfd2d37d22176322df18b05b0a2ec254fdd5e41e199d4b7b8d4617b46",
+      "old": 43,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 43 with 44, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-43.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-9b792614-4b5c-40f9-81bd-a51c72a8c111.png"
+    },
+    {
+      "n": 45,
+      "previous55Page": 44,
+      "mode": "renumbered_v28",
+      "file": "slide-45.png",
+      "sha256": "f323d54607a008b381b8a96e1dcf7ab76bdc5bc9160a4af7c527a34f24b24c25",
+      "old": 44,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 44 with 45, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-44.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-29c28bbc-d889-44a1-b895-5c09fdc22f78.png"
+    },
+    {
+      "n": 46,
+      "previous55Page": 45,
+      "mode": "renumbered_v28",
+      "file": "slide-46.png",
+      "sha256": "e5fa15ae47f0fc3a4c4f012949e42d8efd690ed07290140a88fd0e42f003e6a2",
+      "old": 45,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 45 with 46, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-45.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-9ff5d3d7-aee8-4dd3-abf4-10aa14e83afa.png"
+    },
+    {
+      "n": 47,
+      "previous55Page": 46,
+      "mode": "renumbered_v28",
+      "file": "slide-47.png",
+      "sha256": "925c8bfaffdc795dad23c52e724cb5ba7f11045e2679e1c598eb1748644313e5",
+      "old": 46,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 46 with 47, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-46.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-b8192ad7-8b34-4dd4-8131-d69bc5bcdf41.png"
+    },
+    {
+      "n": 48,
+      "previous55Page": 47,
+      "mode": "renumbered_v28",
+      "file": "slide-48.png",
+      "sha256": "b605b6e2523c591b32e30792d0290877834f7ab9c2bd2277ad749499b6dbc3ed",
+      "old": 47,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 47 with 48, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-47.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-04571c50-321d-44be-9c41-1280a93bf332.png"
+    },
+    {
+      "n": 49,
+      "previous55Page": 48,
+      "mode": "renumbered_v28",
+      "file": "slide-49.png",
+      "sha256": "1878fa0ca62702c7deff350db3b45aef6da3c4df32b60075e4c3fbbd3363860e",
+      "old": 48,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 48 with 49, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-48.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-e742e81e-165a-487c-8949-6c6cd08a9d37.png"
+    },
+    {
+      "n": 50,
+      "previous55Page": 49,
+      "mode": "renumbered_v28",
+      "file": "slide-50.png",
+      "sha256": "230a859fef18a1c6ed995108614d3a3d826a7ce8cb24d9ebbbc045f4627912fc",
+      "old": 49,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 49 with 50, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-49.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-bc385326-48e2-4df7-81a6-ee48cf2653ca.png"
+    },
+    {
+      "n": 51,
+      "previous55Page": 50,
+      "mode": "renumbered_v28",
+      "file": "slide-51.png",
+      "sha256": "8e962b80a289b1b8be519f5b44553a0c2e18019f280f32b1402804b6126e5849",
+      "old": 50,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 50 with 51, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-50.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-cd151a99-7418-41b5-a72a-5fb487f697e5.png"
+    },
+    {
+      "n": 52,
+      "previous55Page": 51,
+      "mode": "renumbered_v28",
+      "file": "slide-52.png",
+      "sha256": "dc6294ae2063083043b23e4ba6d8a586b95222f7a0c19b710d778deb25d4561e",
+      "old": 51,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 51 with 52, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-51.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-94dd479a-dfdc-47d1-bd86-26a2bbc8683b.png"
+    },
+    {
+      "n": 53,
+      "previous55Page": 52,
+      "mode": "renumbered_v28",
+      "file": "slide-53.png",
+      "sha256": "92f1b931bf5941c20b3b8db7cb17e93b7ea6adb45a3ef0c2ade75ac4f7d97077",
+      "old": 52,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 52 with 53, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-52.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-6d6d2e5d-0378-4c17-9c85-68019413f4b8.png"
+    },
+    {
+      "n": 54,
+      "previous55Page": 53,
+      "mode": "renumbered_v28",
+      "file": "slide-54.png",
+      "sha256": "ec912be47e8b0f984abb3a0f961e946a40ba87008ec9ea651ca6702177fd256e",
+      "old": 53,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 53 with 54, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-53.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-78d7080a-147c-480b-bc43-c1cc4f06a964.png"
+    },
+    {
+      "n": 55,
+      "previous55Page": 54,
+      "mode": "renumbered_v28",
+      "file": "slide-55.png",
+      "sha256": "bc99b21bfb0476bf38bc6847d86de77bbd074b41331349a9a5226b86d3b66a3c",
+      "old": 54,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 54 with 55, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-54.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-77b918eb-e04f-4be9-908b-5470fac1e25c.png"
+    },
+    {
+      "n": 56,
+      "previous55Page": 55,
+      "mode": "renumbered_v28",
+      "file": "slide-56.png",
+      "sha256": "4d9e5bcd4302f94a9a73cb92a7d41487e9f2317c3d745b5323bcf47b8a01140b",
+      "old": 55,
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 55 with 56, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number.",
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-55.png"
+      ],
+      "path": "/Users/jamisliao/.codex/generated_images/01a0d1a3-8eb4-71c0-8ac2-89156edbfb41/exec-9c6c30f7-e87b-4918-8b71-e049e4bd8a03.png"
+    }
+  ]
+}

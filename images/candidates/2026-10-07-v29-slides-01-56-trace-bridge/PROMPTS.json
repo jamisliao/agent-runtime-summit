@@ -1,0 +1,173 @@
+{
+  "entries": [
+    {
+      "n": 36,
+      "old": null,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-43.png"
+      ],
+      "prompt": "Use case: productivity-visual. Generate ONE new landscape 16:9 slide image. Input image 1 is STYLE AND TYPOGRAPHY REFERENCE ONLY, not an edit target. Match exactly its Traditional Chinese and English dark-navy hand-lettered family, natural pen pressure and ink texture, warm ivory faint grid paper, thin navy pen icons with sparse blue/purple pencil hatching, accent underlines. Main title TWO very large centered lines in upper third: 「有人審核，」「任務仍可能出錯」 (without quotation brackets). Coral-red short pen underline only beneath 「仍可能出錯」. Middle: two SMALL simple semantic line icons with generous air, an approved clipboard with a checkmark and a separate output document with a small coral warning triangle. Labels exactly 「人工審核」 and 「執行結果」 beneath each icon, large legible. No arrow between icons; approval does not cause failure. Main lower-middle question in very large navy lettering: 「出了錯，我們要怎麼追查？」. Put small navy page number 「36」 in top right. Text is the subject; illustrations secondary and compact. Keep bottom 12% empty; no footer. This is a rhetorical transition: human review does not guarantee an entire task error-free, NOT a new measured failure claim, NOT saying the Builder example was human-approved. Do not add robots, humans, extra text, card wall, logos or watermark. Typography must remain the reference's handwriting, not printed sans serif, thin monoline or thick comic-marker letters. Do not borrow the reference's Builder diagram or its text."
+    },
+    {
+      "n": 37,
+      "old": 36,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-36.png",
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-43.png"
+      ],
+      "prompt": "Use case: text-localization. Input image 1 is the EDIT TARGET, image 2 is the established handwriting reference only. Change ONLY the top headline and top-right page number. New headline TWO centered lines exactly 「回到 Builder 案例：」「漏掉的步驟，怎麼追查？」. Replace top-right number 36 with 37, same handwriting, size and position. Preserve all other words, typography, layout, icons, arrows, hatching, accents, paper and aspect ratio EXACTLY. Keep 「回到漏 Builder 的案例」「缺漏報告」「已知：Builder 未呼叫」「分析」「自行摘要」「結束任務」「回看當時的執行紀錄」 unchanged. No additional wording. Do not shrink the main title; adjust line spacing in the existing title region only. Retain native navy pen handwriting, relative stroke weights, natural pen pressure and ink texture; no print font or altered icon type. Preserve bottom safe area. This returns to a prior Builder example; do not add human-approval symbols or imply human-approved Builder failure."
+    },
+    {
+      "n": 38,
+      "old": 37,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-37.png"
+      ],
+      "prompt": "Use case: text-localization. Input image 1 is the edit target. Make a precise page-number-only edit: replace the top-right page number 37 with 38, same position, size, navy handwriting and paper behind it. EVERYTHING ELSE must remain unchanged: every Chinese and English letter and punctuation, title, icons, color, hatching, arrows, layout, whitespace and image dimensions. In particular retain the title 「完整 Trace，讓當時的執行過程可以回放」. No restyling or new text."
+    },
+    {
+      "n": 39,
+      "old": 38,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-38.png"
+      ],
+      "prompt": "Use case: text-localization. Input image 1 is the edit target. Make a precise page-number-only edit: replace the top-right page number 38 with 39, same position, size, navy handwriting and paper behind it. EVERYTHING ELSE must remain unchanged: every Chinese and English letter and punctuation, title, icons, color, hatching, arrows, layout, whitespace and image dimensions. In particular retain the title 「停止之前，Agent 看到了什麼？」. No restyling or new text."
+    },
+    {
+      "n": 40,
+      "old": 39,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-39.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 39 with 40, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 41,
+      "old": 40,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-40.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 40 with 41, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 42,
+      "old": 41,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-41.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 41 with 42, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 43,
+      "old": 42,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-42.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 42 with 43, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 44,
+      "old": 43,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-43.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 43 with 44, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 45,
+      "old": 44,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-44.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 44 with 45, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 46,
+      "old": 45,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-45.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 45 with 46, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 47,
+      "old": 46,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-46.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 46 with 47, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 48,
+      "old": 47,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-47.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 47 with 48, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 49,
+      "old": 48,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-48.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 48 with 49, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 50,
+      "old": 49,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-49.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 49 with 50, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 51,
+      "old": 50,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-50.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 50 with 51, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 52,
+      "old": 51,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-51.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 51 with 52, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 53,
+      "old": 52,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-52.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 52 with 53, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 54,
+      "old": 53,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-53.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 53 with 54, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 55,
+      "old": 54,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-54.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 54 with 55, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    },
+    {
+      "n": 56,
+      "old": 55,
+      "refs": [
+        "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-06-v28-slides-01-55-quotes-integrated/slide-55.png"
+      ],
+      "prompt": "Use case: text-localization. This attached image is the EDIT TARGET. Make ONLY a precise page-number edit: replace the TOP RIGHT page number 55 with 56, same size, position and navy handwriting and paper behind it. ALL OTHER CONTENT MUST REMAIN EXACTLY UNCHANGED: Chinese and English text, punctuation, icons, arrows, hatch shading, palette, headline, highlights, spacing, line weights, paper grid, image dimensions, typography and bottom safe area. Do NOT redraw, restyle or reinterpret the content. Preserve the established fountain pen lettering and all model names if present. The only authorized change is the top-right page number."
+    }
+  ]
+}

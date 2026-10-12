@@ -1,0 +1,401 @@
+{
+  "version": "v30",
+  "date": "2026-10-08",
+  "count": 56,
+  "approvedSlide": 5,
+  "originalGeneration": "images/candidates/2026-10-08-slide-05-controllability-governance/PROMPT.md",
+  "entries": [
+    {
+      "n": 1,
+      "file": "slide-01.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-01.png",
+      "sha256": "5b74e5120b0817f876fc46156d9961dd5bbe6e32f26ece5fdfc13af6ae3dc343"
+    },
+    {
+      "n": 2,
+      "file": "slide-02.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-02.png",
+      "sha256": "d7865c1e1445ab4cf29942a254c68c99b9166de64faca20fee1ca54fb005eef8"
+    },
+    {
+      "n": 3,
+      "file": "slide-03.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-03.png",
+      "sha256": "958615d2de929ce05b8359dc6487fbee6ba3c8995d9f973c984569572f82c1c8"
+    },
+    {
+      "n": 4,
+      "file": "slide-04.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-04.png",
+      "sha256": "f1481e34a9f4ebd459e8643a3d8765aa8566303f05a744bf3e877e7745a69f14"
+    },
+    {
+      "n": 5,
+      "file": "slide-05.png",
+      "mode": "approved_slide05_integrated",
+      "source": "images/candidates/2026-10-08-slide-05-controllability-governance/slide-05.png",
+      "sha256": "709ac9fdc7a3ea9fdc1288beb09fe07aa617fb93bcd3c3bd6943e6387a01858e"
+    },
+    {
+      "n": 6,
+      "file": "slide-06.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-06.png",
+      "sha256": "329d5f11f235488b1a8ad9b44d88117db8d0dd07a0374128366906fa8959e391"
+    },
+    {
+      "n": 7,
+      "file": "slide-07.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-07.png",
+      "sha256": "8398767fd40b6b0519618ee9d05c29aa1cc81c5ebc93f8de266db072e38be5a2"
+    },
+    {
+      "n": 8,
+      "file": "slide-08.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-08.png",
+      "sha256": "da0b1647e22ea80da5025deb06479f7a3c99dc229a5d278cdf74cac7e645070a"
+    },
+    {
+      "n": 9,
+      "file": "slide-09.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-09.png",
+      "sha256": "dded359c618c71b0a7a4506698ac362d0f39029400c204c955b00e180f4a89b5"
+    },
+    {
+      "n": 10,
+      "file": "slide-10.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-10.png",
+      "sha256": "a39e7f2c4814dad052d78e83adfb91b4595eebbbd2eacffad3013e40956c2857"
+    },
+    {
+      "n": 11,
+      "file": "slide-11.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-11.png",
+      "sha256": "c090d60ff37ec7ec1c2f2c296fe3b9899603ff5d6a46f7111db2c08053ae8fc6"
+    },
+    {
+      "n": 12,
+      "file": "slide-12.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-12.png",
+      "sha256": "12b25ed6db3189abefe52370a1c6092b356983fb689a6f1fe39de3a4d6d17093"
+    },
+    {
+      "n": 13,
+      "file": "slide-13.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-13.png",
+      "sha256": "3067320a914f1dc92bf47e546431d1ee9b2f38ea0a0f98cc698a9e30c742a74b"
+    },
+    {
+      "n": 14,
+      "file": "slide-14.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-14.png",
+      "sha256": "d0a8b7b9d70993f161069556e9ad7355bd612a2b07a7bb75775764a86cd67894"
+    },
+    {
+      "n": 15,
+      "file": "slide-15.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-15.png",
+      "sha256": "ee8595142d3fb3963d82f41fd9af4fff0b9d162ed5aabd32afde18c2f8b604c0"
+    },
+    {
+      "n": 16,
+      "file": "slide-16.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-16.png",
+      "sha256": "ea16f3b3de9c489b881c5325011d10d751bb02a95d9d993a2968c71aeb599485"
+    },
+    {
+      "n": 17,
+      "file": "slide-17.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-17.png",
+      "sha256": "09743092d8280aa962a568dfdf006bc8da91aaf3c0c10e5b013d5fb0555135f6"
+    },
+    {
+      "n": 18,
+      "file": "slide-18.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-18.png",
+      "sha256": "b3c6d7eea81ce22b8ba8b09fe09d58c0aac325502ac1d40f1d5f82f67da7470a"
+    },
+    {
+      "n": 19,
+      "file": "slide-19.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-19.png",
+      "sha256": "8826f762ac361724c3d80c69a4febe8386a67b9593819dcc44a40600383d70a0"
+    },
+    {
+      "n": 20,
+      "file": "slide-20.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-20.png",
+      "sha256": "67babd4955a8ef9b614ae97cd7e209cced437d0e7c2ab6da8697d6cb53534e3c"
+    },
+    {
+      "n": 21,
+      "file": "slide-21.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-21.png",
+      "sha256": "20e4f25d2efd5116356207372983a58edee80dabc06a843b54b878c11c6c0ab5"
+    },
+    {
+      "n": 22,
+      "file": "slide-22.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-22.png",
+      "sha256": "0cb5c40d48c7ab3ace74e90c34f031fdbaffe57b62843795f2f35fa784aaa03f"
+    },
+    {
+      "n": 23,
+      "file": "slide-23.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-23.png",
+      "sha256": "dbf3215cd5cdefe9dfb7483d67950932f1941a8cb484650ac397ab69fb7ce3c4"
+    },
+    {
+      "n": 24,
+      "file": "slide-24.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-24.png",
+      "sha256": "ff79db1ec328f71c53236ae75f14bfcb79c3a56ee5729a9cd30f9a167fe8595c"
+    },
+    {
+      "n": 25,
+      "file": "slide-25.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-25.png",
+      "sha256": "664950f83f2be6d82abb98e838dc8bb8b87de60e5496dd9f9e1a6f55fff4420b"
+    },
+    {
+      "n": 26,
+      "file": "slide-26.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-26.png",
+      "sha256": "e58b941139b10d3639c5136390eb6dba042cd49fa21af71d7aa6bb5c47b7fc0f"
+    },
+    {
+      "n": 27,
+      "file": "slide-27.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-27.png",
+      "sha256": "f86e404edbf90c33aaf7f9ae2dca3390390c63bdcff0af7bc6bbca76f7e9bc40"
+    },
+    {
+      "n": 28,
+      "file": "slide-28.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-28.png",
+      "sha256": "918421f59172f97585bacf8ae84dec537b7a7869e1808f8a9ea83a7657b6a224"
+    },
+    {
+      "n": 29,
+      "file": "slide-29.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-29.png",
+      "sha256": "3749bcbc512f6531674555c4eecfcd43fba301954b8651cd32eb0a5e58eb23da"
+    },
+    {
+      "n": 30,
+      "file": "slide-30.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-30.png",
+      "sha256": "0fbca9278c35c1223e13204e61ad6c66ecd43e1acee81159b946d0c8b351ce5b"
+    },
+    {
+      "n": 31,
+      "file": "slide-31.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-31.png",
+      "sha256": "6a6abb7fe9d39f16dd5a2672373d80f41ac131e0aab4c0f79016b71f242e49ee"
+    },
+    {
+      "n": 32,
+      "file": "slide-32.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-32.png",
+      "sha256": "fa64cbf3aa2ce44ce37e5d8a7efabba77edda41753a6777c14313c1a4edc215b"
+    },
+    {
+      "n": 33,
+      "file": "slide-33.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-33.png",
+      "sha256": "01bdbd305955ea8f97401c1925f49576c762aa74f46d8a72e921763e5983c25b"
+    },
+    {
+      "n": 34,
+      "file": "slide-34.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-34.png",
+      "sha256": "3a837602e460e0aadbe0ba3fc32f64471708ce609db9b4da42f61ddba6543055"
+    },
+    {
+      "n": 35,
+      "file": "slide-35.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-35.png",
+      "sha256": "e8e6e3df34b1ca62447347f10beeaa5412513bd10370bf059689914502927ba5"
+    },
+    {
+      "n": 36,
+      "file": "slide-36.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-36.png",
+      "sha256": "2cef395f1b5921f9776d8d44f6540dd5e0655cc2f3f963c950a2970c686b17ca"
+    },
+    {
+      "n": 37,
+      "file": "slide-37.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-37.png",
+      "sha256": "efa9efd9f75f86f5c3f1e46fa73fb83b74ed1fd6449d27ba2ee9a57ed08f2378"
+    },
+    {
+      "n": 38,
+      "file": "slide-38.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-38.png",
+      "sha256": "06039ffeaf19fab8940d067606658d3d3c34dbf61661d05cc4c95ba61eaedc56"
+    },
+    {
+      "n": 39,
+      "file": "slide-39.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-39.png",
+      "sha256": "69d2ceadbca94fdd61aa40ef08c2a64d98e7c41f00cf73991db9ca16ea981845"
+    },
+    {
+      "n": 40,
+      "file": "slide-40.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-40.png",
+      "sha256": "cd66232c5b7abdc55ba66d49d67038b01920724624af0f9365f47391b271808f"
+    },
+    {
+      "n": 41,
+      "file": "slide-41.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-41.png",
+      "sha256": "d3d9a9c211f226067053f8279debd347f1c2f50e61f974f3dcfcb9d47150430f"
+    },
+    {
+      "n": 42,
+      "file": "slide-42.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-42.png",
+      "sha256": "05369e5b4d1fb53445513842858c601793fe9c549deff6e47823cb646d02040c"
+    },
+    {
+      "n": 43,
+      "file": "slide-43.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-43.png",
+      "sha256": "9dca66a1f31a876b1ce474d302ddf3be122cc85d43532dc53dfadc26eeaa10ca"
+    },
+    {
+      "n": 44,
+      "file": "slide-44.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-44.png",
+      "sha256": "6bfdee2dfd2d37d22176322df18b05b0a2ec254fdd5e41e199d4b7b8d4617b46"
+    },
+    {
+      "n": 45,
+      "file": "slide-45.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-45.png",
+      "sha256": "f323d54607a008b381b8a96e1dcf7ab76bdc5bc9160a4af7c527a34f24b24c25"
+    },
+    {
+      "n": 46,
+      "file": "slide-46.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-46.png",
+      "sha256": "e5fa15ae47f0fc3a4c4f012949e42d8efd690ed07290140a88fd0e42f003e6a2"
+    },
+    {
+      "n": 47,
+      "file": "slide-47.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-47.png",
+      "sha256": "925c8bfaffdc795dad23c52e724cb5ba7f11045e2679e1c598eb1748644313e5"
+    },
+    {
+      "n": 48,
+      "file": "slide-48.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-48.png",
+      "sha256": "b605b6e2523c591b32e30792d0290877834f7ab9c2bd2277ad749499b6dbc3ed"
+    },
+    {
+      "n": 49,
+      "file": "slide-49.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-49.png",
+      "sha256": "1878fa0ca62702c7deff350db3b45aef6da3c4df32b60075e4c3fbbd3363860e"
+    },
+    {
+      "n": 50,
+      "file": "slide-50.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-50.png",
+      "sha256": "230a859fef18a1c6ed995108614d3a3d826a7ce8cb24d9ebbbc045f4627912fc"
+    },
+    {
+      "n": 51,
+      "file": "slide-51.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-51.png",
+      "sha256": "8e962b80a289b1b8be519f5b44553a0c2e18019f280f32b1402804b6126e5849"
+    },
+    {
+      "n": 52,
+      "file": "slide-52.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-52.png",
+      "sha256": "dc6294ae2063083043b23e4ba6d8a586b95222f7a0c19b710d778deb25d4561e"
+    },
+    {
+      "n": 53,
+      "file": "slide-53.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-53.png",
+      "sha256": "92f1b931bf5941c20b3b8db7cb17e93b7ea6adb45a3ef0c2ade75ac4f7d97077"
+    },
+    {
+      "n": 54,
+      "file": "slide-54.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-54.png",
+      "sha256": "ec912be47e8b0f984abb3a0f961e946a40ba87008ec9ea651ca6702177fd256e"
+    },
+    {
+      "n": 55,
+      "file": "slide-55.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-55.png",
+      "sha256": "bc99b21bfb0476bf38bc6847d86de77bbd074b41331349a9a5226b86d3b66a3c"
+    },
+    {
+      "n": 56,
+      "file": "slide-56.png",
+      "mode": "unchanged_v29",
+      "source": "images/candidates/2026-10-07-v29-slides-01-56-trace-bridge/slide-56.png",
+      "sha256": "4d9e5bcd4302f94a9a73cb92a7d41487e9f2317c3d745b5323bcf47b8a01140b"
+    }
+  ]
+}
