@@ -9,8 +9,8 @@ const folder='images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/';
 const read=p=>fs.readFileSync(new URL(p,root));
 const json=p=>JSON.parse(read(p));
 const m=json(folder+'manifest.json');
-const baseline='b4d4149a5716c19b802be5b5f7280d564203815a';
-test('v38 evidence revision keeps56 published images byte-identical and replaces only23 and26',()=>{
+const baseline='e6eee00424e04ff8e6633967a50be61a1da4d171';
+test('v38 cover name keeps57 published images byte-identical and replaces only1',()=>{
   assert.equal(m.count,58);assert.equal(m.entries.length,58);
   for(const e of m.entries){
     const bytes=read(folder+e.file);
@@ -18,7 +18,7 @@ test('v38 evidence revision keeps56 published images byte-identical and replaces
     assert.equal(e.embeddedPageNumber,null);
     assert.deepEqual([bytes.readUInt32BE(16),bytes.readUInt32BE(20)],[e.pixelSize.width,e.pixelSize.height]);
     const old=execFileSync('git',['show',baseline+':'+folder+e.file],{cwd:root,maxBuffer:20*1024*1024});
-    assert.equal(bytes.equals(old),![23,26].includes(e.n));
+    assert.equal(bytes.equals(old),e.n!==1);
   }
   assert.deepEqual(m.entries.filter(e=>e.previousV37).map(e=>e.previousV37),Array.from({length:56},(_,i)=>i+1));
   assert.equal(navigationIndex(0,58,{key:'End'}),57);

@@ -10,7 +10,7 @@
       "n": 1,
       "title": "自己刻 Agent 框架，最難的不是呼叫 LLM",
       "chapter": "開場：Tool Loop 與六個問題",
-      "src": "/slides/slide-01.png?v=000c5e67a4d6d2dbe4343201735b7ed258a5f92a6033ae012e27c109baf2b223",
+      "src": "/slides/slide-01.png?v=fd647e3d9d8e780087516abe580535e144a55ecc8afb0ab71e0fea3b55047fa5",
       "notes": "我一開始只想讓模型反覆呼叫工具。真的接上企業流程後，才陸續遇到漏步驟、錯誤結論與難以追查的問題。今天用這些經驗，說明循環之外需要哪些執行責任。",
       "transition": "先看我一開始以為的 Agent 長什麼樣。",
       "message": "用親身失敗與修正經驗，說明從 Tool Loop 到可交付 Runtime 的過程。",

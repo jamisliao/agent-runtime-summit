@@ -2,7 +2,7 @@
   "version": "v38",
   "count": 58,
   "status": "pending_user_review",
-  "numberingNotice": "58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。本輪更新第23、26頁，其餘56張v38圖片不變。第21頁定義完成標準，第22頁介紹Evaluation，第23頁找實際交付與工具紀錄的依據，第24頁介紹評估對象，第25頁介紹評估方法，第26頁將Builder呼叫及Tool結果對照做成程式檢查，再接第27頁固定條件重跑。講稿、重點、轉場與站台同步；歷史PDF未更新。",
+  "numberingNotice": "58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部加入草寫英文署名JamisLiao，本輪其他57張圖片不變。第21頁定義完成標準，第22頁介紹Evaluation，第23頁找實際交付與工具紀錄的依據，第24頁介紹評估對象，第25頁介紹評估方法，第26頁將Builder呼叫及Tool結果對照做成程式檢查，再接第27頁固定條件重跑。圖片文件與站台同步；歷史PDF未更新。",
   "insertedPages": [
     22,
     23
@@ -13,7 +13,7 @@
       "title": "自己刻 Agent 框架，最難的不是呼叫 LLM",
       "chapter": "開場：Tool Loop 與六個問題",
       "file": "slide-01.png",
-      "sha256": "000c5e67a4d6d2dbe4343201735b7ed258a5f92a6033ae012e27c109baf2b223",
+      "sha256": "fd647e3d9d8e780087516abe580535e144a55ecc8afb0ab71e0fea3b55047fa5",
       "embeddedPageNumber": null,
       "pixelSize": {
         "width": 1672,
@@ -27,18 +27,12 @@
       "核心訊息": "用親身失敗與修正經驗，說明從 Tool Loop 到可交付 Runtime 的過程。",
       "搭配講稿": "我一開始只想讓模型反覆呼叫工具。真的接上企業流程後，才陸續遇到漏步驟、錯誤結論與難以追查的問題。今天用這些經驗，說明循環之外需要哪些執行責任。",
       "接下一頁": "先看我一開始以為的 Agent 長什麼樣。",
-      "sourceSha256": "bca986c6c9a0c791bc97a98dca35c3bc518ffa15ebc49a94ab0fb0b9cc521914",
-      "sourceProvenance": "output/review/2026-10-12-v36-image-check/images/original-01.png",
-      "editBounds": [
-        1575,
-        25,
-        1647,
-        80
-      ],
-      "outsideRepairRegionChangedPixels": 0,
+      "sourceSha256": "000c5e67a4d6d2dbe4343201735b7ed258a5f92a6033ae012e27c109baf2b223",
+      "sourceProvenance": "images/candidates/2026-10-13-v37-slides-01-56-no-numbers/slide-01.png",
       "status": "user_authorized_publication",
       "previousV37": 1,
-      "sourceFile": "images/candidates/2026-10-13-v37-slides-01-56-no-numbers/slide-01.png"
+      "sourceFile": "images/candidates/2026-10-13-evaluation-intro-preview/cover-JamisLiao-small.png",
+      "imageEdited": true
     },
     {
       "n": 2,

@@ -41,8 +41,8 @@ const newEntries=[{
 const entries=[];
 for(const old of source.entries){
   const e={...old,previousV37:old.n,sourceFile:base+'/'+old.file};
-  if(old.n===13||old.n===21||old.n===24){
-    e.sourceFile=old.n===24?revised+'/slide-26-v2.png':added+(old.n===13?'/slide-13-title-v2.png':'/slide-21-criteria-v6.png');
+  if(old.n===1||old.n===13||old.n===21||old.n===24){
+    e.sourceFile=old.n===1?added+'/cover-JamisLiao-small.png':old.n===24?revised+'/slide-26-v2.png':added+(old.n===13?'/slide-13-title-v2.png':'/slide-21-criteria-v6.png');
     e.imageEdited=true;
     delete e.editBounds;
     delete e.outsideRepairRegionChangedPixels;
@@ -73,7 +73,7 @@ for(const [i,e] of entries.entries()){
 assert.deepEqual(entries.filter(e=>e.previousV37).map(e=>e.previousV37),Array.from({length:56},(_,i)=>i+1));
 assert.deepEqual(entries.filter(e=>!e.previousV37).map(e=>e.n),[22,23]);
 assert.equal(entries[20].previousV37,21);
-const notice='58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。本輪更新第23、26頁，其餘56張v38圖片不變。第21頁定義完成標準，第22頁介紹Evaluation，第23頁找實際交付與工具紀錄的依據，第24頁介紹評估對象，第25頁介紹評估方法，第26頁將Builder呼叫及Tool結果對照做成程式檢查，再接第27頁固定條件重跑。講稿、重點、轉場與站台同步；歷史PDF未更新。';
+const notice='58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部加入草寫英文署名JamisLiao，本輪其他57張圖片不變。第21頁定義完成標準，第22頁介紹Evaluation，第23頁找實際交付與工具紀錄的依據，第24頁介紹評估對象，第25頁介紹評估方法，第26頁將Builder呼叫及Tool結果對照做成程式檢查，再接第27頁固定條件重跑。圖片文件與站台同步；歷史PDF未更新。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
 write(story,'# 58頁分頁稿 v38｜Evaluation入門\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 58頁圖片與講稿 v38\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md)\n\n'+entries.map(e=>section(e)).join(''));
@@ -85,6 +85,6 @@ write(dest+'/gallery-images-only.html',head+'<main>'+entries.map(e=>`<figure id=
 write(dest+'/gallery.html',head+'<header><h1>58頁 Evaluation介紹</h1><p>'+notice+'</p></header><main>'+entries.map(e=>`<article id="slide-${String(e.n).padStart(2,'0')}"><h2>${e.n}｜${esc(e.title)}</h2>${img(e)}<p>${esc(e['核心訊息'])}</p><p>${esc(e['搭配講稿'])}</p><p>接下一頁：${esc(e['接下一頁'])}</p></article>`).join('')+'</main></body></html>');
 write(dest+'/manifest.json',JSON.stringify({version:'v38',count:58,status:'pending_user_review',numberingNotice:notice,insertedPages:[22,23],entries},null,2));
 const unchanged=entries.filter(e=>e.previousV37&&!e.imageEdited).length;
-assert.equal(unchanged,53);
-write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[23,26],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-evaluation-evidence-integration.md',pdfUpdated:false},null,2));
-console.log(JSON.stringify({count:58,revisedImagesThisRevision:[23,26],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));
+assert.equal(unchanged,52);
+write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[1],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-cover-name.md',pdfUpdated:false},null,2));
+console.log(JSON.stringify({count:58,revisedImagesThisRevision:[1],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));
