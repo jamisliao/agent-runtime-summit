@@ -10,13 +10,13 @@ const cfg=json('presenter/deck-config.json');
 const folder=cfg.imageDirectory+'/';
 const m=json(folder+'manifest.json');
 const base='images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/';
-test('v39 preserves58 positions and55 original PNGs with no Judge insertion',()=>{
+test('v39 preserves58 positions and54 original PNGs with no Judge insertion',()=>{
   assert.equal(cfg.count,58);assert.equal(cfg.imageVersion,'v39');assert.equal(m.entries.length,58);
   for(const [i,e] of m.entries.entries()){
     assert.equal(e.n,i+1);assert.equal(e.previousV38,i+1);assert.equal(e.embeddedPageNumber,null);
     const bytes=read(folder+e.file);
     assert.equal(createHash('sha256').update(bytes).digest('hex'),e.sha256);
-    assert.equal(bytes.equals(read(base+e.file)),![23,24,25].includes(e.n));
+    assert.equal(bytes.equals(read(base+e.file)),![23,24,25,26].includes(e.n));
   }
 });
 test('v39 published deck contains matching notes, transitions and image hashes',()=>{

@@ -14,7 +14,7 @@ const source=JSON.parse(read(base+'/manifest.json'));
 assert.equal(source.count,58);
 fs.mkdirSync(path.join(root,dest),{recursive:true});
 const entries=source.entries.map(old=>{
-  const e={...old,previousV38:old.n,sourceFile:base+'/'+old.file,revisedInV39:[23,24,25].includes(old.n)};
+  const e={...old,previousV38:old.n,sourceFile:base+'/'+old.file,revisedInV39:[23,24,25,26].includes(old.n)};
   if(e.n===23){
     e.title='把實際執行，對回任務要求';e.sourceFile=edits+'/slide-23-final.png';
     e['搭配講稿']='上一頁介紹實際執行與對照成功標準，現在用Builder案例核對一次。Skill要求呼叫Builder，並交付它產生的正式報告。我先看指定報告有沒有交付，但不能憑報告外觀判斷它來自Builder。接著查看工具呼叫紀錄，確認Builder有沒有被呼叫、回傳了什麼，再把Tool結果與最後交付的報告或引用對照。只有呼叫過Builder，也不代表最後交付用了它的輸出。這一頁就是把實際執行留下的依據，對回任務要求。圖中的問題是核對項目，不是新增實測結果。';
@@ -30,14 +30,15 @@ const entries=source.entries.map(old=>{
     e.points=[old.points[1],old.points[0],old.points[2]];
     e['接下一頁']='以Builder案例來說，呼叫有沒有發生、交付是否對應它的回傳結果，都能做成明確的程式檢查。';
   }
+  if(e.n===26)e.sourceFile=edits+'/slide-26-no-footer.png';
   const bytes=read(e.sourceFile);e.sha256=hash(bytes);
   e.pixelSize={width:bytes.readUInt32BE(16),height:bytes.readUInt32BE(20)};
   if(!e.revisedInV39)assert.equal(e.sha256,old.sha256);
   fs.writeFileSync(path.join(root,dest,e.file),bytes);
   return e;
 });
-assert.equal(entries.filter(e=>!e.revisedInV39).length,55);
-const notice='v39維持58頁與原頁序。第23頁改為「把實際執行，對回任務要求」，第24頁改為「Evaluation 要看結果，也要看執行過程」。第25頁整組左右互換：左為LLM-as-a-Judge、右為Code-based Evaluation；講述順序同步，兩種方法並非與結果或軌跡固定配對。不新增Judge示範；26頁接27重跑與28測試限制。相較v38，其他55張原圖逐位元保留；本次互換僅修改第25張圖片。圖片無內嵌頁碼，歷史PDF未更新。';
+assert.equal(entries.filter(e=>!e.revisedInV39).length,54);
+const notice='v39維持58頁與原頁序。第23頁改為「把實際執行，對回任務要求」，第24頁改為「Evaluation 要看結果，也要看執行過程」。第25頁整組左右互換：左為LLM-as-a-Judge、右為Code-based Evaluation；講述順序同步，兩種方法並非與結果或軌跡固定配對。第26頁移除底部「每次執行後，用同一套標準判定」，保留程式檢查圖示與講稿。不新增Judge示範；26頁接27重跑與28測試限制。相較v38，其他54張原圖逐位元保留；本次僅修改第26張圖片。圖片無內嵌頁碼，歷史PDF未更新。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
 write(story,'# 58頁分頁稿 v39｜Evaluation標題修正\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 58頁圖片與講稿 v39\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md) · [產圖提示](PROMPTS.json)\n\n'+entries.map(e=>section(e)).join(''));
@@ -48,6 +49,6 @@ const img=e=>`<img loading="lazy" src="${e.file}?v=${e.sha256.slice(0,12)}" widt
 write(dest+'/gallery-images-only.html',head+'<main>'+entries.map(e=>`<figure id="slide-${String(e.n).padStart(2,'0')}">${img(e)}</figure>`).join('')+'</main></body></html>');
 write(dest+'/gallery.html',head+'<header><h1>58頁 Evaluation標題修正</h1><p>'+notice+'</p></header><main>'+entries.map(e=>`<article id="slide-${String(e.n).padStart(2,'0')}"><h2>${e.n}｜${esc(e.title)}</h2>${img(e)}<p>${esc(e['核心訊息'])}</p><p>${esc(e['搭配講稿'])}</p><p>接下一頁：${esc(e['接下一頁'])}</p></article>`).join('')+'</main></body></html>');
 write(dest+'/manifest.json',JSON.stringify({version:'v39',count:58,status:'pending_user_review',numberingNotice:notice,insertedPages:[],entries},null,2));
-write(dest+'/PROMPTS.json',JSON.stringify({tool:'built-in image_gen',slide23:JSON.parse(read(edits+'/SLIDE-23-FINAL-PROMPT.json')),slide24:JSON.parse(read(edits+'/SLIDE-24-FINAL-PROMPT.json')),slide25:JSON.parse(read(edits+'/SLIDE-25-SWAP-PROMPT.json'))},null,2));
-write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[],revisedImagesThisRevision:[25],v39RevisedImages:[23,24,25],preservedV38Images:55,originalRelativeOrderPreserved:true,allUnmodifiedOriginalHashesMatch:true,pdfUpdated:false,verification:'docs/verification/2026-10-13-v39-slide25-layout.md'},null,2));
-console.log(JSON.stringify({count:58,dest,story,preservedV38Images:55}));
+write(dest+'/PROMPTS.json',JSON.stringify({tool:'built-in image_gen',slide23:JSON.parse(read(edits+'/SLIDE-23-FINAL-PROMPT.json')),slide24:JSON.parse(read(edits+'/SLIDE-24-FINAL-PROMPT.json')),slide25:JSON.parse(read(edits+'/SLIDE-25-SWAP-PROMPT.json')),slide26:JSON.parse(read(edits+'/SLIDE-26-REMOVE-FOOTER-PROMPT.json'))},null,2));
+write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[],revisedImagesThisRevision:[26],v39RevisedImages:[23,24,25,26],preservedV38Images:54,originalRelativeOrderPreserved:true,allUnmodifiedOriginalHashesMatch:true,pdfUpdated:false,verification:'docs/verification/2026-10-13-v39-slide26-footer.md'},null,2));
+console.log(JSON.stringify({count:58,dest,story,preservedV38Images:54}));
