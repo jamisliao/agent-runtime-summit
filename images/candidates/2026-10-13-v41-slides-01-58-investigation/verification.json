@@ -65,10 +65,11 @@
     39
   ],
   "revisedImages": [
+    16,
     38,
     39
   ],
-  "preservedV40Images": 56,
+  "preservedV40Images": 55,
   "allUnmodifiedSourceHashesMatch": true,
   "swappedPreviousV41Pages": [
     50,
@@ -77,5 +78,5 @@
   "speakerCuesSource": "docs/speaker-cues-v41.json",
   "originalNotesPreserved": true,
   "pdfUpdated": false,
-  "verification": "docs/verification/2026-10-14-presenter-compact-cues.md"
+  "verification": "docs/verification/2026-10-14-slide16-weight-integration.md"
 }

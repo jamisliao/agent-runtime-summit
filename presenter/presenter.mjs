@@ -112,7 +112,7 @@ byId('detect-screens').addEventListener('click',async () => {
       details.addEventListener('currentscreenchange',refreshScreens);
     }
     refreshScreens();
-  } catch { hint('未取得螢幕權限。仍可開啟投影，手動拖到第二個螢幕，再按 F 全螢幕。'); }
+  } catch { hint('未取得螢幕權限。仍可開啟投影，手動拖到第二個螢幕，再按 L 全螢幕。'); }
 });
 
 function projectionClosed() {
@@ -139,7 +139,7 @@ byId('open-projection').addEventListener('click',() => {
   }
   byId('close-projection').disabled = false; byId('open-projection').textContent = '顯示投影視窗';
   popup.focus(); showProjectionStatus();
-  hint('投影視窗已開啟。按「投影全螢幕」；若瀏覽器拒絕，請在投影視窗按 F。講稿留在這個視窗。');
+  hint('投影視窗已開啟。按「投影全螢幕」；若瀏覽器拒絕，請在投影視窗按 L。講稿留在這個視窗。');
 });
 byId('projection-fullscreen').addEventListener('click',() => {
   if (!ready || !popup || popup.closed) return;
@@ -158,7 +158,7 @@ window.addEventListener('message',event => {
   } else if (message.type === 'fullscreen') {
     hint(message.active ? '投影已進入全螢幕；觀眾只會看到圖片。你可以繼續在這裡換頁。' : '投影已退出全螢幕，可再次按「投影全螢幕」。');
   } else if (message.type === 'fullscreen-error') {
-    hint('瀏覽器沒有允許跨視窗全螢幕。請在投影視窗按 F 或點「全螢幕」；選擇的螢幕位置仍會保留。');
+    hint('瀏覽器沒有允許跨視窗全螢幕。請在投影視窗按 L 或點「全螢幕」；選擇的螢幕位置仍會保留。');
   }
 });
 byId('previous').addEventListener('click',() => goTo(index-1));

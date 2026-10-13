@@ -25,13 +25,13 @@ window.enterProjectionFullscreen = async screen => {
     } else if (screen) {
       await document.documentElement.requestFullscreen({screen});
     }
-  } catch { hint.textContent = '全螢幕未成功。請直接在這個視窗按 F 或點擊按鈕。'; report({type:'fullscreen-error'}); }
+  } catch { hint.textContent = '全螢幕未成功。請直接在這個視窗按 L 或點擊按鈕。'; report({type:'fullscreen-error'}); }
 };
 document.getElementById('enter-fullscreen').addEventListener('click',() => window.enterProjectionFullscreen());
 document.addEventListener('dblclick',() => window.enterProjectionFullscreen());
 document.addEventListener('fullscreenchange',() => report({type:'fullscreen',active:!!document.fullscreenElement}));
 document.addEventListener('keydown',event => {
-  if (event.key.toLowerCase() === 'f' && !event.ctrlKey && !event.metaKey) { event.preventDefault(); window.enterProjectionFullscreen(); return; }
+  if (event.key.toLowerCase() === 'l' && !event.ctrlKey && !event.metaKey && !event.altKey) { event.preventDefault(); window.enterProjectionFullscreen(); return; }
   if (slideCount && navigationIndex(0,slideCount,event) !== null) {event.preventDefault();report({type:'navigate',key:event.key});}
 });
 window.addEventListener('message',event => {

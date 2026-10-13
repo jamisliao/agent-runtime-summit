@@ -21,6 +21,12 @@ fs.mkdirSync(path.join(root,dest),{recursive:true});
 const entries=sourceOrder.map((oldN,index)=>{
   const old=source.entries[oldN-1];
   const e={...old,n:index+1,previousV40:oldN,sourceFile:base+'/'+old.file,revisedInV41:false};
+  if(oldN===16){
+    e.sourceFile='images/candidates/2026-10-14-slide16-weight-preview/slide-16.png';
+    e.sourceProvenance=base+'/'+old.file;e.sourceSha256=old.sha256;
+    e.imageEdited=true;e.revisedInV41=true;
+    delete e.editBounds;delete e.outsideRepairRegionChangedPixels;
+  }
   if(oldN===50)e['接下一頁']='有了驗收方式，接著要決定：同一情境要通過幾次，才接受這版修改？';
   if(oldN===52)e['接下一頁']='訂好接受門檻，還要把踩過的坑留進測試集，讓後續修改持續重測。';
   if(oldN===51)e['接下一頁']='有了持續累積的測試集與接受標準，就能讓AI產生候選Skill，再用測試結果決定是否接受。';
@@ -59,7 +65,7 @@ const entries=sourceOrder.map((oldN,index)=>{
   return e;
 });
 assert.equal(entries.length,58);
-assert.equal(entries.filter(e=>!e.revisedInV41).length,56);
+assert.equal(entries.filter(e=>!e.revisedInV41).length,55);
 assert.deepEqual(entries.slice(36,42).map(e=>e.previousV40),[37,38,40,41,42,43]);
 assert.equal(entries[38].title,'再跑一次，不能代替回看出錯那次');
 assert.equal(entries.at(-1).title,'模型會越來越聰明，但是你的口袋沒有越來越深。');
@@ -73,7 +79,7 @@ for(const [i,e]of entries.entries()){
   assert.equal(cue.n,e.n);assert.equal(cue.title,e.title);
   e['核心訊息']=cue.message;e.points=cue.points;e['接下一頁']=cue.transition;
 }
-const notice='v41共58頁：原39頁泛用追查轉場不再列入播放，內容由新38頁承接；新38、39頁重畫，分別說明看見錯誤不等於知道原因、重跑不能取代出錯那次的紀錄。37頁保留；原41、42、43頁依序成為新40、41、42頁，說明四類資訊、Builder逐段對照與AI協助找線索。其餘56張圖像依v40來源SHA逐位元保留，無內嵌頁碼；舊版完整保留，歷史PDF未更新。2026-10-14交換原v41第50、51頁：新50為接受門檻、新51為回歸測試累積，49～51轉場同步，圖片內容不變。';
+const notice='v41共58頁：原39頁泛用追查轉場不再列入播放，內容由新38頁承接；新38、39頁重畫，分別說明看見錯誤不等於知道原因、重跑不能取代出錯那次的紀錄。37頁保留；原41、42、43頁依序成為新40、41、42頁，說明四類資訊、Builder逐段對照與AI協助找線索。2026-10-14第16頁換為文字字重修正版，內容不改；相較v40共55張圖像依來源SHA逐位元保留，無內嵌頁碼；舊版完整保留，歷史PDF未更新。2026-10-14交換原v41第50、51頁：新50為接受門檻、新51為回歸測試累積，49～51轉場同步，圖片內容不變。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
 write(story,'# 58頁分頁稿 v41｜追查章節去重\n\n'+notice+'\n\n2026-10-14講者提示已精簡為主旨、重點與轉場；原搭配講稿保留於此文件，站台不顯示長講稿。\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 58頁圖片與講稿 v41\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md) · [產圖提示](PROMPTS.json)\n\n'+entries.map(e=>section(e)).join(''));
@@ -85,6 +91,6 @@ write(dest+'/gallery-images-only.html',head+'<main>'+entries.map(e=>`<figure id=
 write(dest+'/gallery-review-37-42.html',head+'<header><h1>37～42頁連續預覽</h1><p>37條件檢查 → 38看見問題與原因不同 → 39出錯那次的紀錄 → 40四類資訊 → 41逐段對照 → 42 AI協助找線索</p></header><main>'+entries.filter(e=>e.n>=37&&e.n<=42).map(e=>`<article id="slide-${String(e.n).padStart(2,'0')}"><h2>${e.n}｜${esc(e.title)}</h2>${img(e)}</article>`).join('')+'</main></body></html>');
 write(dest+'/gallery.html',head+'<header><h1>58頁追查章節整合</h1><p>'+notice+'</p></header><main>'+entries.map(e=>`<article id="slide-${String(e.n).padStart(2,'0')}"><h2>${e.n}｜${esc(e.title)}</h2>${img(e)}<p>${esc(e['核心訊息'])}</p><p>${esc(e['搭配講稿'])}</p><p>接下一頁：${esc(e['接下一頁'])}</p></article>`).join('')+'</main></body></html>');
 write(dest+'/manifest.json',JSON.stringify({version:'v41',count:58,status:'pending_user_review',numberingNotice:notice,removedFromPlayback:[39],entries},null,2));
-write(dest+'/PROMPTS.json',read(added+'/PROMPTS.json').toString());
-write(dest+'/verification.json',JSON.stringify({count:58,base,originalSourceOrder:sourceOrder,removedFromPlayback:[39],revisedImages:[38,39],preservedV40Images:56,allUnmodifiedSourceHashesMatch:true,swappedPreviousV41Pages:[50,51],speakerCuesSource:'docs/speaker-cues-v41.json',originalNotesPreserved:true,pdfUpdated:false,verification:'docs/verification/2026-10-14-presenter-compact-cues.md'},null,2));
-console.log(JSON.stringify({count:58,dest,story,preservedV40Images:56,newImages:[38,39],removedV40Page:39}));
+write(dest+'/PROMPTS.json',JSON.stringify({investigation:JSON.parse(read(added+'/PROMPTS.json')),slide16:JSON.parse(read('images/candidates/2026-10-14-slide16-weight-preview/PROMPT.json'))},null,2));
+write(dest+'/verification.json',JSON.stringify({count:58,base,originalSourceOrder:sourceOrder,removedFromPlayback:[39],revisedImages:[16,38,39],preservedV40Images:55,allUnmodifiedSourceHashesMatch:true,swappedPreviousV41Pages:[50,51],speakerCuesSource:'docs/speaker-cues-v41.json',originalNotesPreserved:true,pdfUpdated:false,verification:'docs/verification/2026-10-14-slide16-weight-integration.md'},null,2));
+console.log(JSON.stringify({count:58,dest,story,preservedV40Images:55,newImages:[16,38,39],removedV40Page:39}));
