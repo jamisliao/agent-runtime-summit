@@ -16,6 +16,8 @@ fs.mkdirSync(path.join(root,dest),{recursive:true});
 const source=JSON.parse(read(base+'/manifest.json'));
 assert.equal(source.count,56);
 const updates={
+  7:{message:'從每輪累積工具結果，帶出下一步究竟需要哪些資訊，以及完整資料與模型Context應分開處理。',notes:'第一版的做法很直覺：工具回什麼，我就整包append進Context。一輪看起來沒問題，幾輪之後，舊結果還在，新結果又加進來，Context就越堆越多。但這時我回頭問：下一步，模型真的需要重新讀完這些資料嗎？有時它只需要知道工具成功了，再決定把資料交給哪個工具；完整內容是下一個工具要用的，不一定是模型要讀的。即使需要模型分析，也應先判斷這次任務需要哪些內容。所以接下來要分開兩件事：完整資料怎麼保留，以及這一輪模型需要看到什麼。',points:['每輪整包append，使舊結果、新結果持續累積。','先問下一步由誰使用資料：模型分析，或另一個工具處理？','工具需要保留完整資料，不等於這一輪模型需要讀完整包。'],transition:'完整資料仍要保留，但不用全放進模型的Context。下一頁看我怎麼把資料保存與本輪輸入分開。'},
+  8:{notes:'既然下一個工具可能還要用完整資料，我不能只為了縮小Context，就把原始結果丟掉。我把工具回傳的完整結果留在Runtime；再依模型這一輪要做什麼，準備它需要看到的內容。資料不是一開始就在資料庫裡，是工具回傳後，由Runtime刻意保存下來的。如果下一步只是交給另一個工具處理，模型可以只拿狀態與取件參照；如果要模型分析，就給它相關內容。這樣完整資料仍可取用，Context也不必跟著所有原始結果一路累積。'},
   13:{title:'資訊放在中間，也容易被 LLM 忽略'},
   20:{transition:'既然有回答不代表流程正確完成，那我們要怎麼知道Agent真的完成了任務？'},
   21:{message:'先說清楚怎樣才算完成，讓任務有可對照的成功標準。',notes:'要知道Agent有沒有完成，第一步是先說清楚：這個任務做到什麼才算完成。以剛才的報告任務為例，我要求兩件事：必要操作是確實呼叫Builder；交付成果則是交出Builder產生的正式報告。只呼叫工具卻沒有交出報告，不算完成；自己寫一份摘要卻跳過Builder，也不符合要求。這張驗收卡是在定義要求，不是在宣告測試已通過，也不是再次驗證Builder底層程式是否正確。',points:['必要操作：確實呼叫Builder。','交付成果：交出Builder產生的正式報告。','先定義成功標準，才有依據判斷是否完成。'],transition:'有了明確標準，接著讓模型實際跑一次，再檢查有沒有做到。這就是Evaluation。'},
@@ -73,7 +75,7 @@ for(const [i,e] of entries.entries()){
 assert.deepEqual(entries.filter(e=>e.previousV37).map(e=>e.previousV37),Array.from({length:56},(_,i)=>i+1));
 assert.deepEqual(entries.filter(e=>!e.previousV37).map(e=>e.n),[22,23]);
 assert.equal(entries[20].previousV37,21);
-const notice='58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部加入草寫英文署名JamisLiao，本輪其他57張圖片不變。第21頁定義完成標準，第22頁介紹Evaluation，第23頁找實際交付與工具紀錄的依據，第24頁介紹評估對象，第25頁介紹評估方法，第26頁將Builder呼叫及Tool結果對照做成程式檢查，再接第27頁固定條件重跑。圖片文件與站台同步；歷史PDF未更新。';
+const notice='58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部為草寫英文署名JamisLiao。本輪補強第7至8頁講稿與轉場：先問下一步由誰使用資料，再區分完整結果保存與模型本輪輸入；58張圖片皆不變。第21頁定義完成標準，第22頁介紹Evaluation，第23頁找實際交付與工具紀錄的依據，第24頁介紹評估對象，第25頁介紹評估方法，第26頁做程式檢查，再接第27頁固定條件重跑。文件與站台同步；歷史PDF未更新。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
 write(story,'# 58頁分頁稿 v38｜Evaluation入門\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 58頁圖片與講稿 v38\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md)\n\n'+entries.map(e=>section(e)).join(''));
@@ -86,5 +88,5 @@ write(dest+'/gallery.html',head+'<header><h1>58頁 Evaluation介紹</h1><p>'+not
 write(dest+'/manifest.json',JSON.stringify({version:'v38',count:58,status:'pending_user_review',numberingNotice:notice,insertedPages:[22,23],entries},null,2));
 const unchanged=entries.filter(e=>e.previousV37&&!e.imageEdited).length;
 assert.equal(unchanged,52);
-write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[1],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-cover-name.md',pdfUpdated:false},null,2));
-console.log(JSON.stringify({count:58,revisedImagesThisRevision:[1],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));
+write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[],revisedNarration:[7,8],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-context-bridge.md',pdfUpdated:false},null,2));
+console.log(JSON.stringify({count:58,revisedImagesThisRevision:[],revisedNarration:[7,8],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));
