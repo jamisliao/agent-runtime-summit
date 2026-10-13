@@ -46,7 +46,7 @@ const entries=[];
 for(const old of source.entries){
   const e={...old,previousV37:old.n,sourceFile:base+'/'+old.file};
   if(old.n===1||old.n===13||old.n===16||old.n===21||old.n===24){
-    e.sourceFile=old.n===16?added+'/slide-16-formal-report-pen.png':old.n===1?added+'/cover-JamisLiao-small.png':old.n===24?revised+'/slide-26-v2.png':added+(old.n===13?'/slide-13-title-v2.png':'/slide-21-criteria-v6.png');
+    e.sourceFile=old.n===16?added+'/slide-16-formal-report-type-v3.png':old.n===1?added+'/cover-JamisLiao-small.png':old.n===24?revised+'/slide-26-v2.png':added+(old.n===13?'/slide-13-title-v2.png':'/slide-21-criteria-v6.png');
     e.imageEdited=true;
     delete e.editBounds;
     delete e.outsideRepairRegionChangedPixels;
@@ -77,7 +77,7 @@ for(const [i,e] of entries.entries()){
 assert.deepEqual(entries.filter(e=>e.previousV37).map(e=>e.previousV37),Array.from({length:56},(_,i)=>i+1));
 assert.deepEqual(entries.filter(e=>!e.previousV37).map(e=>e.n),[22,23]);
 assert.equal(entries[20].previousV37,21);
-const notice='58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部為草寫英文署名JamisLiao。第7至8頁已補上資料用途的轉場；本輪更新第16頁標題及圖片，從分析結果帶到正式報告需求與自由撰寫風險，再接第17頁Builder與第18頁Skill。其他57張圖片不變。Evaluation驗收依據及程式檢查修正保留。文件與站台同步；歷史PDF未更新。';
+const notice='58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部為草寫英文署名JamisLiao。第7至8頁已補上資料用途的轉場；第16頁從分析結果帶到正式報告需求與自由撰寫風險，再接第17頁Builder與第18頁Skill。本輪將第16頁文字收斂至中等手寫字重，與前後頁對照；圖示維持細鋼筆風格，其他57張圖片及講稿不變。Evaluation驗收依據及程式檢查修正保留。文件與站台同步；歷史PDF未更新。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
 write(story,'# 58頁分頁稿 v38｜Evaluation入門\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 58頁圖片與講稿 v38\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md)\n\n'+entries.map(e=>section(e)).join(''));
@@ -90,5 +90,5 @@ write(dest+'/gallery.html',head+'<header><h1>58頁 Evaluation介紹</h1><p>'+not
 write(dest+'/manifest.json',JSON.stringify({version:'v38',count:58,status:'pending_user_review',numberingNotice:notice,insertedPages:[22,23],entries},null,2));
 const unchanged=entries.filter(e=>e.previousV37&&!e.imageEdited).length;
 assert.equal(unchanged,51);
-write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[16],revisedNarration:[16,17],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-report-bridge.md',pdfUpdated:false},null,2));
-console.log(JSON.stringify({count:58,revisedImagesThisRevision:[16],revisedNarration:[16,17],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));
+write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[16],revisedNarration:[],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-slide16-text-weight.md',pdfUpdated:false},null,2));
+console.log(JSON.stringify({count:58,revisedImagesThisRevision:[16],revisedNarration:[],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));

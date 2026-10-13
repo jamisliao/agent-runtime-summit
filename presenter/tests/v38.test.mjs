@@ -9,8 +9,8 @@ const folder='images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/';
 const read=p=>fs.readFileSync(new URL(p,root));
 const json=p=>JSON.parse(read(p));
 const m=json(folder+'manifest.json');
-const baseline='e78c904af778a52d2015a4b6fc01a8c96c1262bc';
-test('v38 report bridge keeps57 published images byte-identical and replaces only16',()=>{
+const baseline='8b337ccd61ffb7963f05890771fcbd7115f0c8d5';
+test('v38 slide16 text weight keeps57 published images byte-identical and replaces only16',()=>{
   assert.equal(m.count,58);assert.equal(m.entries.length,58);
   for(const e of m.entries){
     const bytes=read(folder+e.file);

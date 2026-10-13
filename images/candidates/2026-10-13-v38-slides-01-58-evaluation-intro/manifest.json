@@ -2,7 +2,7 @@
   "version": "v38",
   "count": 58,
   "status": "pending_user_review",
-  "numberingNotice": "58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部為草寫英文署名JamisLiao。第7至8頁已補上資料用途的轉場；本輪更新第16頁標題及圖片，從分析結果帶到正式報告需求與自由撰寫風險，再接第17頁Builder與第18頁Skill。其他57張圖片不變。Evaluation驗收依據及程式檢查修正保留。文件與站台同步；歷史PDF未更新。",
+  "numberingNotice": "58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部為草寫英文署名JamisLiao。第7至8頁已補上資料用途的轉場；第16頁從分析結果帶到正式報告需求與自由撰寫風險，再接第17頁Builder與第18頁Skill。本輪將第16頁文字收斂至中等手寫字重，與前後頁對照；圖示維持細鋼筆風格，其他57張圖片及講稿不變。Evaluation驗收依據及程式檢查修正保留。文件與站台同步；歷史PDF未更新。",
   "insertedPages": [
     22,
     23
@@ -487,7 +487,7 @@
       "title": "分析完 Log，還要交付正式報告",
       "chapter": "Skill：流程真的會照做嗎？",
       "file": "slide-16.png",
-      "sha256": "eee31bfb51873a0588b0c1ee2ce7dac613d778df66c8733e1edc5e36be6402ee",
+      "sha256": "3aadacf5ce090133e392d58db60ba645cb89088f299dae897f710f79ae1d3bb9",
       "embeddedPageNumber": null,
       "pixelSize": {
         "width": 1672,
@@ -506,7 +506,7 @@
       "sourceProvenance": "images/candidates/2026-10-13-v37-slides-01-56-no-numbers/slide-16.png",
       "status": "user_authorized_publication",
       "previousV37": 16,
-      "sourceFile": "images/candidates/2026-10-13-evaluation-intro-preview/slide-16-formal-report-pen.png",
+      "sourceFile": "images/candidates/2026-10-13-evaluation-intro-preview/slide-16-formal-report-type-v3.png",
       "imageEdited": true
     },
     {
