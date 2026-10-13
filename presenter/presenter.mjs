@@ -6,6 +6,7 @@ let slides = [], index = 0, popup = null, ready = false, details = null;
 let slideStorageKey = 'runtime-slide-index';
 let projection = {revision:0, requested:0, shown:null,status:'closed'};
 let popupCheck = null;
+let fullscreenCheck = null;
 const hint = text => { byId('setup-hint').textContent = text; };
 const save = (key,value) => { try { localStorage.setItem(key,String(value)); } catch {} };
 const restore = key => { try { return localStorage.getItem(key); } catch { return null; } };
@@ -118,6 +119,7 @@ byId('detect-screens').addEventListener('click',async () => {
 function projectionClosed() {
   ready = false; popup = null; projection = {...projection,shown:null,status:'closed'};
   clearInterval(popupCheck); popupCheck = null;
+  clearTimeout(fullscreenCheck); fullscreenCheck = null;
   byId('close-projection').disabled = true; byId('projection-fullscreen').disabled = true;
   byId('open-projection').textContent = '開啟投影';
   showProjectionStatus();
@@ -143,7 +145,25 @@ byId('open-projection').addEventListener('click',() => {
 });
 byId('projection-fullscreen').addEventListener('click',() => {
   if (!ready || !popup || popup.closed) return;
-  popup.enterProjectionFullscreen(selectedScreen());
+  clearTimeout(fullscreenCheck); fullscreenCheck = null;
+  hint('正在請求投影全螢幕，等待瀏覽器確認…');
+  try {
+    const screen = selectedScreen();
+    if (screen && !popup.document.fullscreenElement) {
+      popup.moveTo(screen.availLeft,screen.availTop);
+      popup.resizeTo(screen.availWidth,screen.availHeight);
+    }
+    // Delegate this click's fullscreen capability; never send ScreenDetailed
+    // (not structured-cloneable), await first, or grant persistent permission.
+    popup.postMessage({type:'enter-fullscreen',session},
+      {targetOrigin:location.origin,delegate:'fullscreen'});
+    fullscreenCheck = setTimeout(() => {
+      fullscreenCheck = null;
+      hint('未收到瀏覽器的全螢幕確認。可在控制台再點「投影全螢幕」，或在投影視窗按 L 備援。');
+    },3500);
+  } catch {
+    hint('瀏覽器未能送出全螢幕授權。請在投影視窗按 L；也可回到控制台再次點「投影全螢幕」。');
+  }
 });
 byId('close-projection').addEventListener('click',() => { popup?.close(); projectionClosed(); hint('投影已關閉。'); });
 window.addEventListener('message',event => {
@@ -156,9 +176,11 @@ window.addEventListener('message',event => {
   } else if (message.type === 'navigate') {
     const next = navigationIndex(index,slides.length,{key:message.key}); if (next !== null) goTo(next);
   } else if (message.type === 'fullscreen') {
+    clearTimeout(fullscreenCheck); fullscreenCheck = null;
     hint(message.active ? '投影已進入全螢幕；觀眾只會看到圖片。你可以繼續在這裡換頁。' : '投影已退出全螢幕，可再次按「投影全螢幕」。');
   } else if (message.type === 'fullscreen-error') {
-    hint('瀏覽器沒有允許跨視窗全螢幕。請在投影視窗按 L 或點「全螢幕」；選擇的螢幕位置仍會保留。');
+    clearTimeout(fullscreenCheck); fullscreenCheck = null;
+    hint('瀏覽器沒有允許跨視窗全螢幕。請在投影視窗按 L；選擇的螢幕位置仍會保留。');
   }
 });
 byId('previous').addEventListener('click',() => goTo(index-1));
