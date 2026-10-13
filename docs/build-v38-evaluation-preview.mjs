@@ -15,6 +15,7 @@ fs.mkdirSync(path.join(root,dest),{recursive:true});
 const source=JSON.parse(read(base+'/manifest.json'));
 assert.equal(source.count,56);
 const updates={
+  13:{title:'資訊放在中間，也容易被 LLM 忽略'},
   20:{transition:'既然有回答不代表流程正確完成，那我們要怎麼知道Agent真的完成了任務？'},
   21:{message:'先說清楚怎樣才算完成，讓任務有可對照的成功標準。',notes:'要知道Agent有沒有完成，第一步是先說清楚：這個任務做到什麼才算完成。以剛才的報告任務為例，我要求兩件事：必要操作是確實呼叫Builder；交付成果則是交出Builder產生的正式報告。只呼叫工具卻沒有交出報告，不算完成；自己寫一份摘要卻跳過Builder，也不符合要求。這張驗收卡是在定義要求，不是在宣告測試已通過，也不是再次驗證Builder底層程式是否正確。',points:['必要操作：確實呼叫Builder。','交付成果：交出Builder產生的正式報告。','先定義成功標準，才有依據判斷是否完成。'],transition:'有了明確標準，接著讓模型實際跑一次，再檢查有沒有做到。這就是Evaluation。'},
   22:{notes:'剛才用白話檢查兩件事：報告有交出嗎、Builder有呼叫嗎。現在才介紹它們的名稱。Outcome Evaluation，也就是結果評估，看最後的交付是否符合要求；Trajectory Evaluation，也就是執行軌跡評估，看實際發生的工具操作、順序與參數。這不是讀取模型內心的推理，而是檢查可觀察的訊息與操作。兩者是評估對象，可以一起看，不是兩種只能選一個的測試。'},
@@ -39,8 +40,8 @@ const newEntries=[{
 const entries=[];
 for(const old of source.entries){
   const e={...old,previousV37:old.n,sourceFile:base+'/'+old.file};
-  if(old.n===21){
-    e.sourceFile=added+'/slide-21-criteria-v6.png';
+  if(old.n===13||old.n===21){
+    e.sourceFile=added+(old.n===13?'/slide-13-title-v2.png':'/slide-21-criteria-v6.png');
     e.imageEdited=true;
     delete e.editBounds;
     delete e.outsideRepairRegionChangedPixels;
@@ -49,6 +50,7 @@ for(const old of source.entries){
   }
   const u=updates[old.n];
   if(u){
+    if(u.title)e.title=u.title;
     if(u.message)e['核心訊息']=u.message;
     if(u.notes)e['搭配講稿']=u.notes;
     if(u.points)e.points=u.points;
@@ -70,7 +72,7 @@ for(const [i,e] of entries.entries()){
 assert.deepEqual(entries.filter(e=>e.previousV37).map(e=>e.previousV37),Array.from({length:56},(_,i)=>i+1));
 assert.deepEqual(entries.filter(e=>!e.previousV37).map(e=>e.n),[22,23]);
 assert.equal(entries[20].previousV37,21);
-const notice='58頁整合版：保留v37的56頁相對順序，新增第22、23頁Evaluation介紹。本輪只重畫第21頁，其餘57張v38圖片不變。第20頁提出有回答不代表完成，第21頁定義完成標準，第22頁介紹Evaluation測試流程，第23頁示範如何從交付成果與操作紀錄找驗收依據。附近講稿與轉場同步更新；圖內不加頁碼。此版供投影站台使用，歷史PDF未更新。';
+const notice='58頁整合版：保留v37的56頁相對順序，新增第22、23頁Evaluation介紹。第21頁採任務驗收卡；本輪更新第13頁標題為「資訊放在中間，也容易被 LLM 忽略」，其他57張圖片與講稿內容不變。第20頁提出有回答不代表完成，第21頁定義完成標準，第22頁介紹Evaluation測試流程，第23頁示範如何從交付成果與操作紀錄找驗收依據。圖內不加頁碼。此版供投影站台使用，歷史PDF未更新。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
 write(story,'# 58頁分頁稿 v38｜Evaluation入門\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 58頁圖片與講稿 v38\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md)\n\n'+entries.map(e=>section(e)).join(''));
@@ -82,6 +84,6 @@ write(dest+'/gallery-images-only.html',head+'<main>'+entries.map(e=>`<figure id=
 write(dest+'/gallery.html',head+'<header><h1>58頁 Evaluation介紹</h1><p>'+notice+'</p></header><main>'+entries.map(e=>`<article id="slide-${String(e.n).padStart(2,'0')}"><h2>${e.n}｜${esc(e.title)}</h2>${img(e)}<p>${esc(e['核心訊息'])}</p><p>${esc(e['搭配講稿'])}</p><p>接下一頁：${esc(e['接下一頁'])}</p></article>`).join('')+'</main></body></html>');
 write(dest+'/manifest.json',JSON.stringify({version:'v38',count:58,status:'pending_user_review',numberingNotice:notice,insertedPages:[22,23],entries},null,2));
 const unchanged=entries.filter(e=>e.previousV37&&!e.imageEdited).length;
-assert.equal(unchanged,55);
-write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[21],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-evaluation-presenter-publish.md',pdfUpdated:false},null,2));
-console.log(JSON.stringify({count:58,revisedImagesThisRevision:[21],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));
+assert.equal(unchanged,54);
+write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[13],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-slide13-title.md',pdfUpdated:false},null,2));
+console.log(JSON.stringify({count:58,revisedImagesThisRevision:[13],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));

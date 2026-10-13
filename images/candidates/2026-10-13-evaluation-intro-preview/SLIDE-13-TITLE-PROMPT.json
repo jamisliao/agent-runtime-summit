@@ -1,0 +1,7 @@
+{
+  "method": "built-in imagegen",
+  "prompt": "Use case: text-localization.\nInput image is the edit target. Modify ONLY the top headline, replacing it verbatim with「資訊放在中間，也容易被 LLM 忽略」.\nPreserve natural dark navy handwritten pen lettering, slight pressure variation and the same very large readable title size. Keep the red hand-drawn underline beneath the second phrase, adjusting only its length to fit the new title. Preserve 16:9 canvas, cream graph-paper background, native clarity.\nEvery element below the headline must stay visually unchanged: Lost in the Middle label, chart axes, U-shaped curve, purple hatched area, trend arrow, three document icons, colors, locations, labels「任務表現」「趨勢示意」「開頭」「中間」「結尾」「關鍵資訊在 Context 的位置」and「Liu et al., 2023」.\nNo page numbers, no new objects, no extra text, no footer, no printed font, no brush calligraphy, no change to chart meaning. Title accurately uses Traditional Chinese「忽略」and capital LLM.",
+  "file": "slide-13-title-v2.png",
+  "replaces": "v38/slide-13.png",
+  "visualReview": "Title accurate; chart, axes, icons and source caption visually preserved."
+}

@@ -2,7 +2,7 @@
   "version": "v38",
   "count": 58,
   "status": "pending_user_review",
-  "numberingNotice": "58頁整合版：保留v37的56頁相對順序，新增第22、23頁Evaluation介紹。本輪只重畫第21頁，其餘57張v38圖片不變。第20頁提出有回答不代表完成，第21頁定義完成標準，第22頁介紹Evaluation測試流程，第23頁示範如何從交付成果與操作紀錄找驗收依據。附近講稿與轉場同步更新；圖內不加頁碼。此版供投影站台使用，歷史PDF未更新。",
+  "numberingNotice": "58頁整合版：保留v37的56頁相對順序，新增第22、23頁Evaluation介紹。第21頁採任務驗收卡；本輪更新第13頁標題為「資訊放在中間，也容易被 LLM 忽略」，其他57張圖片與講稿內容不變。第20頁提出有回答不代表完成，第21頁定義完成標準，第22頁介紹Evaluation測試流程，第23頁示範如何從交付成果與操作紀錄找驗收依據。圖內不加頁碼。此版供投影站台使用，歷史PDF未更新。",
   "insertedPages": [
     22,
     23
@@ -397,10 +397,10 @@
     },
     {
       "n": 13,
-      "title": "資訊放在中間，也可能比較難被用到",
+      "title": "資訊放在中間，也容易被 LLM 忽略",
       "chapter": "Context：給模型哪些資訊",
       "file": "slide-13.png",
-      "sha256": "c99ca71bcc34bb4ce3f8c35fe3a8309434a39b34378e2e1076c9f5501ba94333",
+      "sha256": "2e4765111c66451ca524265d1c9025a16fd7d7310c597f7cc5b99ea081992d44",
       "embeddedPageNumber": null,
       "pixelSize": {
         "width": 1672,
@@ -414,18 +414,12 @@
       "核心訊息": "研究在特定任務觀察到位置效應，不能把長視窗當成等量有效利用。",
       "搭配講稿": "Lost in the Middle 在多文件問答及鍵值檢索任務中，觀察到重要資訊位於開頭或結尾時表現往往較好，位於中間時可能下降。這張是研究趨勢示意，不是注意力權重圖，也不是我的實測曲線，更不是所有模型必然如此。它提醒我：容量與有效使用是不同問題。來源：https://arxiv.org/abs/2307.03172",
       "接下一頁": "這也呼應我的實務經驗：Context 還沒有滿，模型就可能無法正確走完流程。",
-      "sourceSha256": "0d224374260bfe9a2a725de9d266bc5cc429e61e9c873fefd89c266db5809d11",
-      "sourceProvenance": "images/candidates/2026-10-12-v36-slides-01-60-hd/slide-13.png",
-      "editBounds": [
-        1595,
-        14,
-        1656,
-        66
-      ],
-      "outsideRepairRegionChangedPixels": 0,
+      "sourceSha256": "c99ca71bcc34bb4ce3f8c35fe3a8309434a39b34378e2e1076c9f5501ba94333",
+      "sourceProvenance": "images/candidates/2026-10-13-v37-slides-01-56-no-numbers/slide-13.png",
       "status": "user_authorized_publication",
       "previousV37": 13,
-      "sourceFile": "images/candidates/2026-10-13-v37-slides-01-56-no-numbers/slide-13.png"
+      "sourceFile": "images/candidates/2026-10-13-evaluation-intro-preview/slide-13-title-v2.png",
+      "imageEdited": true
     },
     {
       "n": 14,

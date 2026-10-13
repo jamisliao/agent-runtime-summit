@@ -9,8 +9,8 @@ const folder='images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/';
 const read=p=>fs.readFileSync(new URL(p,root));
 const json=p=>JSON.parse(read(p));
 const m=json(folder+'manifest.json');
-const baseline='37b1b62e269bed2d2974b8684a1f27165d8a6d4a';
-test('v38 keeps57 published images byte-identical and replaces only21',()=>{
+const baseline='1f0fc346991350e305ff7527f77963dba1fe9830';
+test('v38 title revision keeps57 published images byte-identical and replaces only13',()=>{
   assert.equal(m.count,58);assert.equal(m.entries.length,58);
   for(const e of m.entries){
     const bytes=read(folder+e.file);
@@ -18,7 +18,7 @@ test('v38 keeps57 published images byte-identical and replaces only21',()=>{
     assert.equal(e.embeddedPageNumber,null);
     assert.deepEqual([bytes.readUInt32BE(16),bytes.readUInt32BE(20)],[e.pixelSize.width,e.pixelSize.height]);
     const old=execFileSync('git',['show',baseline+':'+folder+e.file],{cwd:root,maxBuffer:20*1024*1024});
-    assert.equal(bytes.equals(old),e.n!==21);
+    assert.equal(bytes.equals(old),e.n!==13);
   }
   assert.deepEqual(m.entries.filter(e=>e.previousV37).map(e=>e.previousV37),Array.from({length:56},(_,i)=>i+1));
   assert.equal(navigationIndex(0,58,{key:'End'}),57);
@@ -30,6 +30,7 @@ test('v38 active deck matches58 images, notes, points and transitions',()=>{
   const expected=attachKeyPoints(parseDeck(read(cfg.storyboard).toString(),m),m.entries);
   const actual=json('presenter/deck.json');
   assert.equal(actual.count,58);assert.equal(actual.slides.length,58);
+  assert.equal(m.entries[12].title,'資訊放在中間，也容易被 LLM 忽略');
   expected.forEach((s,i)=>assert.deepEqual(actual.slides[i],{...s,src:s.src+'?v='+m.entries[i].sha256}));
   assert(actual.slides[20].notes.includes('驗收卡'));
   assert(!actual.slides[20].notes.includes('三步'));
