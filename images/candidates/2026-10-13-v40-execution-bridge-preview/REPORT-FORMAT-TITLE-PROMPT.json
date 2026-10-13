@@ -1,0 +1,5 @@
+{
+  "tool": "built-in image_gen",
+  "useCase": "text-localization",
+  "prompt": "Use case: text-localization. Asset type: existing 16:9 handwritten presentation slide. Input image 1 is the edit target. Change ONLY the top title 「改完之後，報告符合要求了嗎？」 to exactly 「輸出報告，格式與內容也要符合要求」. Center the replacement within the same top title area, using the original dark navy natural handwritten Traditional Chinese letterforms, medium pen-pressure variation and existing title size. Keep the pale blue hand-drawn underline, repositioned to emphasize 「格式與內容」. Preserve ALL body content and layout exactly: the Outcome report stack at left, four cards labeled 「固定格式」「完整分類」「必要warning」「結論有根據」, their checkbox squares, arrows, document/bar-chart icons, card outlines, colored pencil hatching, text stroke weight and positions. Same cream faint-grid paper, framing and aspect ratio. Do not add text, page numbers, badges, watermarks, printed fonts or brush calligraphy. Do not redesign the accepted diagram. Highest available native resolution."
+}

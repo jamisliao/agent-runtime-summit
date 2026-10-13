@@ -650,7 +650,7 @@
       "chapter": "Evaluation：修改如何驗證？",
       "src": "/slides/slide-45.png?v=b7faa780f6150700280f0ad7f9430831f5909a37ae3acefd7ff7b199eed38a04",
       "notes": "剛才我們用Trace回看漏Builder那次的事件、當時可見資料與Skill版本，提出了候選修改。現在換成驗收視角：這版Skill改完後，在原本的要求和測試條件下，整次任務是否真的改善？不能只確認新加的句子存在，也不能只測那一句；還要看最後交付、必要操作，以及工具使用。接下來沿用報告案例，一項一項檢查。",
-      "transition": "先看使用者拿到的成果：改完之後，報告符合原本要求了嗎？",
+      "transition": "先回到漏Builder的問題：這版Skill修改後，必要的Builder有沒有真的被呼叫？",
       "message": "從Trace提出候選修改，轉入修改驗收；用整次任務的結果、路徑與工具參數判定是否符合既定成功標準。",
       "points": [
         "承接追查後的候選修改，這裡開始驗收新版Skill，不重新介紹Evaluation。",
@@ -660,23 +660,9 @@
     },
     {
       "n": 46,
-      "title": "改完之後，報告符合要求了嗎？",
-      "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-46.png?v=d264e42c17d280d502a1893e66167c58f99d6af75a998ffffde8b74ac222be9e",
-      "notes": "前面缺漏的報告，問題是格式不符與分類不完整。修改後先用同一套交付要求重查：固定格式、完整分類與必要warning有沒有交出來；結論是否有工具結果支持。不能因為新版看起來比較順，就說修改有效，也不能為了讓它通過而放寬標準。這是對正式交付的測試，不是請LLM重新判定Builder底層程式的正確性。",
-      "transition": "報告符合要求了，必要的Builder這次也真的執行了嗎？",
-      "message": "將Outcome Eval落到新版Skill的報告驗收，不重複一般定義，也不為讓修改通過而放寬既定標準。",
-      "points": [
-        "修改後仍用既定交付要求，檢查格式、分類與必要warning。",
-        "檢查報告結論是否有對應支持，不以文字流暢代替交付驗收。"
-      ],
-      "displayMessage": "將Outcome Eval落到新版Skill的報告驗收，不重複一般定義，也不為讓修改通過而放寬既定標準。"
-    },
-    {
-      "n": 47,
       "title": "漏掉的 Builder，這次有呼叫嗎？",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-47.png?v=6c252cf3d334dd37efcb3a130fb9c3fe05f4df6fe1ff6d13129e0fd41a638fdb",
+      "src": "/slides/slide-46.png?v=6c252cf3d334dd37efcb3a130fb9c3fe05f4df6fe1ff6d13129e0fd41a638fdb",
       "notes": "這次修改是為了改善漏Builder，就要回看修改後的實際工具紀錄，確認build_execution_summary確實出現，而且在這個情境要求的位置發生。圖是驗收方法示意，沒有宣稱某個候選版本已通過。不同情境可以有合法分支，我們檢查的是各自的必要操作、順序與停止條件，不是把每一個Run硬套成完全一樣的路徑。",
       "transition": "即使這次有呼叫Builder，傳給它的Ref和參數也可能不對。",
       "message": "用Trajectory Eval驗收已知漏Builder問題是否仍發生，不再重講看答案不夠的一般概念。",
@@ -687,18 +673,32 @@
       "displayMessage": "用Trajectory Eval驗收已知漏Builder問題是否仍發生，不再重講看答案不夠的一般概念。"
     },
     {
-      "n": 48,
+      "n": 47,
       "title": "呼叫了 Builder，傳入的資料也對嗎？",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-48.png?v=771542e6965129fe73f25ae2f1b2d6c3b40e3c63b2ca8e4b171129088b0c377e",
+      "src": "/slides/slide-47.png?v=771542e6965129fe73f25ae2f1b2d6c3b40e3c63b2ca8e4b171129088b0c377e",
       "notes": "上一頁驗收必要Builder是否被呼叫，這一頁再看這版Skill如何使用它。傳入的Ref要對應本次分析結果，必要參數不能漏，也不能把Tool error當成正常資料繼續處理。工具名稱正確只是第一步。修改後用實際的工具輸入紀錄核對，才能知道Agent有沒有正確把資料交給Builder。",
-      "transition": "這些驗收項目該怎麼判斷？前面介紹過程式與Judge，現在選用適合各項目的方法。",
+      "transition": "Builder有呼叫，傳入資料也核對完，接著看實際交付的報告，格式與內容是否符合原本要求。",
       "message": "延續同一摘要案例，必要工具被呼叫不代表參數與資料引用正確。",
       "points": [
         "叫對 Builder 還不夠，要檢查參數和資料引用。",
         "Ref 是否對應本次分析結果？必要參數與使用條件是否正確？"
       ],
       "displayMessage": "延續同一摘要案例，必要工具被呼叫不代表參數與資料引用正確。"
+    },
+    {
+      "n": 48,
+      "title": "輸出報告，格式與內容也要符合要求",
+      "chapter": "Evaluation：修改如何驗證？",
+      "src": "/slides/slide-48.png?v=5505aaa8a45a2e5cbf6ce81e8db871b784fb5dc4c56d825849202464b0fb21a2",
+      "notes": "前面核對Builder有沒有呼叫，以及傳入的Ref和參數是否正確。接著驗收使用者實際拿到的報告：固定格式、完整分類與必要warning有沒有交出來；結論是否有工具結果支持。呼叫與傳入資料符合要求，還要把最後交付對回這次工具回傳的報告或引用，並用既定交付標準核對。不能因為新版看起來比較順，就說修改有效，也不能為了讓它通過而放寬標準。這是對正式交付的測試，不是請LLM重新判定Builder底層程式的正確性。",
+      "transition": "Builder呼叫、傳入資料與報告交付這些驗收項目，該用哪種方法判斷？接著對應程式檢查與Judge。",
+      "message": "在核對Builder呼叫與傳入資料後，驗收實際交付的報告是否符合既定格式與內容要求。",
+      "points": [
+        "修改後仍用既定交付要求，檢查格式、分類與必要warning。",
+        "檢查報告結論是否有對應支持，不以文字流暢代替交付驗收。"
+      ],
+      "displayMessage": "在核對Builder呼叫與傳入資料後，驗收實際交付的報告是否符合既定格式與內容要求。"
     },
     {
       "n": 49,

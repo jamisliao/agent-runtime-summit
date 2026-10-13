@@ -2,7 +2,7 @@
   "version": "v40",
   "count": 59,
   "status": "pending_user_review",
-  "numberingNotice": "v40共59頁：在原37與38頁之間新增「可以執行，不代表能正確完成任務」，補上執行條件與任務完成的差別，再接出錯後回看執行。原42頁（現43頁）移除底部「找出可疑環節，不把推測當成原因」，其餘57張v39原圖逐位元保留，不採用原37頁的補字比較稿。原38～58頁順延為39～59；37與新39頁講稿轉場同步，其他原頁內容保留。圖片無內嵌頁碼；歷史PDF未更新。",
+  "numberingNotice": "v40共59頁：原37與38頁之間新增執行與完成的轉場；原42頁（現43頁）移除底部說明。報告驗收頁由原58頁版45頁／上一版59頁版46頁，移到Builder呼叫與資料檢查後，成為現48頁，標題改為「輸出報告，格式與內容也要符合要求」。現46～48頁依序為Builder呼叫、傳入資料、報告驗收，45與47～48轉場同步。其餘56張v39原圖逐位元保留，本輪僅重畫報告頁標題；圖片無內嵌頁碼，歷史PDF未更新。",
   "insertedPages": [
     38
   ],
@@ -1515,7 +1515,7 @@
       ],
       "核心訊息": "從Trace提出候選修改，轉入修改驗收；用整次任務的結果、路徑與工具參數判定是否符合既定成功標準。",
       "搭配講稿": "剛才我們用Trace回看漏Builder那次的事件、當時可見資料與Skill版本，提出了候選修改。現在換成驗收視角：這版Skill改完後，在原本的要求和測試條件下，整次任務是否真的改善？不能只確認新加的句子存在，也不能只測那一句；還要看最後交付、必要操作，以及工具使用。接下來沿用報告案例，一項一項檢查。",
-      "接下一頁": "先看使用者拿到的成果：改完之後，報告符合原本要求了嗎？",
+      "接下一頁": "先回到漏Builder的問題：這版Skill修改後，必要的Builder有沒有真的被呼叫？",
       "sourceSha256": "05369e5b4d1fb53445513842858c601793fe9c549deff6e47823cb646d02040c",
       "sourceProvenance": "output/review/2026-10-12-v36-image-check/images/original-41.png",
       "editBounds": [
@@ -1534,44 +1534,9 @@
     },
     {
       "n": 46,
-      "title": "改完之後，報告符合要求了嗎？",
-      "chapter": "Evaluation：修改如何驗證？",
-      "file": "slide-46.png",
-      "sha256": "d264e42c17d280d502a1893e66167c58f99d6af75a998ffffde8b74ac222be9e",
-      "embeddedPageNumber": null,
-      "pixelSize": {
-        "width": 1672,
-        "height": 941
-      },
-      "previousPlayback": 42,
-      "points": [
-        "修改後仍用既定交付要求，檢查格式、分類與必要warning。",
-        "檢查報告結論是否有對應支持，不以文字流暢代替交付驗收。"
-      ],
-      "核心訊息": "將Outcome Eval落到新版Skill的報告驗收，不重複一般定義，也不為讓修改通過而放寬既定標準。",
-      "搭配講稿": "前面缺漏的報告，問題是格式不符與分類不完整。修改後先用同一套交付要求重查：固定格式、完整分類與必要warning有沒有交出來；結論是否有工具結果支持。不能因為新版看起來比較順，就說修改有效，也不能為了讓它通過而放寬標準。這是對正式交付的測試，不是請LLM重新判定Builder底層程式的正確性。",
-      "接下一頁": "報告符合要求了，必要的Builder這次也真的執行了嗎？",
-      "sourceSha256": "9dca66a1f31a876b1ce474d302ddf3be122cc85d43532dc53dfadc26eeaa10ca",
-      "sourceProvenance": "output/review/2026-10-12-v36-image-check/images/original-42.png",
-      "editBounds": [
-        1597,
-        10,
-        1662,
-        62
-      ],
-      "outsideRepairRegionChangedPixels": 0,
-      "status": "user_authorized_publication",
-      "previousV37": 43,
-      "sourceFile": "images/candidates/2026-10-13-v39-slides-01-58-evaluation-titles/slide-45.png",
-      "previousV38": 45,
-      "revisedInV39": false,
-      "previousV39": 45
-    },
-    {
-      "n": 47,
       "title": "漏掉的 Builder，這次有呼叫嗎？",
       "chapter": "Evaluation：修改如何驗證？",
-      "file": "slide-47.png",
+      "file": "slide-46.png",
       "sha256": "6c252cf3d334dd37efcb3a130fb9c3fe05f4df6fe1ff6d13129e0fd41a638fdb",
       "embeddedPageNumber": null,
       "pixelSize": {
@@ -1603,10 +1568,10 @@
       "previousV39": 46
     },
     {
-      "n": 48,
+      "n": 47,
       "title": "呼叫了 Builder，傳入的資料也對嗎？",
       "chapter": "Evaluation：修改如何驗證？",
-      "file": "slide-48.png",
+      "file": "slide-47.png",
       "sha256": "771542e6965129fe73f25ae2f1b2d6c3b40e3c63b2ca8e4b171129088b0c377e",
       "embeddedPageNumber": null,
       "pixelSize": {
@@ -1620,7 +1585,7 @@
       ],
       "核心訊息": "延續同一摘要案例，必要工具被呼叫不代表參數與資料引用正確。",
       "搭配講稿": "上一頁驗收必要Builder是否被呼叫，這一頁再看這版Skill如何使用它。傳入的Ref要對應本次分析結果，必要參數不能漏，也不能把Tool error當成正常資料繼續處理。工具名稱正確只是第一步。修改後用實際的工具輸入紀錄核對，才能知道Agent有沒有正確把資料交給Builder。",
-      "接下一頁": "這些驗收項目該怎麼判斷？前面介紹過程式與Judge，現在選用適合各項目的方法。",
+      "接下一頁": "Builder有呼叫，傳入資料也核對完，接著看實際交付的報告，格式與內容是否符合原本要求。",
       "sourceSha256": "f323d54607a008b381b8a96e1dcf7ab76bdc5bc9160a4af7c527a34f24b24c25",
       "sourceProvenance": "output/review/2026-10-12-v36-image-check/images/original-44.png",
       "editBounds": [
@@ -1636,6 +1601,35 @@
       "previousV38": 47,
       "revisedInV39": false,
       "previousV39": 47
+    },
+    {
+      "n": 48,
+      "title": "輸出報告，格式與內容也要符合要求",
+      "chapter": "Evaluation：修改如何驗證？",
+      "file": "slide-48.png",
+      "sha256": "5505aaa8a45a2e5cbf6ce81e8db871b784fb5dc4c56d825849202464b0fb21a2",
+      "embeddedPageNumber": null,
+      "pixelSize": {
+        "width": 1672,
+        "height": 941
+      },
+      "previousPlayback": 42,
+      "points": [
+        "修改後仍用既定交付要求，檢查格式、分類與必要warning。",
+        "檢查報告結論是否有對應支持，不以文字流暢代替交付驗收。"
+      ],
+      "核心訊息": "在核對Builder呼叫與傳入資料後，驗收實際交付的報告是否符合既定格式與內容要求。",
+      "搭配講稿": "前面核對Builder有沒有呼叫，以及傳入的Ref和參數是否正確。接著驗收使用者實際拿到的報告：固定格式、完整分類與必要warning有沒有交出來；結論是否有工具結果支持。呼叫與傳入資料符合要求，還要把最後交付對回這次工具回傳的報告或引用，並用既定交付標準核對。不能因為新版看起來比較順，就說修改有效，也不能為了讓它通過而放寬標準。這是對正式交付的測試，不是請LLM重新判定Builder底層程式的正確性。",
+      "接下一頁": "Builder呼叫、傳入資料與報告交付這些驗收項目，該用哪種方法判斷？接著對應程式檢查與Judge。",
+      "sourceSha256": "d264e42c17d280d502a1893e66167c58f99d6af75a998ffffde8b74ac222be9e",
+      "sourceProvenance": "images/candidates/2026-10-13-v39-slides-01-58-evaluation-titles/slide-45.png",
+      "status": "user_authorized_publication",
+      "previousV37": 43,
+      "sourceFile": "images/candidates/2026-10-13-v40-execution-bridge-preview/report-format-title.png",
+      "previousV38": 45,
+      "revisedInV39": false,
+      "previousV39": 45,
+      "imageEdited": true
     },
     {
       "n": 49,
