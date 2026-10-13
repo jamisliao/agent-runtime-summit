@@ -2,7 +2,7 @@
   "version": "v40",
   "count": 59,
   "status": "pending_user_review",
-  "numberingNotice": "v40共59頁：在原37與38頁之間新增「可以執行，不代表能正確完成任務」，補上執行條件與任務完成的差別，再接出錯後回看執行。原58張圖片全部逐位元保留，不採用原37頁的補字比較稿。原38～58頁順延為39～59；37與新39頁講稿轉場同步，其他原頁內容保留。圖片無內嵌頁碼；歷史PDF未更新。",
+  "numberingNotice": "v40共59頁：在原37與38頁之間新增「可以執行，不代表能正確完成任務」，補上執行條件與任務完成的差別，再接出錯後回看執行。原42頁（現43頁）移除底部「找出可疑環節，不把推測當成原因」，其餘57張v39原圖逐位元保留，不採用原37頁的補字比較稿。原38～58頁順延為39～59；37與新39頁講稿轉場同步，其他原頁內容保留。圖片無內嵌頁碼；歷史PDF未更新。",
   "insertedPages": [
     38
   ],
@@ -1438,7 +1438,7 @@
       "title": "把執行紀錄交給 AI，協助找線索",
       "chapter": "Trace：從發現錯誤，到找到修改線索",
       "file": "slide-43.png",
-      "sha256": "a01219fac3ae2ec7b70983d5a2d5d065fba15116980ae037de3237d821212c8f",
+      "sha256": "d7ab7735a5e08c432dbc69fecb77cb7b93dd81033910be7e25e036b551e58282",
       "embeddedPageNumber": null,
       "pixelSize": {
         "width": 1672,
@@ -1452,21 +1452,15 @@
       "核心訊息": "讓AI依執行紀錄提出待確認疑點，而不是替缺漏編造原因。",
       "搭配講稿": "我可以把對得起來的執行紀錄交給AI，讓它協助找出可疑環節、指出依據，以及還需要查什麼。這不代表AI能讀出模型的內部思考，也不能把它事後說得通的解釋當成已確認原因。紀錄不足就要承認尚未確認，再補查。",
       "接下一頁": "找到值得修改的方向之後，還要實際驗證修改是否改善。",
-      "sourceSha256": "40dd434eef21d37f352cc0711d587668648a3e1875e724efe7c817ab44504ee2",
-      "sourceProvenance": "output/review/2026-10-12-v36-image-check/images/original-39.png",
-      "editBounds": [
-        1593,
-        14,
-        1657,
-        66
-      ],
-      "outsideRepairRegionChangedPixels": 0,
+      "sourceSha256": "a01219fac3ae2ec7b70983d5a2d5d065fba15116980ae037de3237d821212c8f",
+      "sourceProvenance": "images/candidates/2026-10-13-v39-slides-01-58-evaluation-titles/slide-42.png",
       "status": "user_authorized_publication",
       "previousV37": 40,
-      "sourceFile": "images/candidates/2026-10-13-v39-slides-01-58-evaluation-titles/slide-42.png",
+      "sourceFile": "images/candidates/2026-10-13-v40-execution-bridge-preview/slide-43-no-footer.png",
       "previousV38": 42,
       "revisedInV39": false,
-      "previousV39": 42
+      "previousV39": 42,
+      "imageEdited": true
     },
     {
       "n": 44,

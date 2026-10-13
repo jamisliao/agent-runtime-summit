@@ -3,8 +3,11 @@
   "insertedPages": [
     38
   ],
-  "preservedV39Images": 58,
-  "allOriginalHashesMatch": true,
+  "revisedOriginalImages": [
+    43
+  ],
+  "preservedV39Images": 57,
+  "allUnmodifiedOriginalHashesMatch": true,
   "originalRelativeOrderPreserved": true,
   "revisedNarration": [
     37,
@@ -12,5 +15,5 @@
     39
   ],
   "pdfUpdated": false,
-  "verification": "docs/verification/2026-10-13-v40-execution-bridge.md"
+  "verification": "docs/verification/2026-10-13-v40-slide43-footer.md"
 }

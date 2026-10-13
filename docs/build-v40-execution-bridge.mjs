@@ -36,6 +36,14 @@ for(const old of source.entries){
   if(old.n===38){
     e['搭配講稿']='上一頁區分了可以執行與正確完成。現在若發現結果不符合要求，除了處理當下情況，也要能回看當時如何接收任務、模型回了什麼、工具怎麼執行，最後交付了什麼。圖中由結果往回看的箭頭，是對照當時留下的執行紀錄，不是重新跑一次就當成重現，也不是已經知道哪一步出了錯。接著回到前面漏Builder的案例，示範如何用紀錄找出需要追查的環節。';
   }
+  if(old.n===42){
+    e.sourceFile=added+'/slide-43-no-footer.png';
+    e.imageEdited=true;
+    e.sourceProvenance=base+'/'+old.file;
+    e.sourceSha256=old.sha256;
+    delete e.editBounds;
+    delete e.outsideRepairRegionChangedPixels;
+  }
   entries.push(e);
   if(old.n===37)entries.push({...bridge});
 }
@@ -46,14 +54,14 @@ for(const [i,e] of entries.entries()){
   e.n=i+1;e.file=`slide-${String(e.n).padStart(2,'0')}.png`;
   e.sha256=hash(bytes);
   e.pixelSize={width:bytes.readUInt32BE(16),height:bytes.readUInt32BE(20)};
-  if(e.previousV39)assert.equal(e.sha256,source.entries[e.previousV39-1].sha256);
+  if(e.previousV39&&e.previousV39!==42)assert.equal(e.sha256,source.entries[e.previousV39-1].sha256);
   fs.writeFileSync(path.join(root,dest,e.file),bytes);
   assert.equal(hash(read(dest+'/'+e.file)),e.sha256);
 }
 assert.equal(entries[36].previousV39,37);
 assert.equal(entries[37].title,bridge.title);
 assert.equal(entries[38].previousV39,38);
-const notice='v40共59頁：在原37與38頁之間新增「可以執行，不代表能正確完成任務」，補上執行條件與任務完成的差別，再接出錯後回看執行。原58張圖片全部逐位元保留，不採用原37頁的補字比較稿。原38～58頁順延為39～59；37與新39頁講稿轉場同步，其他原頁內容保留。圖片無內嵌頁碼；歷史PDF未更新。';
+const notice='v40共59頁：在原37與38頁之間新增「可以執行，不代表能正確完成任務」，補上執行條件與任務完成的差別，再接出錯後回看執行。原42頁（現43頁）移除底部「找出可疑環節，不把推測當成原因」，其餘57張v39原圖逐位元保留，不採用原37頁的補字比較稿。原38～58頁順延為39～59；37與新39頁講稿轉場同步，其他原頁內容保留。圖片無內嵌頁碼；歷史PDF未更新。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
 write(story,'# 59頁分頁稿 v40｜執行與完成的轉場\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 59頁圖片與講稿 v40\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md) · [產圖提示](PROMPTS.json)\n\n'+entries.map(e=>section(e)).join(''));
@@ -64,6 +72,6 @@ const img=e=>`<img loading="lazy" src="${e.file}?v=${e.sha256.slice(0,12)}" widt
 write(dest+'/gallery-images-only.html',head+'<main>'+entries.map(e=>`<figure id="slide-${String(e.n).padStart(2,'0')}">${img(e)}</figure>`).join('')+'</main></body></html>');
 write(dest+'/gallery.html',head+'<header><h1>59頁執行轉場</h1><p>'+notice+'</p></header><main>'+entries.map(e=>`<article id="slide-${String(e.n).padStart(2,'0')}"><h2>${e.n}｜${esc(e.title)}</h2>${img(e)}<p>${esc(e['核心訊息'])}</p><p>${esc(e['搭配講稿'])}</p><p>接下一頁：${esc(e['接下一頁'])}</p></article>`).join('')+'</main></body></html>');
 write(dest+'/manifest.json',JSON.stringify({version:'v40',count:59,status:'pending_user_review',numberingNotice:notice,insertedPages:[38],entries},null,2));
-write(dest+'/PROMPTS.json',read(added+'/PROMPT.json').toString());
-write(dest+'/verification.json',JSON.stringify({count:59,insertedPages:[38],preservedV39Images:58,allOriginalHashesMatch:true,originalRelativeOrderPreserved:true,revisedNarration:[37,38,39],pdfUpdated:false,verification:'docs/verification/2026-10-13-v40-execution-bridge.md'},null,2));
-console.log(JSON.stringify({count:59,dest,story,preservedV39Images:58,insertedPage:38}));
+write(dest+'/PROMPTS.json',JSON.stringify({tool:'built-in image_gen',bridge:JSON.parse(read(added+'/PROMPT.json')),slide43:JSON.parse(read(added+'/SLIDE-43-REMOVE-FOOTER-PROMPT.json'))},null,2));
+write(dest+'/verification.json',JSON.stringify({count:59,insertedPages:[38],revisedOriginalImages:[43],preservedV39Images:57,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,revisedNarration:[37,38,39],pdfUpdated:false,verification:'docs/verification/2026-10-13-v40-slide43-footer.md'},null,2));
+console.log(JSON.stringify({count:59,dest,story,preservedV39Images:57,insertedPage:38,revisedImage:43}));

@@ -1,0 +1,5 @@
+{
+  "tool": "built-in image_gen",
+  "useCase": "precise-object-edit",
+  "prompt": "Use case: precise-object-edit. Asset type: existing 16:9 handwritten presentation slide. Image 1 is the edit target. Remove ONLY the bottom sentence 「找出可疑環節，不把推測當成原因」. Seamlessly restore the same warm cream faint-grid paper background in the small affected bottom region, and leave it blank. Preserve the title 「把執行紀錄交給 AI，協助找線索」 and its coral underline, the three icons, connecting arrows, body labels 「執行紀錄」「AI 協助分析」「待確認的疑點」, positions, scale, colors, pen stroke weight, lettering, pencil hatching and original canvas framing/aspect ratio exactly. Do not reflow or redesign any content, add text, or introduce page numbers. Highest available native resolution."
+}
