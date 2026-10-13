@@ -2,7 +2,7 @@
   "version": "v38",
   "count": 58,
   "status": "pending_user_review",
-  "numberingNotice": "58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部為草寫英文署名JamisLiao。本輪補強第7至8頁講稿與轉場：先問下一步由誰使用資料，再區分完整結果保存與模型本輪輸入；58張圖片皆不變。第21頁定義完成標準，第22頁介紹Evaluation，第23頁找實際交付與工具紀錄的依據，第24頁介紹評估對象，第25頁介紹評估方法，第26頁做程式檢查，再接第27頁固定條件重跑。文件與站台同步；歷史PDF未更新。",
+  "numberingNotice": "58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部為草寫英文署名JamisLiao。第7至8頁已補上資料用途的轉場；本輪更新第16頁標題及圖片，從分析結果帶到正式報告需求與自由撰寫風險，再接第17頁Builder與第18頁Skill。其他57張圖片不變。Evaluation驗收依據及程式檢查修正保留。文件與站台同步；歷史PDF未更新。",
   "insertedPages": [
     22,
     23
@@ -484,10 +484,10 @@
     },
     {
       "n": 16,
-      "title": "分析完 Log，任務就完成了嗎？",
+      "title": "分析完 Log，還要交付正式報告",
       "chapter": "Skill：流程真的會照做嗎？",
       "file": "slide-16.png",
-      "sha256": "7b6ec354cc0c56f861d3ec89adb85a549134d28e0b240e7fd32c81ce31cee9ad",
+      "sha256": "eee31bfb51873a0588b0c1ee2ce7dac613d778df66c8733e1edc5e36be6402ee",
       "embeddedPageNumber": null,
       "pixelSize": {
         "width": 1672,
@@ -495,24 +495,19 @@
       },
       "previousPlayback": 15,
       "points": [
-        "回到Log分析場景，先建立後續的報告交付需求。",
-        "分析結果與正式報告是不同的交付；這個任務不只要一段分析文字。"
+        "Log分析完成後，這個任務仍要求交付正式報告。",
+        "讓LLM自由撰寫，可能產生格式不一致、分類或必要欄位遺漏。",
+        "報告交付有規格，需要明確安排產生報告的步驟。"
       ],
-      "核心訊息": "以Log分析場景建立後續流程章的交付目標：取得分析結果還不夠，任務另要求交付正式報告。這裡先建立需求，不提前宣告模型漏步驟。",
-      "搭配講稿": "前面用Log分析說明模型需要哪些資訊。接下來繼續用這個容易理解的場景，帶入另一個問題：分析完Log，就算任務完成了嗎？在我們接下來討論的報告交付要求中，使用者不只要一段分析文字，還要一份符合規格的正式報告。這是將主稿的分析差異與Summary Builder案例放進Log分析場景的教學串接，不是說前面的API、模型測試與這次報告全都是同一個實際Run。先把要交付的成果說清楚，才知道後面哪些操作不能省略。",
-      "接下一頁": "正式報告有固定格式與必要內容，因此我準備了專門的Builder來產生它。",
-      "sourceSha256": "ee8595142d3fb3963d82f41fd9af4fff0b9d162ed5aabd32afde18c2f8b604c0",
-      "sourceProvenance": "output/review/2026-10-12-v36-image-check/images/original-15.png",
-      "editBounds": [
-        1587,
-        15,
-        1647,
-        64
-      ],
-      "outsideRepairRegionChangedPixels": 0,
+      "核心訊息": "交代分析結果還需整理成正式報告，指出讓LLM自由撰寫可能造成格式不一致與分類遺漏，帶出下一頁的Builder。",
+      "搭配講稿": "前面處理的是Log要怎麼交給模型，以及Context帶來的負擔。現在模型取得了分析結果，這個任務還需要交付一份正式報告。最直覺的做法，是讓LLM把分析結果整理成報告。但讓它自由撰寫，格式可能每次不一樣，必要分類或欄位也可能被漏掉。文字看起來流暢，不代表這份報告符合交付規格。我希望正式報告有固定格式，也能保留必要內容，所以需要把報告產生這一步安排清楚。這裡沿用Log場景來說明主稿的分析與報告交付案例。",
+      "接下一頁": "在我的案例裡，我準備了專門的Builder，把分析結果整理成固定格式、包含必要內容的正式報告。",
+      "sourceSha256": "7b6ec354cc0c56f861d3ec89adb85a549134d28e0b240e7fd32c81ce31cee9ad",
+      "sourceProvenance": "images/candidates/2026-10-13-v37-slides-01-56-no-numbers/slide-16.png",
       "status": "user_authorized_publication",
       "previousV37": 16,
-      "sourceFile": "images/candidates/2026-10-13-v37-slides-01-56-no-numbers/slide-16.png"
+      "sourceFile": "images/candidates/2026-10-13-evaluation-intro-preview/slide-16-formal-report-pen.png",
+      "imageEdited": true
     },
     {
       "n": 17,
@@ -530,8 +525,8 @@
         "這個任務要交付固定格式、完整分類、warning、統計與明細。",
         "分析結果交給報告Builder，指定格式與必要內容由程式收斂。"
       ],
-      "核心訊息": "承接第15頁的正式報告交付需求，說明為什麼需要Builder，而不是任意一段LLM摘要。這是本案例的交付規格，不是所有Agent任務都必須用Builder。",
-      "搭配講稿": "前面說這個任務不只要分析結果，還要正式報告。正式報告有固定格式，必須帶上完整分類、必要warning、統計與明細，所以我準備了專門的Builder。模型負責分析、判斷下一步並呼叫工具；Builder則把交付格式和必要內容收斂成報告。不是任何一段流暢摘要，都能替代這份指定交付。這是這個任務的需求，並不是所有Agent都只能使用這種流程。",
+      "核心訊息": "承接第16頁的正式報告需求與自由撰寫風險，說明如何由Builder收斂固定格式、完整分類及必要內容。",
+      "搭配講稿": "為了處理剛才的報告格式與內容要求，我準備了專門的Builder。正式報告必須有固定格式，帶上完整分類、必要warning、統計與明細。模型負責分析、判斷下一步並呼叫工具；Builder負責把分析結果整理成指定格式與必要內容。這是我這個任務的交付設計，並不是所有Agent任務都必須使用Builder。接下來，工具準備好了，我也要讓模型知道分析之後應該呼叫它。",
       "接下一頁": "工具已經準備好了，我也把分析後要呼叫Builder的要求，寫進Skill。",
       "sourceSha256": "ea16f3b3de9c489b881c5325011d10d751bb02a95d9d993a2968c71aeb599485",
       "sourceProvenance": "output/review/2026-10-12-v36-image-check/images/original-16.png",

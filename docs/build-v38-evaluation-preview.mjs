@@ -19,6 +19,8 @@ const updates={
   7:{message:'從每輪累積工具結果，帶出下一步究竟需要哪些資訊，以及完整資料與模型Context應分開處理。',notes:'第一版的做法很直覺：工具回什麼，我就整包append進Context。一輪看起來沒問題，幾輪之後，舊結果還在，新結果又加進來，Context就越堆越多。但這時我回頭問：下一步，模型真的需要重新讀完這些資料嗎？有時它只需要知道工具成功了，再決定把資料交給哪個工具；完整內容是下一個工具要用的，不一定是模型要讀的。即使需要模型分析，也應先判斷這次任務需要哪些內容。所以接下來要分開兩件事：完整資料怎麼保留，以及這一輪模型需要看到什麼。',points:['每輪整包append，使舊結果、新結果持續累積。','先問下一步由誰使用資料：模型分析，或另一個工具處理？','工具需要保留完整資料，不等於這一輪模型需要讀完整包。'],transition:'完整資料仍要保留，但不用全放進模型的Context。下一頁看我怎麼把資料保存與本輪輸入分開。'},
   8:{notes:'既然下一個工具可能還要用完整資料，我不能只為了縮小Context，就把原始結果丟掉。我把工具回傳的完整結果留在Runtime；再依模型這一輪要做什麼，準備它需要看到的內容。資料不是一開始就在資料庫裡，是工具回傳後，由Runtime刻意保存下來的。如果下一步只是交給另一個工具處理，模型可以只拿狀態與取件參照；如果要模型分析，就給它相關內容。這樣完整資料仍可取用，Context也不必跟著所有原始結果一路累積。'},
   13:{title:'資訊放在中間，也容易被 LLM 忽略'},
+  16:{title:'分析完 Log，還要交付正式報告',message:'交代分析結果還需整理成正式報告，指出讓LLM自由撰寫可能造成格式不一致與分類遺漏，帶出下一頁的Builder。',notes:'前面處理的是Log要怎麼交給模型，以及Context帶來的負擔。現在模型取得了分析結果，這個任務還需要交付一份正式報告。最直覺的做法，是讓LLM把分析結果整理成報告。但讓它自由撰寫，格式可能每次不一樣，必要分類或欄位也可能被漏掉。文字看起來流暢，不代表這份報告符合交付規格。我希望正式報告有固定格式，也能保留必要內容，所以需要把報告產生這一步安排清楚。這裡沿用Log場景來說明主稿的分析與報告交付案例。',points:['Log分析完成後，這個任務仍要求交付正式報告。','讓LLM自由撰寫，可能產生格式不一致、分類或必要欄位遺漏。','報告交付有規格，需要明確安排產生報告的步驟。'],transition:'在我的案例裡，我準備了專門的Builder，把分析結果整理成固定格式、包含必要內容的正式報告。'},
+  17:{message:'承接第16頁的正式報告需求與自由撰寫風險，說明如何由Builder收斂固定格式、完整分類及必要內容。',notes:'為了處理剛才的報告格式與內容要求，我準備了專門的Builder。正式報告必須有固定格式，帶上完整分類、必要warning、統計與明細。模型負責分析、判斷下一步並呼叫工具；Builder負責把分析結果整理成指定格式與必要內容。這是我這個任務的交付設計，並不是所有Agent任務都必須使用Builder。接下來，工具準備好了，我也要讓模型知道分析之後應該呼叫它。'},
   20:{transition:'既然有回答不代表流程正確完成，那我們要怎麼知道Agent真的完成了任務？'},
   21:{message:'先說清楚怎樣才算完成，讓任務有可對照的成功標準。',notes:'要知道Agent有沒有完成，第一步是先說清楚：這個任務做到什麼才算完成。以剛才的報告任務為例，我要求兩件事：必要操作是確實呼叫Builder；交付成果則是交出Builder產生的正式報告。只呼叫工具卻沒有交出報告，不算完成；自己寫一份摘要卻跳過Builder，也不符合要求。這張驗收卡是在定義要求，不是在宣告測試已通過，也不是再次驗證Builder底層程式是否正確。',points:['必要操作：確實呼叫Builder。','交付成果：交出Builder產生的正式報告。','先定義成功標準，才有依據判斷是否完成。'],transition:'有了明確標準，接著讓模型實際跑一次，再檢查有沒有做到。這就是Evaluation。'},
   22:{notes:'上一頁我們找了兩類依據：交付成果，以及工具呼叫與回傳紀錄。現在介紹要評估的對象。Outcome Evaluation，也就是結果評估，看最後的交付是否符合任務要求；若要求交付Builder產生的報告，確認來源時也需要對照工具回傳結果。Trajectory Evaluation，也就是執行軌跡評估，看實際發生的工具操作、順序與參數，例如Builder有沒有真的被呼叫。這些名稱指的是評估什麼，不是限定只能使用哪一份紀錄；同一份工具紀錄也可以支援結果來源的檢查。兩者可以一起評估。'},
@@ -43,8 +45,8 @@ const newEntries=[{
 const entries=[];
 for(const old of source.entries){
   const e={...old,previousV37:old.n,sourceFile:base+'/'+old.file};
-  if(old.n===1||old.n===13||old.n===21||old.n===24){
-    e.sourceFile=old.n===1?added+'/cover-JamisLiao-small.png':old.n===24?revised+'/slide-26-v2.png':added+(old.n===13?'/slide-13-title-v2.png':'/slide-21-criteria-v6.png');
+  if(old.n===1||old.n===13||old.n===16||old.n===21||old.n===24){
+    e.sourceFile=old.n===16?added+'/slide-16-formal-report-pen.png':old.n===1?added+'/cover-JamisLiao-small.png':old.n===24?revised+'/slide-26-v2.png':added+(old.n===13?'/slide-13-title-v2.png':'/slide-21-criteria-v6.png');
     e.imageEdited=true;
     delete e.editBounds;
     delete e.outsideRepairRegionChangedPixels;
@@ -75,7 +77,7 @@ for(const [i,e] of entries.entries()){
 assert.deepEqual(entries.filter(e=>e.previousV37).map(e=>e.previousV37),Array.from({length:56},(_,i)=>i+1));
 assert.deepEqual(entries.filter(e=>!e.previousV37).map(e=>e.n),[22,23]);
 assert.equal(entries[20].previousV37,21);
-const notice='58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部為草寫英文署名JamisLiao。本輪補強第7至8頁講稿與轉場：先問下一步由誰使用資料，再區分完整結果保存與模型本輪輸入；58張圖片皆不變。第21頁定義完成標準，第22頁介紹Evaluation，第23頁找實際交付與工具紀錄的依據，第24頁介紹評估對象，第25頁介紹評估方法，第26頁做程式檢查，再接第27頁固定條件重跑。文件與站台同步；歷史PDF未更新。';
+const notice='58頁整合版：保留原相對順序及無頁碼圖片，維持58頁。封面底部為草寫英文署名JamisLiao。第7至8頁已補上資料用途的轉場；本輪更新第16頁標題及圖片，從分析結果帶到正式報告需求與自由撰寫風險，再接第17頁Builder與第18頁Skill。其他57張圖片不變。Evaluation驗收依據及程式檢查修正保留。文件與站台同步；歷史PDF未更新。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
 write(story,'# 58頁分頁稿 v38｜Evaluation入門\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 58頁圖片與講稿 v38\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md)\n\n'+entries.map(e=>section(e)).join(''));
@@ -87,6 +89,6 @@ write(dest+'/gallery-images-only.html',head+'<main>'+entries.map(e=>`<figure id=
 write(dest+'/gallery.html',head+'<header><h1>58頁 Evaluation介紹</h1><p>'+notice+'</p></header><main>'+entries.map(e=>`<article id="slide-${String(e.n).padStart(2,'0')}"><h2>${e.n}｜${esc(e.title)}</h2>${img(e)}<p>${esc(e['核心訊息'])}</p><p>${esc(e['搭配講稿'])}</p><p>接下一頁：${esc(e['接下一頁'])}</p></article>`).join('')+'</main></body></html>');
 write(dest+'/manifest.json',JSON.stringify({version:'v38',count:58,status:'pending_user_review',numberingNotice:notice,insertedPages:[22,23],entries},null,2));
 const unchanged=entries.filter(e=>e.previousV37&&!e.imageEdited).length;
-assert.equal(unchanged,52);
-write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[],revisedNarration:[7,8],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-context-bridge.md',pdfUpdated:false},null,2));
-console.log(JSON.stringify({count:58,revisedImagesThisRevision:[],revisedNarration:[7,8],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));
+assert.equal(unchanged,51);
+write(dest+'/verification.json',JSON.stringify({count:58,insertedPages:[22,23],revisedImagesThisRevision:[16],revisedNarration:[16,17],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:true,allFilesExist:true,presenterVerification:'docs/verification/2026-10-13-v38-report-bridge.md',pdfUpdated:false},null,2));
+console.log(JSON.stringify({count:58,revisedImagesThisRevision:[16],revisedNarration:[16,17],preservedV37Images:unchanged,allUnmodifiedOriginalHashesMatch:true,dest,story},null,2));
