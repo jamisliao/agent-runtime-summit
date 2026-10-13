@@ -1,0 +1,8 @@
+{
+  "method": "built-in imagegen",
+  "file": "slide-26-v2.png",
+  "prompt": "Use case: precise-object-edit / text-localization. Input image is the edit target. Preserve this slide's title「把明確要求，做成程式檢查」, composition, top lane, arrows, verdict alternatives, footer, typography, colors and hand-drawn pen style.\nCorrect ONLY the lower input and lower check to explicitly compare final delivery with recorded Tool results:\n- In the lower-left input card, replace the label「交付來源」with「交付＋Tool 結果」, which may wrap into two large lines. Replace the single document icon with two simple overlapping document icons, representing final delivery and the Tool result; same navy outline and light blue hatching.\n- In the central second numbered rule, replace「交付 Builder 輸出」with「交付對應 Tool 結果」.\nKeep the first rule「包含 Builder 呼叫」and its input「呼叫紀錄」unchanged. Tool result here is the recorded Builder result. The lower lane is a programmatic comparison, not inferring the producer from the appearance of a report.\nKeep both「通過／未通過」verdict alternatives unselected. Keep footer「每次執行後，用同一套標準判定」.\nNo extra text, page numbers, selected successes or shield/gate. Preserve16:9 landscape, cream graph paper, natural navy handwritten pen lettering and blue/teal colored hatching. Very readable text minimum visually30pt, no dense code, no brush or printed fonts. Highest available native clarity.",
+  "integrated": true,
+  "status": "pending_user_review",
+  "visualReview": "Corrected lower lane compares delivery with recorded Builder Tool result; pass/fail alternatives unselected; style preserved."
+}

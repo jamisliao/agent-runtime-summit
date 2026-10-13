@@ -4,7 +4,7 @@
 
 ## 最新發佈：v38・58頁・圖內無頁碼（2026-10-13）
 
-保留v37順序，加入兩頁Evaluation介紹，共58頁。第21頁採任務驗收卡；第13頁標題更新為「資訊放在中間，也容易被 LLM 忽略」。投影站台同步為圖片v38／講稿v38。
+保留v37順序，加入兩頁Evaluation介紹，共58頁。第21頁採任務驗收卡，第13頁標題為「資訊放在中間，也容易被 LLM 忽略」。第23頁說明驗收依據，第26頁將明確條件做成程式檢查；交付來源需用工具呼叫及Tool結果對照確認。完整主稿與投影站台同步。
 
 - [58頁完整圖片與講稿（GitHub直接瀏覽）](images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/README.md)
 - [58頁純圖片HTML](images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/gallery-images-only.html)

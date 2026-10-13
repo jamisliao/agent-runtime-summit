@@ -9,8 +9,8 @@ const folder='images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/';
 const read=p=>fs.readFileSync(new URL(p,root));
 const json=p=>JSON.parse(read(p));
 const m=json(folder+'manifest.json');
-const baseline='1f0fc346991350e305ff7527f77963dba1fe9830';
-test('v38 title revision keeps57 published images byte-identical and replaces only13',()=>{
+const baseline='b4d4149a5716c19b802be5b5f7280d564203815a';
+test('v38 evidence revision keeps56 published images byte-identical and replaces only23 and26',()=>{
   assert.equal(m.count,58);assert.equal(m.entries.length,58);
   for(const e of m.entries){
     const bytes=read(folder+e.file);
@@ -18,7 +18,7 @@ test('v38 title revision keeps57 published images byte-identical and replaces on
     assert.equal(e.embeddedPageNumber,null);
     assert.deepEqual([bytes.readUInt32BE(16),bytes.readUInt32BE(20)],[e.pixelSize.width,e.pixelSize.height]);
     const old=execFileSync('git',['show',baseline+':'+folder+e.file],{cwd:root,maxBuffer:20*1024*1024});
-    assert.equal(bytes.equals(old),e.n!==13);
+    assert.equal(bytes.equals(old),![23,26].includes(e.n));
   }
   assert.deepEqual(m.entries.filter(e=>e.previousV37).map(e=>e.previousV37),Array.from({length:56},(_,i)=>i+1));
   assert.equal(navigationIndex(0,58,{key:'End'}),57);
@@ -35,7 +35,11 @@ test('v38 active deck matches58 images, notes, points and transitions',()=>{
   assert(actual.slides[20].notes.includes('驗收卡'));
   assert(!actual.slides[20].notes.includes('三步'));
   assert(actual.slides[21].notes.includes('這就是Evaluation'));
-  assert(actual.slides[22].notes.includes('沿用'));
+  assert.equal(actual.slides[22].title,'測試跑完，怎麼確認達標？');
+  assert(actual.slides[22].notes.includes('不能憑報告外觀'));
+  assert(actual.slides[22].notes.includes('Tool結果與最後交付'));
+  assert.equal(actual.slides[25].title,'把明確要求，做成程式檢查');
+  assert(actual.slides[25].notes.includes('Builder回傳的報告或引用對照'));
 });
 test('v38 galleries and README contain58 valid local images',()=>{
   for(const file of ['gallery.html','gallery-images-only.html']){

@@ -2,7 +2,7 @@
 
 ## 現行版本：v38・58頁・圖內無頁碼
 
-保留v37的56頁相對順序，加入第22、23頁Evaluation介紹，共58頁。第21頁採任務驗收卡；第13頁標題更新為「資訊放在中間，也容易被 LLM 忽略」，同步圖片、分頁稿及站台標題。
+保留v37的56頁相對順序，加入第22、23頁Evaluation介紹，共58頁。第23頁為「測試跑完，怎麼確認達標？」；第26頁為「把明確要求，做成程式檢查」。講稿說明交付存在、實際工具呼叫與Tool結果對照的不同用途；圖片、講稿、重點及轉場同步。
 
 - [58頁完整圖片與講稿](../images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/README.md)
 - [純圖片HTML](../images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/gallery-images-only.html)
