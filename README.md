@@ -1,8 +1,23 @@
 # Agent Runtime Summit
 
-私人工作庫，保存講稿來源、最新58頁無頁碼圖片，以及歷史分頁版本。
+私人工作庫，保存講稿來源、最新59頁無頁碼圖片，以及歷史分頁版本。
 
-## 最新發佈：v39・58頁・圖內無頁碼（2026-10-13）
+## 最新發佈：v40・59頁・圖內無頁碼（2026-10-13）
+
+在原37與38頁之間新增「可以執行，不代表能正確完成任務」：先說明批准與條件檢查確認操作可以執行，再帶到任務仍可能漏步驟或執行失敗，最後接出錯後回看當時的過程。
+
+原58張圖片完整保留，原38～58頁順延為39～59頁；原37頁不使用補字比較稿。完整講稿、分頁稿與站台同步。
+
+- [59頁完整圖片與講稿](images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/README.md)
+- [59頁純圖片HTML](images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/gallery-images-only.html)
+- [59頁分頁稿](storyboard/59-slide-storyboard-v40-execution-bridge.md)
+- [59頁講述重點](presenter/59-page-key-points-v40.md)
+- [啟動與雙螢幕操作](presenter/README.md)
+- [發佈驗證](docs/verification/2026-10-13-v40-execution-bridge.md)
+
+執行`node docs/build-v40-execution-bridge.mjs`與`node presenter/build-deck.mjs`可重建。用`python3 presenter/serve.py --port 8767`啟動後，開啟http://127.0.0.1:8767/。換來源目錄或頁數須重新啟動服務，並關閉舊投影、重新整理控制台。歷史PDF未更新為59頁。
+
+## 上一版：v39・58頁・圖內無頁碼（2026-10-13）
 
 封面署名：JamisLiao（草寫英文）。
 
@@ -30,7 +45,7 @@ python3 presenter/serve.py --port 8767
 
 開啟 http://127.0.0.1:8767/ ，關閉舊投影後重新整理控制台，再開啟投影。GitHub只保存檔案，不會啟動本機服務；歷史PDF尚未更新為v39。
 
-以下均為歷史版本當時的紀錄；其中本機試作不一定發佈至GitHub，現行內容以上方v39為準。
+以下均為歷史版本當時的紀錄；其中本機試作不一定發佈至GitHub，現行內容以上方v40為準。
 
 ## 本機最新：Builder案例合併 v35（2026-10-12）
 

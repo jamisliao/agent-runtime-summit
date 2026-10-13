@@ -25,6 +25,6 @@ await writeFile(new URL('./deck.json',import.meta.url), JSON.stringify({
 }, null, 2)+'\n');
 const review = `# Agent Runtime｜${config.count}頁講述重點\n\n依${config.notesVersion}分頁稿整理，對應${config.imageVersion}圖片。每頁保留來源主旨、2–3個講述重點及轉場，這是講者提示，不取代原講稿。\n\n` +
   slides.map(slide => `## ${String(slide.n).padStart(2,'0')}｜${slide.title}\n\n主旨：${slide.displayMessage}\n\n${slide.points.map(point => `- ${point}`).join('\n')}\n\n接下一頁：${slide.transition}\n`).join('\n');
-const pointsFile = `${config.count}-page-key-points.md`;
+const pointsFile = config.keyPointsFile || `${config.count}-page-key-points.md`;
 await writeFile(new URL('./'+pointsFile,import.meta.url),review);
 console.log(`Built ${slides.length} slides: images ${config.imageVersion}, notes ${config.notesVersion}; image hashes and notes checked. Exported ${pointsFile}.`);

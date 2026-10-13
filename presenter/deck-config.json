@@ -1,8 +1,9 @@
 {
-  "id": "v39-58pages-evaluation-titles",
-  "imageVersion": "v39",
-  "notesVersion": "v39",
-  "count": 58,
-  "imageDirectory": "images/candidates/2026-10-13-v39-slides-01-58-evaluation-titles",
-  "storyboard": "storyboard/58-slide-storyboard-v39-evaluation-titles.md"
+  "id": "v40-59pages-execution-bridge",
+  "imageVersion": "v40",
+  "notesVersion": "v40",
+  "count": 59,
+  "imageDirectory": "images/candidates/2026-10-13-v40-slides-01-59-execution-bridge",
+  "storyboard": "storyboard/59-slide-storyboard-v40-execution-bridge.md",
+  "keyPointsFile": "59-page-key-points-v40.md"
 }

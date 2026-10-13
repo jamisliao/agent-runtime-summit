@@ -1,9 +1,9 @@
 {
   "title": "自己刻 Agent 框架",
-  "id": "v39-58pages-evaluation-titles",
-  "count": 58,
-  "imageVersion": "v39",
-  "notesVersion": "v39",
+  "id": "v40-59pages-execution-bridge",
+  "count": 59,
+  "imageVersion": "v40",
+  "notesVersion": "v40",
   "status": "pending_user_review",
   "slides": [
     {
@@ -535,8 +535,8 @@
       "title": "批准後，執行前仍要重新檢查條件",
       "chapter": "Guard、Evidence 與人工確認",
       "src": "/slides/slide-37.png?v=757e40c9a25e86c9504d1c4c350e46f570006d8eed3a17096f82ac436c90116d",
-      "notes": "Approval會把一次Agent Run切成提案與執行兩段，中間可能隔幾分鐘或幾小時。資料可能已被別人處理，任務可能已關閉，帳務或權限狀態也可能改變。因此批准不是永久通行證。Runtime在真正執行前仍要重新檢查Precondition，並留下批准內容與檢查結果。系統與人各自承接特定條件的檢查；但有了批准與重新檢查，並不代表整次任務永遠不會出錯。",
-      "transition": "前面做了系統檢查與人工確認，但任務仍可能出錯。除了執行前防錯，出了問題也要能回看當時的執行。",
+      "notes": "Approval會把一次Agent Run切成提案與執行兩段，中間可能隔幾分鐘或幾小時。資料可能已被別人處理，任務可能已關閉，帳務或權限狀態也可能改變。因此批准不是永久通行證。Runtime在真正執行前仍要重新檢查Precondition，並留下批准內容與檢查結果。這裡確認的是這次操作現在能不能執行，接下來還要看整個任務能不能正確完成。",
+      "transition": "重新檢查通過，這次操作就可以繼續。但可以執行，是否代表整個任務一定能正確完成？",
       "message": "批准與執行之間可能出現狀態變化；Runtime 必須在真正執行前重新檢查前置條件。",
       "points": [
         "批准到執行可能相隔一段時間，資料、任務或權限狀態可能已變。",
@@ -546,10 +546,24 @@
     },
     {
       "n": 38,
+      "title": "可以執行，不代表能正確完成任務",
+      "chapter": "從防錯，轉向出錯後的追查",
+      "src": "/slides/slide-38.png?v=0c790561df3de66cb07e6b5ff81e8fcaa49ffe24fe06ee6008fc71c5e7e9109a",
+      "notes": "上一頁重新檢查的是：這次操作現在是否符合執行條件。批准與檢查通過，代表可以往下執行，但不等於整個任務已經正確完成。後面仍可能漏掉要求的步驟、工具執行失敗，或交付結果不符合要求。圖中是可能發生的問題，不是一組新增實測。除了執行前檢查，我們也要知道實際執行發生了什麼。若最後發現問題，就需要回看當時的過程，接著談這件事。",
+      "transition": "如果任務真的出了問題，我們要怎麼回看當時的執行、找到需要追查的環節？",
+      "message": "批准與條件檢查確認操作現在是否可以執行；任務是否正確完成，還要看後續實際執行與交付結果。",
+      "points": [
+        "批准與條件檢查通過，確認的是操作可以執行。",
+        "任務是否正確完成，還要看實際步驟、工具執行與交付結果。"
+      ],
+      "displayMessage": "批准與條件檢查確認操作現在是否可以執行；任務是否正確完成，還要看後續實際執行與交付結果。"
+    },
+    {
+      "n": 39,
       "title": "任務出錯時，要能回看當時的執行",
       "chapter": "從防錯，轉向出錯後的追查",
-      "src": "/slides/slide-38.png?v=084b16c2eacb63407ad166d2f1dc7a2a8865775d513fde095e0d6f529fc4a7a9",
-      "notes": "前面做了系統檢查與人工確認，但任務仍可能出錯。發現結果不符合要求時，除了處理當下情況，也要能回看當時如何接收任務、模型回了什麼、工具怎麼執行，最後交付了什麼。圖中由結果往回看的箭頭，是對照當時留下的執行紀錄，不是重新跑一次就當成重現，也不是已經知道哪一步出了錯。接著回到前面漏Builder的案例，示範如何用紀錄找出需要追查的環節。",
+      "src": "/slides/slide-39.png?v=084b16c2eacb63407ad166d2f1dc7a2a8865775d513fde095e0d6f529fc4a7a9",
+      "notes": "上一頁區分了可以執行與正確完成。現在若發現結果不符合要求，除了處理當下情況，也要能回看當時如何接收任務、模型回了什麼、工具怎麼執行，最後交付了什麼。圖中由結果往回看的箭頭，是對照當時留下的執行紀錄，不是重新跑一次就當成重現，也不是已經知道哪一步出了錯。接著回到前面漏Builder的案例，示範如何用紀錄找出需要追查的環節。",
       "transition": "接著回到前面漏Builder的案例，看看發現問題之後，如何回頭追查當時的執行。",
       "message": "從執行前的防錯轉向出錯後的追查：把最後發現的問題放回當時的執行過程，尋找需要確認的環節。",
       "points": [
@@ -559,10 +573,10 @@
       "displayMessage": "從執行前的防錯轉向出錯後的追查：把最後發現的問題放回當時的執行過程，尋找需要確認的環節。"
     },
     {
-      "n": 39,
+      "n": 40,
       "title": "發現漏了 Builder，還要查它怎麼發生",
       "chapter": "Trace：從發現錯誤，到找到修改線索",
-      "src": "/slides/slide-39.png?v=27463e6c178ff2df6a54938a448ac1636bbe78cc61b5ebacede65041aa87fc49",
+      "src": "/slides/slide-40.png?v=27463e6c178ff2df6a54938a448ac1636bbe78cc61b5ebacede65041aa87fc49",
       "notes": "不論是在開發測試、實際使用或Evaluation中，發現報告沒有經過Builder，都只告訴我們結果有缺漏，還不知道缺在哪裡。接下來要回看當時模型收到什麼、回了什麼，以及工具有沒有真的執行。不能只憑最後報告就斷定是Skill、模型或工具出了問題。",
       "transition": "要讓這件事可以追查，必須先把這幾類資訊留下來。",
       "message": "發現漏了Builder只是起點，還要對照當時的實際執行紀錄。",
@@ -573,10 +587,10 @@
       "displayMessage": "發現漏了Builder只是起點，還要對照當時的實際執行紀錄。"
     },
     {
-      "n": 40,
+      "n": 41,
       "title": "先留下 AI 能協助追查的資訊",
       "chapter": "Trace：從發現錯誤，到找到修改線索",
-      "src": "/slides/slide-40.png?v=99664d7be6f9b22964d0215c6a4820c78893f8c2d761509d688e250dbd658afb",
+      "src": "/slides/slide-41.png?v=99664d7be6f9b22964d0215c6a4820c78893f8c2d761509d688e250dbd658afb",
       "notes": "最重要的是四類資料：當輪實際送出的Context、模型回應、Tool的呼叫參數與結果或錯誤，以及模型、Skill與相關版本設定。這些資訊必須能對回同一次任務與相應呼叫。版本標記也要能找回實際Skill內容。保存時遮蔽敏感資料或限制存取；回看當時紀錄，不等於保證重新執行會得到相同結果。",
       "transition": "把這些紀錄放回漏Builder的案例，就能逐步對照。",
       "message": "留下同一次任務的實際輸入、回應、工具呼叫與設定，才能協助追查。",
@@ -588,10 +602,10 @@
       "displayMessage": "留下同一次任務的實際輸入、回應、工具呼叫與設定，才能協助追查。"
     },
     {
-      "n": 41,
+      "n": 42,
       "title": "漏了 Builder，要對照哪些紀錄？",
       "chapter": "Trace：從發現錯誤，到找到修改線索",
-      "src": "/slides/slide-41.png?v=5d6b813de41679ab15a5b3fdd165ce5bc9d55de0bd70f4fa74232be19876cf33",
+      "src": "/slides/slide-42.png?v=5d6b813de41679ab15a5b3fdd165ce5bc9d55de0bd70f4fa74232be19876cf33",
       "notes": "先看當輪Context有沒有送入Builder的指示，再看模型回應有沒有提出Builder呼叫，最後看Tool執行紀錄裡呼叫有沒有真的執行。這三個都是待確認問題，不是假設我們已知道答案。若紀錄不完整，查不到也不能直接當作沒有發生。",
       "transition": "這些紀錄的交叉比對，也可以讓AI幫忙整理。",
       "message": "用Context、模型回應與Tool執行紀錄，逐段檢查Builder缺在哪裡。",
@@ -603,10 +617,10 @@
       "displayMessage": "用Context、模型回應與Tool執行紀錄，逐段檢查Builder缺在哪裡。"
     },
     {
-      "n": 42,
+      "n": 43,
       "title": "把執行紀錄交給 AI，協助找線索",
       "chapter": "Trace：從發現錯誤，到找到修改線索",
-      "src": "/slides/slide-42.png?v=a01219fac3ae2ec7b70983d5a2d5d065fba15116980ae037de3237d821212c8f",
+      "src": "/slides/slide-43.png?v=a01219fac3ae2ec7b70983d5a2d5d065fba15116980ae037de3237d821212c8f",
       "notes": "我可以把對得起來的執行紀錄交給AI，讓它協助找出可疑環節、指出依據，以及還需要查什麼。這不代表AI能讀出模型的內部思考，也不能把它事後說得通的解釋當成已確認原因。紀錄不足就要承認尚未確認，再補查。",
       "transition": "找到值得修改的方向之後，還要實際驗證修改是否改善。",
       "message": "讓AI依執行紀錄提出待確認疑點，而不是替缺漏編造原因。",
@@ -617,10 +631,10 @@
       "displayMessage": "讓AI依執行紀錄提出待確認疑點，而不是替缺漏編造原因。"
     },
     {
-      "n": 43,
+      "n": 44,
       "title": "提出修改，再用 Evaluation 驗證",
       "chapter": "Trace：從發現錯誤，到找到修改線索",
-      "src": "/slides/slide-43.png?v=fb9818616c629aeb74f0420950a696b116f33c08c76407b46abf18ccda8adf0b",
+      "src": "/slides/slide-44.png?v=fb9818616c629aeb74f0420950a696b116f33c08c76407b46abf18ccda8adf0b",
       "notes": "如果追查指向Skill的說明需要修正，可以先提出候選修改，再用Evaluation跑任務，檢查流程與交付是否改善。圖上的再測一次是重新執行評估，不是只跑一個案例就證明可靠。接下來會把整次任務、輸出、步驟與其他情境一起放進驗收。",
       "transition": "所以改完Skill，不能只測改動的那一句，而要把整次任務重跑。",
       "message": "追查提供修改方向，Evaluation用實際執行檢查修改效果。",
@@ -631,10 +645,10 @@
       "displayMessage": "追查提供修改方向，Evaluation用實際執行檢查修改效果。"
     },
     {
-      "n": 44,
+      "n": 45,
       "title": "改完 Skill，整次任務都要重新測",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-44.png?v=b7faa780f6150700280f0ad7f9430831f5909a37ae3acefd7ff7b199eed38a04",
+      "src": "/slides/slide-45.png?v=b7faa780f6150700280f0ad7f9430831f5909a37ae3acefd7ff7b199eed38a04",
       "notes": "剛才我們用Trace回看漏Builder那次的事件、當時可見資料與Skill版本，提出了候選修改。現在換成驗收視角：這版Skill改完後，在原本的要求和測試條件下，整次任務是否真的改善？不能只確認新加的句子存在，也不能只測那一句；還要看最後交付、必要操作，以及工具使用。接下來沿用報告案例，一項一項檢查。",
       "transition": "先看使用者拿到的成果：改完之後，報告符合原本要求了嗎？",
       "message": "從Trace提出候選修改，轉入修改驗收；用整次任務的結果、路徑與工具參數判定是否符合既定成功標準。",
@@ -645,10 +659,10 @@
       "displayMessage": "從Trace提出候選修改，轉入修改驗收；用整次任務的結果、路徑與工具參數判定是否符合既定成功標準。"
     },
     {
-      "n": 45,
+      "n": 46,
       "title": "改完之後，報告符合要求了嗎？",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-45.png?v=d264e42c17d280d502a1893e66167c58f99d6af75a998ffffde8b74ac222be9e",
+      "src": "/slides/slide-46.png?v=d264e42c17d280d502a1893e66167c58f99d6af75a998ffffde8b74ac222be9e",
       "notes": "前面缺漏的報告，問題是格式不符與分類不完整。修改後先用同一套交付要求重查：固定格式、完整分類與必要warning有沒有交出來；結論是否有工具結果支持。不能因為新版看起來比較順，就說修改有效，也不能為了讓它通過而放寬標準。這是對正式交付的測試，不是請LLM重新判定Builder底層程式的正確性。",
       "transition": "報告符合要求了，必要的Builder這次也真的執行了嗎？",
       "message": "將Outcome Eval落到新版Skill的報告驗收，不重複一般定義，也不為讓修改通過而放寬既定標準。",
@@ -659,10 +673,10 @@
       "displayMessage": "將Outcome Eval落到新版Skill的報告驗收，不重複一般定義，也不為讓修改通過而放寬既定標準。"
     },
     {
-      "n": 46,
+      "n": 47,
       "title": "漏掉的 Builder，這次有呼叫嗎？",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-46.png?v=6c252cf3d334dd37efcb3a130fb9c3fe05f4df6fe1ff6d13129e0fd41a638fdb",
+      "src": "/slides/slide-47.png?v=6c252cf3d334dd37efcb3a130fb9c3fe05f4df6fe1ff6d13129e0fd41a638fdb",
       "notes": "這次修改是為了改善漏Builder，就要回看修改後的實際工具紀錄，確認build_execution_summary確實出現，而且在這個情境要求的位置發生。圖是驗收方法示意，沒有宣稱某個候選版本已通過。不同情境可以有合法分支，我們檢查的是各自的必要操作、順序與停止條件，不是把每一個Run硬套成完全一樣的路徑。",
       "transition": "即使這次有呼叫Builder，傳給它的Ref和參數也可能不對。",
       "message": "用Trajectory Eval驗收已知漏Builder問題是否仍發生，不再重講看答案不夠的一般概念。",
@@ -673,10 +687,10 @@
       "displayMessage": "用Trajectory Eval驗收已知漏Builder問題是否仍發生，不再重講看答案不夠的一般概念。"
     },
     {
-      "n": 47,
+      "n": 48,
       "title": "呼叫了 Builder，傳入的資料也對嗎？",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-47.png?v=771542e6965129fe73f25ae2f1b2d6c3b40e3c63b2ca8e4b171129088b0c377e",
+      "src": "/slides/slide-48.png?v=771542e6965129fe73f25ae2f1b2d6c3b40e3c63b2ca8e4b171129088b0c377e",
       "notes": "上一頁驗收必要Builder是否被呼叫，這一頁再看這版Skill如何使用它。傳入的Ref要對應本次分析結果，必要參數不能漏，也不能把Tool error當成正常資料繼續處理。工具名稱正確只是第一步。修改後用實際的工具輸入紀錄核對，才能知道Agent有沒有正確把資料交給Builder。",
       "transition": "這些驗收項目該怎麼判斷？前面介紹過程式與Judge，現在選用適合各項目的方法。",
       "message": "延續同一摘要案例，必要工具被呼叫不代表參數與資料引用正確。",
@@ -687,10 +701,10 @@
       "displayMessage": "延續同一摘要案例，必要工具被呼叫不代表參數與資料引用正確。"
     },
     {
-      "n": 48,
+      "n": 49,
       "title": "驗收修改：哪些用程式，哪些用 Judge？",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-48.png?v=d063b917bf12c3b656ba9162f20b94758870df08df7832d83e8e352babbbb9b3",
+      "src": "/slides/slide-49.png?v=d063b917bf12c3b656ba9162f20b94758870df08df7832d83e8e352babbbb9b3",
       "notes": "前面介紹程式、LLM Judge與人工，現在把方法對應到這份驗收清單。Builder有沒有呼叫、Ref是否有效、必要欄位是否齊全，能明確判定就寫程式檢查。摘要是否完整、引用內容是否支持結論等語意，再依明確評分規則由Judge或人工輔助。Judge也可能判錯，要用人工判定的樣本核對與校準，不能只相信它給出的通過分數。這些是在測試時評估候選修改，不是取代執行時的Guard。",
       "transition": "有了驗收方式，還要把真的踩過的坑留下來，讓每次修改都能重新檢查。",
       "message": "將入門頁介紹的評分方式落到這次修改的具體驗收項目；不要重複LLM Judge名詞定義，不把Judge當保證器。",
@@ -701,10 +715,10 @@
       "displayMessage": "將入門頁介紹的評分方式落到這次修改的具體驗收項目；不要重複LLM Judge名詞定義，不把Judge當保證器。"
     },
     {
-      "n": 49,
+      "n": 50,
       "title": "踩過的坑，留進回歸測試",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-49.png?v=771ac59d3c62b9d051df9b8e604571357bd20b1f25a55745fb9af407ac32e843",
+      "src": "/slides/slide-50.png?v=771ac59d3c62b9d051df9b8e604571357bd20b1f25a55745fb9af407ac32e843",
       "notes": "回歸測試就是修改後重查原本的能力。第一版情境可從需求與 SOP 拆出來；遇到真實失敗就補進去，也可讓 AI 找未測分支。昨天踩過的坑，明天應該能自動檢查。",
       "transition": "回歸測試也要有接受標準：同一情境要通過幾次，我們才接受這版修改？",
       "message": "測試集由需求、真實失敗與補充邊界情境持續累積。",
@@ -715,10 +729,10 @@
       "displayMessage": "測試集由需求、真實失敗與補充邊界情境持續累積。"
     },
     {
-      "n": 50,
+      "n": 51,
       "title": "通過幾次，才接受這版修改？",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-50.png?v=1d6eae4bf8b4a06ac1569da569433cba14c5d12762d342d39843c39b9de59a41",
+      "src": "/slides/slide-51.png?v=1d6eae4bf8b4a06ac1569da569433cba14c5d12762d342d39843c39b9de59a41",
       "notes": "前面已說過不能只跑一次；現在是要訂接受這版修改的門檻。例如某個情境要求十次成功九次，或者另一種要求五次全部通過。這些是主稿的門檻示例，不是新增實測，也不能直接比較五次全過一定比十次九次可靠。實際門檻要看這個情境的風險、成本與可接受錯誤程度。高風險不能只靠加大測試次數來保證安全，仍要有相應Guard。",
       "transition": "這個失敗案例達到門檻了，其他原本會過的情境有沒有退步？",
       "message": "前段已理解重跑的必要；這頁專講如何為候選Skill設定可接受門檻，並權衡風險與測試成本。",
@@ -730,10 +744,10 @@
       "displayMessage": "前段已理解重跑的必要；這頁專講如何為候選Skill設定可接受門檻，並權衡風險與測試成本。"
     },
     {
-      "n": 51,
+      "n": 52,
       "title": "修好一個問題，也可能弄壞其他情境。",
       "chapter": "Evaluation：修改如何驗證？",
-      "src": "/slides/slide-51.png?v=192ae099d684ab652be9c11f27e6a0e0222f48d8d4824e282bf805d253d17962",
+      "src": "/slides/slide-52.png?v=192ae099d684ab652be9c11f27e6a0e0222f48d8d4824e282bf805d253d17962",
       "notes": "修好一個問題，也可能弄壞其他情境。這張圖用兩個情境說明同一次Skill修改的影響：A原本失敗，修改後修好了；B原本通過，卻可能因此退步。這不是實測統計，而是為什麼要重跑其他情境的示意。接受修改不能只看這一次有沒有修好，還要回歸測試。既然我們能驗證修改是否值得接受，Skill還需要全部由人逐句手寫嗎？",
       "transition": "有了驗證標準，就可以讓 AI 產生 Skill，再用測試判斷差距。",
       "message": "Skill 修改可能影響原本通過的情境，接受修改不能只看原本的失敗是否修好。",
@@ -744,10 +758,10 @@
       "displayMessage": "Skill 修改可能影響原本通過的情境，接受修改不能只看原本的失敗是否修好。"
     },
     {
-      "n": 52,
+      "n": 53,
       "title": "從第一版 Skill 到功能完成，我沒有手寫過一行 Prompt。",
       "chapter": "AI 協助撰寫與修正 Skill",
-      "src": "/slides/slide-52.png?v=919ea13a7e38abe95bf1bf8053ad2b2e4ae0caf2305d189819439f823b16f619",
+      "src": "/slides/slide-53.png?v=919ea13a7e38abe95bf1bf8053ad2b2e4ae0caf2305d189819439f823b16f619",
       "notes": "在我的系統裡，從第一版Skill到功能完成，我沒有手寫過一行Prompt。我讓協助開發的AI讀PRD、SOP和程式碼，產生第一版Skill，再跑Evaluation找出實際行為和目標的差距。這不是沒有人的要求，也不是AI自行定義成功；人仍然負責需求與接受標準。這裡的AI是協助開發的角色，不是正式執行任務的Agent。",
       "transition": "測試沒有符合預期時，把執行紀錄交給 AI 分析並修改。",
       "message": "人不必逐句手寫；開發用 AI 依需求產生候選 Skill，再依既定目標測試。",
@@ -758,10 +772,10 @@
       "displayMessage": "人不必逐句手寫；開發用 AI 依需求產生候選 Skill，再依既定目標測試。"
     },
     {
-      "n": 53,
+      "n": 54,
       "title": "Eval 的價值不是分數，而是讓 Skill 能被持續修正。",
       "chapter": "AI 協助撰寫與修正 Skill",
-      "src": "/slides/slide-53.png?v=28277fcdba3f4b8e7ce8fc19a76b296cf957351f4226af46dd9e6278bc394572",
+      "src": "/slides/slide-54.png?v=28277fcdba3f4b8e7ce8fc19a76b296cf957351f4226af46dd9e6278bc394572",
       "notes": "Eval的價值不是分數，而是讓Skill能被持續修正。Evaluation指出實際行為與目標的差距，Log和Trace提供追查材料；AI據此分析並提出Skill修改，再跑回歸。尚未符合就繼續修正，符合接受條件才送審。重點不是追高分，也不是原封不動一直重跑，而是让回饋真正推動下一版修改。",
       "transition": "人不再逐句撰寫，但仍然要定義成功與接受標準。",
       "message": "Evaluation 與執行紀錄提供可檢查回饋，驅動 AI 分析、修改 Skill、再驗證的循環。",
@@ -772,10 +786,10 @@
       "displayMessage": "Evaluation 與執行紀錄提供可檢查回饋，驅動 AI 分析、修改 Skill、再驗證的循環。"
     },
     {
-      "n": 54,
+      "n": 55,
       "title": "人定義成功標準，修改用測試結果驗收",
       "chapter": "AI 協助撰寫與修正 Skill",
-      "src": "/slides/slide-54.png?v=193fd369f33d224f29a28b87475b0f65ea37a7dc2652f6c11f02e304dc01fa1c",
+      "src": "/slides/slide-55.png?v=193fd369f33d224f29a28b87475b0f65ea37a7dc2652f6c11f02e304dc01fa1c",
       "notes": "人的重心轉為定義什麼算成功、該測哪些情境與哪些風險不能接受。AI 可以產生與修改 Skill，但不能為了過關任意放寬標準。接受候選修改時，要看修改差異、測試結果和對應紀錄。",
       "transition": "這個循環會反覆進行，因此成本也要一起被觀察。",
       "message": "人掌握目標、情境與接受標準，AI 產生修改；候選版本用測試及紀錄驗收。",
@@ -786,10 +800,10 @@
       "displayMessage": "人掌握目標、情境與接受標準，AI 產生修改；候選版本用測試及紀錄驗收。"
     },
     {
-      "n": 55,
+      "n": 56,
       "title": "每輪產生、測試與修正，都要留下成本紀錄",
       "chapter": "每輪迭代的成本",
-      "src": "/slides/slide-55.png?v=24465fba48449074b9d7d45e491b6a40aedd6d51533e31bcba6ee2f970549d38",
+      "src": "/slides/slide-56.png?v=24465fba48449074b9d7d45e491b6a40aedd6d51533e31bcba6ee2f970549d38",
       "notes": "這個循環不是免費的。AI 讀紀錄和修 Skill、測試和回歸都需要資源。重點不是先問付不付得起，而是記錄每輪 Tokens、工具次數、重試和延遲，知道成本在哪裡，才能比較修改的效果與代價。",
       "transition": "回到一開始的 Tool Loop：讓它跑起來不難，讓它正確完成任務，才是我們一路處理的工程問題。",
       "message": "成本觀測涵蓋開發改進循環與正式執行，不是暗示 AI 寫 Skill 一定省錢。",
@@ -800,10 +814,10 @@
       "displayMessage": "成本觀測涵蓋開發改進循環與正式執行，不是暗示 AI 寫 Skill 一定省錢。"
     },
     {
-      "n": 56,
+      "n": 57,
       "title": "寫出一個 Loop 很簡單，讓一個 Loop 能夠正確地完成任務，才是困難的工程問題。",
       "chapter": "收尾：把任務做對與資源限制",
-      "src": "/slides/slide-56.png?v=31fb9c8a93a4d13a53e653883fe31dc4c9b277def2a5784fcbf0e1450ce821c5",
+      "src": "/slides/slide-57.png?v=31fb9c8a93a4d13a53e653883fe31dc4c9b277def2a5784fcbf0e1450ce821c5",
       "notes": "回到一開始，我們幾行程式碼就能讓這個Loop跑起來。但真的交給它任務後，才會遇到Context塞太多、Skill沒有照做、報告出現工具沒回傳的內容，以及出錯後難以追查。前面這些工程工作，不是為了堆模組，而是為了讓它在實際條件下把任務做對。寫出一個Loop很簡單，讓一個Loop能夠正確地完成任務，才是困難的工程問題。",
       "transition": "模型會進步，也能幫忙解決其中一些問題；但能不能只等下一個更強的模型？",
       "message": "回扣開場：工程難點不是啟動Tool Loop，而是讓它正確完成任務。",
@@ -814,10 +828,10 @@
       "displayMessage": "回扣開場：工程難點不是啟動Tool Loop，而是讓它正確完成任務。"
     },
     {
-      "n": 57,
+      "n": 58,
       "title": "解決這個問題，不能只靠最新的模型。",
       "chapter": "收尾：把任務做對與資源限制",
-      "src": "/slides/slide-57.png?v=99042585ee5143d5f19689315afcb5e168d649dceceeffa25efa38ec923c70d3",
+      "src": "/slides/slide-58.png?v=99042585ee5143d5f19689315afcb5e168d649dceceeffa25efa38ec923c70d3",
       "notes": "更強的模型的確可能讓某些步驟更穩、讓原本難處理的任務做得更好。我不是說模型不重要，而是不能把所有問題都交給下一版模型。Context怎麼給、Skill寫了以後有多常照做、哪些結論需要Tool Result支持、出錯時能不能回看，都還是我們需要處理的事。圖中的模型名稱只是沿用選定示例，不代表性能比較或最新版本排名。解決這個問題，不能只靠最新的模型。",
       "transition": "而且每次遇到問題都換更大的模型、塞更多Context、做更多重試，資源代價也會跟著增加。",
       "message": "改善Agent不能只靠換模型；模型能力、任務設計與驗證需要一起考慮。",
@@ -828,10 +842,10 @@
       "displayMessage": "改善Agent不能只靠換模型；模型能力、任務設計與驗證需要一起考慮。"
     },
     {
-      "n": 58,
+      "n": 59,
       "title": "模型會越來越聰明，但是你的口袋沒有越來越深。",
       "chapter": "收尾：把任務做對與資源限制",
-      "src": "/slides/slide-58.png?v=81eee29357f1a903d3e8d020046aa78307984741dd31d6f98f49f8c60b8b3b8f",
+      "src": "/slides/slide-59.png?v=81eee29357f1a903d3e8d020046aa78307984741dd31d6f98f49f8c60b8b3b8f",
       "notes": "所以我們才要管理Context、用Evaluation了解表現、守住不能接受的錯、留下Trace，並且觀察Tokens、工具呼叫、重試與延遲。不是為了把系統做得更複雜，而是在有限資源裡讓Agent把任務做對。模型會越來越聰明，但是你的口袋沒有越來越深。",
       "transition": "分享結束，進入Q&A；不再追加另一句收尾金句。",
       "message": "以口袋金句結尾：工程工作的理由，是在有限資源內把任務做對，而非一味增加模型與重試成本。",

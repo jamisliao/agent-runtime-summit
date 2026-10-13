@@ -1,6 +1,16 @@
 # 雙螢幕圖片簡報播放器
 
-## 現行版本：v39・58頁・圖內無頁碼
+## 現行版本：v40・59頁・圖內無頁碼
+
+原37與38頁之間新增「可以執行，不代表能正確完成任務」，再接出錯後回看執行。原58張圖片逐位元保留，原38～58頁順延為39～59；37與新39頁講稿轉場同步。
+
+- [59頁圖片與講稿](../images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/README.md)
+- [59頁純圖片HTML](../images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/gallery-images-only.html)
+- [59頁分頁稿](../storyboard/59-slide-storyboard-v40-execution-bridge.md)
+- [59頁講述重點](59-page-key-points-v40.md)
+- [發佈驗證](../docs/verification/2026-10-13-v40-execution-bridge.md)
+
+## 上一版：v39・58頁
 
 封面底部署名JamisLiao，使用草寫英文；依使用者回饋採較小尺寸。
 
@@ -27,7 +37,7 @@ node presenter/build-deck.mjs
 python3 presenter/serve.py --port 8767
 ```
 
-用 Chrome 開啟 [講者控制台](http://127.0.0.1:8767/)。頁首應顯示「58頁・圖片v39／講稿v39」。
+用 Chrome 開啟 [講者控制台](http://127.0.0.1:8767/)。頁首應顯示「59頁・圖片v40／講稿v40」。
 
 已有控制台或投影視窗時，請先關閉舊投影、重新整理控制台，再開啟投影。圖片網址附SHA256避免舊快取，停留頁序依版本分開保存。換了來源目錄或頁數，須重新啟動自己的服務；不要終止不明的占用程序。
 
