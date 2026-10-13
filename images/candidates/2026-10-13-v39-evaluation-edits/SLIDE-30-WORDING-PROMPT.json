@@ -1,0 +1,5 @@
+{
+  "tool": "built-in image_gen",
+  "useCase": "text-localization",
+  "prompt": "Use case: text-localization. Asset type: existing 16:9 hand-drawn presentation slide. Input image 1 is the edit target. Change ONLY these three text labels, using exactly the replacement Traditional Chinese text: middle-row left 「根因結論要有證據」 becomes 「輸出結論要有證據」; bottom-row left 「未授權不能修改」 becomes 「權限不足不能修改」; bottom-row right 「寫入前由後端檢查」 becomes 「修改前由程式檢查」. In the bottom-right replacement, color 「修改前」 coral-red and 「由程式檢查」 dark green, matching the existing pen lettering and weights. Keep middle and bottom left labels dark navy. Match the original handwritten Chinese typography, medium stroke thickness, natural pen pressure and label size. Preserve every other element exactly: title, top row and its labels, middle-row right label 「輸出前檢查支持依據」, all icons, blue arrows, positions, fine outlines, colored pencil hatching, cream graph-paper grid background, framing and original aspect ratio. Do not redesign or add words, badges or page numbers. Highest available native resolution."
+}
