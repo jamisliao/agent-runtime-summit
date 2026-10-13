@@ -2,12 +2,16 @@
   "count": 58,
   "insertedPages": [],
   "revisedImagesThisRevision": [
-    23,
-    24
+    25
   ],
-  "preservedV38Images": 56,
+  "v39RevisedImages": [
+    23,
+    24,
+    25
+  ],
+  "preservedV38Images": 55,
   "originalRelativeOrderPreserved": true,
   "allUnmodifiedOriginalHashesMatch": true,
   "pdfUpdated": false,
-  "verification": "docs/verification/2026-10-13-v39-evaluation-judge.md"
+  "verification": "docs/verification/2026-10-13-v39-slide25-layout.md"
 }

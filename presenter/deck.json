@@ -344,7 +344,7 @@
       "chapter": "Skill 與 Evaluation：說明如何變成測試",
       "src": "/slides/slide-24.png?v=80e59f3b791f0a2a1c6530594447e9abe1b4586a4fdbae6f8ebf63fc77a46e87",
       "notes": "上一頁我們找了兩類依據：交付成果，以及工具呼叫與回傳紀錄。現在介紹要評估的對象。Outcome Evaluation，也就是結果評估，看最後的交付是否符合任務要求；若要求交付Builder產生的報告，確認來源時也需要對照工具回傳結果。Trajectory Evaluation，也就是執行軌跡評估，看實際發生的工具操作、順序與參數，例如Builder有沒有真的被呼叫。這些名稱指的是評估什麼，不是限定只能使用哪一份紀錄；同一份工具紀錄也可以支援結果來源的檢查。兩者可以一起評估。",
-      "transition": "結果與執行過程是評估的面向；接著看判斷方法，可以用程式檢查，也可以請模型依準則評審。",
+      "transition": "結果與執行過程是評估的面向；接著看判斷方法，可以請模型依準則評審，也可以用程式檢查。",
       "message": "Outcome Evaluation檢查交付結果是否符合任務要求；Trajectory Evaluation檢查實際執行的訊息與操作，包括必要工具、順序與參數。兩者是評估對象，不是評分者或必須二選一的方案。",
       "points": [
         "Outcome Evaluation：看最後的交付是否符合要求。",
@@ -357,13 +357,13 @@
       "n": 25,
       "title": "這些要求，要怎麼評估？",
       "chapter": "Skill 與 Evaluation：說明如何變成測試",
-      "src": "/slides/slide-25.png?v=7d2df9ba044811f0d3fadfd2efcb97517f48e788e17ffc6949ed2998b81bd716",
-      "notes": "上一頁的Outcome和Trajectory，是要評估什麼；這一頁是怎麼評估。Code-based Evaluation，是把明確條件寫成程式檢查，例如Builder有沒有呼叫、參數是否正確、交付是否對應工具回傳的結果。把實際工具步驟與預期軌跡比對，可以用Trajectory Matching；哪些步驟必須做、順序是否重要，要依任務要求決定。需要語意判斷時，可以讓模型依準則評審，這就是LLM-as-a-Judge。兩種方法能搭配，也不固定綁定結果或軌跡；Judge也可能判錯。這裡的Builder案例有明確條件，用程式核對即可，接著就看這個做法。",
+      "src": "/slides/slide-25.png?v=521ea91fd728fb6d95aa1c0274dbcd4255e174520eb1a4137f17f35f60d95d87",
+      "notes": "上一頁的Outcome和Trajectory，是要評估什麼；這一頁是怎麼評估。先看左邊：需要語意判斷時，可以讓模型依準則評審，這就是LLM-as-a-Judge。再看右邊：Code-based Evaluation，是把明確條件寫成程式檢查，例如Builder有沒有呼叫、參數是否正確、交付是否對應工具回傳的結果。把實際工具步驟與預期軌跡比對，可以用Trajectory Matching；哪些步驟必須做、順序是否重要，要依任務要求決定。左右排列方便接續上一頁，但不代表Outcome只能用Judge、Trajectory只能用程式；兩種方法能搭配，也不固定綁定結果或軌跡。Judge也可能判錯。這裡的Builder案例有明確條件，用程式核對即可，接著就看這個做法。",
       "transition": "以Builder案例來說，呼叫有沒有發生、交付是否對應它的回傳結果，都能做成明確的程式檢查。",
       "message": "Code-based Evaluation與LLM-as-a-Judge是評估方法，均不固定綁定某一對象。Trajectory Matching是程式化比對預期軌跡的一種方式；Judge可評內容，也可評執行軌跡。評估不是執行時Guard，也不保證未來每次正確。",
       "points": [
-        "Code-based Evaluation：以程式核對明確條件；Trajectory Matching可比對預期步驟。",
         "LLM-as-a-Judge：依評分準則評內容或軌跡，不等同於只看分數。",
+        "Code-based Evaluation：以程式核對明確條件；Trajectory Matching可比對預期步驟。",
         "評估對象與方法是兩個維度，能搭配使用；測試通過不等於未來零風險。"
       ],
       "displayMessage": "Code-based Evaluation與LLM-as-a-Judge是評估方法，均不固定綁定某一對象。Trajectory Matching是程式化比對預期軌跡的一種方式；Judge可評內容，也可評執行軌跡。評估不是執行時Guard，也不保證未來每次正確。"

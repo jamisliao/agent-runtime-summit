@@ -1,6 +1,6 @@
 # 58頁圖片與講稿 v39
 
-v39維持58頁與原頁序。第23頁改為「把實際執行，對回任務要求」，第24頁改為「Evaluation 要看結果，也要看執行過程」。第25頁保留Judge方法概覽，不加入獨立示範；26頁程式檢查接27頁重跑、28頁測試限制。其他56張原圖逐位元保留。圖片無內嵌頁碼；主稿、分頁稿與站台同步。新標題圖片待使用者視覺確認；歷史PDF未更新。
+v39維持58頁與原頁序。第23頁改為「把實際執行，對回任務要求」，第24頁改為「Evaluation 要看結果，也要看執行過程」。第25頁整組左右互換：左為LLM-as-a-Judge、右為Code-based Evaluation；講述順序同步，兩種方法並非與結果或軌跡固定配對。不新增Judge示範；26頁接27重跑與28測試限制。相較v38，其他55張原圖逐位元保留；本次互換僅修改第25張圖片。圖片無內嵌頁碼，歷史PDF未更新。
 
 [純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md) · [產圖提示](PROMPTS.json)
 
@@ -559,7 +559,7 @@ Outcome Evaluation檢查交付結果是否符合任務要求；Trajectory Evalua
 
 ### 接下一頁
 
-結果與執行過程是評估的面向；接著看判斷方法，可以用程式檢查，也可以請模型依準則評審。
+結果與執行過程是評估的面向；接著看判斷方法，可以請模型依準則評審，也可以用程式檢查。
 
 ### 本頁重點
 
@@ -579,7 +579,7 @@ Code-based Evaluation與LLM-as-a-Judge是評估方法，均不固定綁定某一
 
 ### 搭配講稿
 
-上一頁的Outcome和Trajectory，是要評估什麼；這一頁是怎麼評估。Code-based Evaluation，是把明確條件寫成程式檢查，例如Builder有沒有呼叫、參數是否正確、交付是否對應工具回傳的結果。把實際工具步驟與預期軌跡比對，可以用Trajectory Matching；哪些步驟必須做、順序是否重要，要依任務要求決定。需要語意判斷時，可以讓模型依準則評審，這就是LLM-as-a-Judge。兩種方法能搭配，也不固定綁定結果或軌跡；Judge也可能判錯。這裡的Builder案例有明確條件，用程式核對即可，接著就看這個做法。
+上一頁的Outcome和Trajectory，是要評估什麼；這一頁是怎麼評估。先看左邊：需要語意判斷時，可以讓模型依準則評審，這就是LLM-as-a-Judge。再看右邊：Code-based Evaluation，是把明確條件寫成程式檢查，例如Builder有沒有呼叫、參數是否正確、交付是否對應工具回傳的結果。把實際工具步驟與預期軌跡比對，可以用Trajectory Matching；哪些步驟必須做、順序是否重要，要依任務要求決定。左右排列方便接續上一頁，但不代表Outcome只能用Judge、Trajectory只能用程式；兩種方法能搭配，也不固定綁定結果或軌跡。Judge也可能判錯。這裡的Builder案例有明確條件，用程式核對即可，接著就看這個做法。
 
 ### 接下一頁
 
@@ -587,8 +587,8 @@ Code-based Evaluation與LLM-as-a-Judge是評估方法，均不固定綁定某一
 
 ### 本頁重點
 
-- Code-based Evaluation：以程式核對明確條件；Trajectory Matching可比對預期步驟。
 - LLM-as-a-Judge：依評分準則評內容或軌跡，不等同於只看分數。
+- Code-based Evaluation：以程式核對明確條件；Trajectory Matching可比對預期步驟。
 - 評估對象與方法是兩個維度，能搭配使用；測試通過不等於未來零風險。
 
 ## 26｜把明確要求，做成程式檢查
