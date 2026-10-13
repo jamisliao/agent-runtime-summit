@@ -1,14 +1,14 @@
 # 雙螢幕圖片簡報播放器
 
-## 現行版本：v37・56頁・圖內無頁碼
+## 現行版本：v38・58頁・圖內無頁碼
 
-維持原55頁的內容與順序，在原第12頁後加入 Lost in the Middle 圖表，共56頁。所有圖片只局部移除頁碼；其他像素、原生尺寸、字型與圖示不變。圖片、標題、講稿、重點及轉場已同步；追查章節不再混用舊版講稿。
+保留v37的56頁相對順序，加入第22、23頁Evaluation介紹，共58頁。本輪第21頁改為任務驗收卡，其餘57張v38圖片不變；講稿、重點及轉場同步。
 
-- [56頁完整圖片與講稿](../images/candidates/2026-10-13-v37-slides-01-56-no-numbers/README.md)
-- [純圖片HTML](../images/candidates/2026-10-13-v37-slides-01-56-no-numbers/gallery-images-only.html)
-- [56頁分頁稿](../storyboard/56-slide-storyboard-v37-integrated.md)
-- [56頁講述重點](56-page-key-points.md)
-- [本輪驗證](../docs/verification/2026-10-13-v37-presenter-publish.md)
+- [58頁完整圖片與講稿](../images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/README.md)
+- [純圖片HTML](../images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/gallery-images-only.html)
+- [58頁分頁稿](../storyboard/58-slide-storyboard-v38-evaluation-intro.md)
+- [58頁講述重點](58-page-key-points.md)
+- [本輪驗證](../docs/verification/2026-10-13-v38-evaluation-presenter-publish.md)
 
 ## 啟動
 
@@ -19,7 +19,7 @@ node presenter/build-deck.mjs
 python3 presenter/serve.py --port 8767
 ```
 
-用 Chrome 開啟 [講者控制台](http://127.0.0.1:8767/)。頁首應顯示「56頁・圖片v37／講稿v37」。
+用 Chrome 開啟 [講者控制台](http://127.0.0.1:8767/)。頁首應顯示「58頁・圖片v38／講稿v38」。
 
 已有控制台或投影視窗時，請先關閉舊投影、重新整理控制台，再開啟投影。圖片網址附SHA256避免舊快取，停留頁序依版本分開保存。換了來源目錄或頁數，須重新啟動自己的服務；不要終止不明的占用程序。
 
@@ -47,20 +47,20 @@ python3 presenter/serve.py --port 8767
 
 ## 重建及驗證
 
-`deck-config.json`是站台版本、來源目錄、頁數與分頁稿的設定來源。重建會檢查每張PNG的SHA256，以及講稿和manifest相符，再產生`deck.json`與56頁重點文件。一般重建不需重新製圖，也不需舊核對包。
+`deck-config.json`是站台版本、來源目錄、頁數與分頁稿的設定來源。重建會檢查每張PNG的SHA256，以及講稿和manifest相符，再產生`deck.json`與58頁重點文件。一般重建不需重新製圖，也不需舊核對包。
 
 ```bash
 node presenter/build-deck.mjs
-node --test presenter/tests/core.test.mjs presenter/tests/preview-layout.test.mjs presenter/tests/v37.test.mjs
+node --test presenter/tests/core.test.mjs presenter/tests/preview-layout.test.mjs presenter/tests/v38.test.mjs
 python3 presenter/tests/server_test.py
-node presenter/tests/http-check.mjs http://127.0.0.1:8767
+node docs/verify-v38-live.mjs
 ```
 
-伺服器只提供播放器白名單檔案及56張具名PNG；第57頁起、git、歷史資料、來源講稿與任意repo檔案均不對外提供。投影視窗不請求完整deck講稿。
+伺服器只提供播放器白名單檔案及58張具名PNG；第59頁起、git、歷史資料、來源講稿與任意repo檔案均不對外提供。投影視窗不請求完整deck講稿。
 
 ## 限制
 
-- v37保留原生約1672×941尺寸，沒有放大或宣稱1080p。
+- v38保留原生約1672×941尺寸，沒有放大或宣稱1080p。
 - 本輪驗證本機HTTP、資料與圖片完整性；未重新驗證實體雙螢幕、會場投影、Safari或長時間播放。
-- 原版本與PDF保留；歷史PDF不是此份v37的56頁版本。
+- 原版本與PDF保留；歷史PDF不是此份v38的58頁版本。
 - [Chrome Window Management API](https://developer.chrome.com/docs/capabilities/web-apis/window-management)

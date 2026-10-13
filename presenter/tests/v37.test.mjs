@@ -21,17 +21,11 @@ test('v37 preserves original55 order, inserts only Lost in the Middle at13, and 
   }
   assert.equal(navigationIndex(0,56,{key:'End'}),55);
 });
-test('v37 configured presenter has exact notes, points, transitions and hashes for56 slides',()=>{
-  const cfg=JSON.parse(read('presenter/deck-config.json'));
-  assert.equal(cfg.imageVersion,'v37');assert.equal(cfg.notesVersion,'v37');
-  const expected=attachKeyPoints(parseDeck(read(cfg.storyboard),m),m.entries);
-  const actual=JSON.parse(read('presenter/deck.json'));
-  assert.equal(actual.count,56);assert.equal(actual.slides.length,56);
-  for(const[i,s] of expected.entries()){
-    assert.deepEqual(actual.slides[i],{...s,src:s.src+'?v='+m.entries[i].sha256});
-  }
-  assert(actual.slides[36].notes.includes('實際使用'));
-  assert(actual.slides[37].notes.includes('呼叫參數與結果'));
+test('archived v37 storyboard still parses all56 slides and trace notes',()=>{
+  const slides=attachKeyPoints(parseDeck(read('storyboard/56-slide-storyboard-v37-integrated.md'),m),m.entries);
+  assert.equal(slides.length,56);
+  assert(slides[36].notes.includes('實際使用'));
+  assert(slides[37].notes.includes('呼叫參數與結果'));
 });
 test('published galleries and README use56 valid local images',()=>{
   for(const file of ['gallery.html','gallery-images-only.html']){

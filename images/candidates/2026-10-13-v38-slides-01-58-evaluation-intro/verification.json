@@ -4,14 +4,13 @@
     22,
     23
   ],
-  "revisedImages": [
-    21,
-    22
+  "revisedImagesThisRevision": [
+    21
   ],
   "preservedV37Images": 55,
   "allUnmodifiedOriginalHashesMatch": true,
   "originalRelativeOrderPreserved": true,
   "allFilesExist": true,
-  "presenterUpdated": false,
+  "presenterVerification": "docs/verification/2026-10-13-v38-evaluation-presenter-publish.md",
   "pdfUpdated": false
 }

@@ -1,17 +1,17 @@
 # Agent Runtime Summit
 
-私人工作庫，保存講稿來源、最新56頁無頁碼圖片，以及歷史分頁版本。
+私人工作庫，保存講稿來源、最新58頁無頁碼圖片，以及歷史分頁版本。
 
-## 最新發佈：v37・56頁・圖內無頁碼（2026-10-13）
+## 最新發佈：v38・58頁・圖內無頁碼（2026-10-13）
 
-回到原55頁順序，只在原第12頁後加入 Lost in the Middle 圖表。全56張僅局部移除頁碼，其他像素完全不變；沒有重新生成整張圖片。投影站台同步為圖片v37／講稿v37，共56頁。
+保留v37順序，加入兩頁Evaluation介紹，共58頁。第21頁改為任務驗收卡，其餘57張v38圖片不變。投影站台同步為圖片v38／講稿v38。
 
-- [56頁完整圖片與講稿（GitHub直接瀏覽）](images/candidates/2026-10-13-v37-slides-01-56-no-numbers/README.md)
-- [56頁純圖片HTML](images/candidates/2026-10-13-v37-slides-01-56-no-numbers/gallery-images-only.html)
-- [56頁分頁稿](storyboard/56-slide-storyboard-v37-integrated.md)
-- [講述重點](presenter/56-page-key-points.md)
+- [58頁完整圖片與講稿（GitHub直接瀏覽）](images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/README.md)
+- [58頁純圖片HTML](images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/gallery-images-only.html)
+- [58頁分頁稿](storyboard/58-slide-storyboard-v38-evaluation-intro.md)
+- [講述重點](presenter/58-page-key-points.md)
 - [啟動與雙螢幕操作](presenter/README.md)
-- [發佈驗證](docs/verification/2026-10-13-v37-presenter-publish.md)
+- [發佈驗證](docs/verification/2026-10-13-v38-evaluation-presenter-publish.md)
 
 在專案根目錄執行：
 
@@ -20,9 +20,9 @@ node presenter/build-deck.mjs
 python3 presenter/serve.py --port 8767
 ```
 
-開啟 http://127.0.0.1:8767/ ，關閉舊投影後重新整理控制台，再開啟投影。GitHub只保存檔案，不會啟動本機服務；歷史PDF尚未更新為v37。
+開啟 http://127.0.0.1:8767/ ，關閉舊投影後重新整理控制台，再開啟投影。GitHub只保存檔案，不會啟動本機服務；歷史PDF尚未更新為v38。
 
-以下均為歷史版本當時的紀錄；其中本機試作不一定發佈至GitHub，現行內容以上方v37為準。
+以下均為歷史版本當時的紀錄；其中本機試作不一定發佈至GitHub，現行內容以上方v38為準。
 
 ## 本機最新：Builder案例合併 v35（2026-10-12）
 
