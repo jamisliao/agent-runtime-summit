@@ -21,5 +21,10 @@
     "tool": "built-in image_gen",
     "useCase": "precise-object-edit",
     "prompt": "Use case: precise-object-edit. Asset type: existing 16:9 hand-drawn presentation slide. Input image 1 is the edit target. Remove ONLY the bottom sentence 「每次執行後，用同一套標準判定」, restoring the same pale cream graph-paper background and faint grid seamlessly in that small bottom region. Keep all other content exactly as the original: title 「把明確要求，做成程式檢查」, blue underline, every icon, arrows, boxes, numbered checks, text, handwritten typography, stroke weights, ink colors and pencil hatching, original layout positions and overall aspect ratio. Do not reposition, resize, redesign or redraw existing content. Leave the newly blank bottom space empty, do not add text or page numbers. Preserve original canvas framing with no borders or cropping. Highest available native resolution."
+  },
+  "slide28": {
+    "tool": "built-in image_gen",
+    "useCase": "text-localization",
+    "prompt": "Use case: text-localization. Asset type: hand-drawn 16:9 presentation slide. Image 1 is the edit target. Make only one change: replace the TOP TITLE 「這批測試全過，不代表下次一定照做」 with exactly 「測試全過，不代表下次一定照做」, deleting only the first two characters 「這批」. Center the shortened title in the same top title region; match the original dark navy handwritten lettering, stroke width, pen pressure and character size. Preserve the red underline under the latter part of the title. Preserve EVERYTHING ELSE in the image: cream faint graph-paper grid background, all icons, arrows, checkmarks, purple bubbles, layout, colors, hatching and body text including the smaller label 「這批測試」. Do not add any text or page numbers. Keep the original framing, aspect ratio and resolution. Do not redraw or redesign the content below the title."
   }
 }

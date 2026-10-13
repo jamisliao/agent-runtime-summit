@@ -10,13 +10,13 @@ const cfg=json('presenter/deck-config.json');
 const folder=cfg.imageDirectory+'/';
 const m=json(folder+'manifest.json');
 const base='images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/';
-test('v39 preserves58 positions and54 original PNGs with no Judge insertion',()=>{
+test('v39 preserves58 positions and53 original PNGs with no Judge insertion',()=>{
   assert.equal(cfg.count,58);assert.equal(cfg.imageVersion,'v39');assert.equal(m.entries.length,58);
   for(const [i,e] of m.entries.entries()){
     assert.equal(e.n,i+1);assert.equal(e.previousV38,i+1);assert.equal(e.embeddedPageNumber,null);
     const bytes=read(folder+e.file);
     assert.equal(createHash('sha256').update(bytes).digest('hex'),e.sha256);
-    assert.equal(bytes.equals(read(base+e.file)),![23,24,25,26].includes(e.n));
+    assert.equal(bytes.equals(read(base+e.file)),![23,24,25,26,28].includes(e.n));
   }
 });
 test('v39 published deck contains matching notes, transitions and image hashes',()=>{
@@ -28,7 +28,7 @@ test('v39 published deck contains matching notes, transitions and image hashes',
   assert.equal(actual.slides[23].title,'Evaluation 要看結果，也要看執行過程');
   assert(actual.slides[24].notes.includes('用程式核對即可'));
   assert.equal(actual.slides[26].title,'固定條件重跑，觀察流程是否穩定');
-  assert.equal(actual.slides[27].title,'這批測試全過，不代表下次一定照做');
+  assert.equal(actual.slides[27].title,'測試全過，不代表下次一定照做');
   assert(!actual.slides.some(s=>s.notes.includes('Tool只回傳timeout')));
 });
 test('v39 galleries and README contain58 existing images',()=>{

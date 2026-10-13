@@ -2,7 +2,7 @@
   "version": "v39",
   "count": 58,
   "status": "pending_user_review",
-  "numberingNotice": "v39維持58頁與原頁序。第23頁改為「把實際執行，對回任務要求」，第24頁改為「Evaluation 要看結果，也要看執行過程」。第25頁整組左右互換：左為LLM-as-a-Judge、右為Code-based Evaluation；講述順序同步，兩種方法並非與結果或軌跡固定配對。第26頁移除底部「每次執行後，用同一套標準判定」，保留程式檢查圖示與講稿。不新增Judge示範；26頁接27重跑與28測試限制。相較v38，其他54張原圖逐位元保留；本次僅修改第26張圖片。圖片無內嵌頁碼，歷史PDF未更新。",
+  "numberingNotice": "v39維持58頁與原頁序。第23頁改為「把實際執行，對回任務要求」，第24頁改為「Evaluation 要看結果，也要看執行過程」。第25頁整組左右互換：左為LLM-as-a-Judge、右為Code-based Evaluation；講述順序同步，兩種方法並非與結果或軌跡固定配對。第26頁移除底部「每次執行後，用同一套標準判定」，保留程式檢查圖示與講稿。第28頁標題簡化為「測試全過，不代表下次一定照做」。不新增Judge示範；26頁接27重跑與28測試限制。相較v38，其他53張原圖逐位元保留；本次僅修改第28張圖片標題。圖片無內嵌頁碼，歷史PDF未更新。",
   "insertedPages": [],
   "entries": [
     {
@@ -887,10 +887,10 @@
     },
     {
       "n": 28,
-      "title": "這批測試全過，不代表下次一定照做",
+      "title": "測試全過，不代表下次一定照做",
       "chapter": "Skill：流程真的會照做嗎？",
       "file": "slide-28.png",
-      "sha256": "c95bd780db9aec2af090526d80f36075f25d1c3e30e0b47865e7a49e754330ff",
+      "sha256": "ea89b3d9717505de9b59c2ff7ee606ca29c3da09cbb427d2a3893070c22e0571",
       "embeddedPageNumber": null,
       "pixelSize": {
         "width": 1672,
@@ -916,9 +916,9 @@
       "outsideRepairRegionChangedPixels": 0,
       "status": "user_authorized_publication",
       "previousV37": 26,
-      "sourceFile": "images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/slide-28.png",
+      "sourceFile": "images/candidates/2026-10-13-v39-evaluation-edits/slide-28-short-title.png",
       "previousV38": 28,
-      "revisedInV39": false
+      "revisedInV39": true
     },
     {
       "n": 29,

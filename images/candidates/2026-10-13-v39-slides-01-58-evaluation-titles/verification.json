@@ -2,17 +2,18 @@
   "count": 58,
   "insertedPages": [],
   "revisedImagesThisRevision": [
-    26
+    28
   ],
   "v39RevisedImages": [
     23,
     24,
     25,
-    26
+    26,
+    28
   ],
-  "preservedV38Images": 54,
+  "preservedV38Images": 53,
   "originalRelativeOrderPreserved": true,
   "allUnmodifiedOriginalHashesMatch": true,
   "pdfUpdated": false,
-  "verification": "docs/verification/2026-10-13-v39-slide26-footer.md"
+  "verification": "docs/verification/2026-10-13-v39-slide28-title.md"
 }
