@@ -6,14 +6,14 @@
 
 在原37與38頁之間新增「可以執行，不代表能正確完成任務」：先說明批准與條件檢查確認操作可以執行，再帶到任務仍可能漏步驟或執行失敗，最後接出錯後回看當時的過程。
 
-原42頁（現43頁）已移除底部「找出可疑環節，不把推測當成原因」。報告驗收頁移到Builder呼叫與資料檢查之後；現46～48頁依序為「漏掉的Builder，這次有呼叫嗎？」、「呼叫了Builder，傳入的資料也對嗎？」、「輸出報告，格式與內容也要符合要求」。相較v39保留56張原圖；原37頁不使用補字比較稿，總數仍59頁。完整講稿、分頁稿與站台同步。
+原42頁（現43頁）已移除底部說明。現45頁先說「修好一個問題，也可能弄壞其他情境」，46頁接完整流程與其他情境重測；47～49頁依序核對Builder呼叫、傳入資料、報告交付。50頁Judge改以輸出、準則與參考範例評審；52頁接受門檻接53頁AI協助撰寫Skill。本輪重畫46與50兩張，相較v39保留54張原圖，59頁總數不變，完整講稿、分頁稿與站台同步。
 
 - [59頁完整圖片與講稿](images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/README.md)
 - [59頁純圖片HTML](images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/gallery-images-only.html)
 - [59頁分頁稿](storyboard/59-slide-storyboard-v40-execution-bridge.md)
 - [59頁講述重點](presenter/59-page-key-points-v40.md)
 - [啟動與雙螢幕操作](presenter/README.md)
-- [發佈驗證](docs/verification/2026-10-13-v40-execution-bridge.md)
+- [發佈驗證](docs/verification/2026-10-13-v40-regression-judge.md)
 
 執行`node docs/build-v40-execution-bridge.mjs`與`node presenter/build-deck.mjs`可重建。用`python3 presenter/serve.py --port 8767`啟動後，開啟http://127.0.0.1:8767/。換來源目錄或頁數須重新啟動服務，並關閉舊投影、重新整理控制台。歷史PDF未更新為59頁。
 

@@ -27,7 +27,7 @@ const bridge={
   points:['批准與條件檢查通過，確認的是操作可以執行。','任務是否正確完成，還要看實際步驟、工具執行與交付結果。']
 };
 const entries=[];
-const sourceOrder=[...Array.from({length:44},(_,i)=>i+1),46,47,45,...Array.from({length:11},(_,i)=>i+48)];
+const sourceOrder=[...Array.from({length:43},(_,i)=>i+1),51,44,46,47,45,48,49,50,...Array.from({length:7},(_,i)=>i+52)];
 assert.equal(new Set(sourceOrder).size,58);
 for(const old of sourceOrder.map(n=>source.entries[n-1])){
   const e={...old,previousV39:old.n,sourceFile:base+'/'+old.file};
@@ -46,7 +46,32 @@ for(const old of sourceOrder.map(n=>source.entries[n-1])){
     delete e.editBounds;
     delete e.outsideRepairRegionChangedPixels;
   }
-  if(old.n===44)e['接下一頁']='先回到漏Builder的問題：這版Skill修改後，必要的Builder有沒有真的被呼叫？';
+  if(old.n===43)e['接下一頁']='提出修改後，不能只看原本的問題有沒有修好：修改Skill，也可能影響其他原本通過的情境。';
+  if(old.n===51){
+    e['搭配講稿']='修好一個問題，也可能弄壞其他情境。我曾為了修一個failure case修改Skill，原本失敗的情境過了，重跑其他情境卻發現原本會過的流程壞掉。圖中A修好、B退步是影響的示意，不是新增實測統計。Skill的說明會影響模型在整次任務中的判斷，不一定只影響我們想修改的那一步。因此接受修改不能只看原本的失敗是否修好。';
+    e['接下一頁']='所以改完Skill，完整任務要重測，其他原本通過的情境也要重測。';
+    e.points=['修好一個失敗，其他原本通過的情境可能退步。','驗收修改要看完整流程，也要重跑其他情境，避免修A壞B。'];
+  }
+  if(old.n===44){
+    e.title='改完 Skill，完整流程與其他情境都要重測';
+    e.sourceFile=added+'/full-workflow-regression.png';
+    e['核心訊息']='驗收候選Skill，同時檢查完整任務的交付、步驟與工具參數，以及其他原本通過的情境是否退步。';
+    e['搭配講稿']='上一頁的修A壞B，說明為什麼不能只重測原本那個錯。這裡要測兩個範圍：第一是完整任務，核對交付結果、必要執行步驟與工具參數；第二是其他原本通過的情境，確認修改沒有造成退步。左側三張卡是同一任務的檢查面向，不是新的操作順序；右側是其他測試情境。沿用既定成功標準與測試條件，不因修改而放寬要求。接下來先用漏Builder的報告任務，示範完整流程如何核對。';
+    e.points=['完整任務：交付結果、執行步驟、工具與參數都要核對。','其他情境：重跑原本通過的案例，檢查是否退步。'];
+    e['接下一頁']='先回到漏Builder的問題：這版Skill修改後，必要的Builder有沒有真的被呼叫？';
+  }
+  if(old.n===48){
+    e.sourceFile=added+'/judge-rubric.png';
+    e['核心訊息']='明確條件用程式檢查；需要語意理解的輸出品質，交給Judge依評分準則與參考範例輔助評審。';
+    e['搭配講稿']='前面核對了Builder呼叫、傳入資料與報告交付，現在對應適合的驗收方法。Builder有沒有呼叫、Ref是否有效、必要欄位是否齊全，能明確判定就用程式。若要評估是否回應需求、語意上是否涵蓋重點等輸出品質，可以把輸出內容、評分準則與參考範例交給Judge，得到分數或是否達標的判定。固定格式本身不需要再請Judge判斷；這裡是選用方法，不是在Builder案例上硬加一道模型評審。Judge也可能判錯，需用人工判定樣本核對與校準。它不會自動驗證來源真偽；若特別提供來源與groundedness準則，才可另外輔助評估支持程度，這不是本頁重點。測試評審仍不是執行保證。';
+    e.points=['Builder呼叫、有效Ref、必要欄位等明確條件，用程式檢查。','Judge讀取輸出、準則與範例，評審是否符合需求、涵蓋重點；仍需校準。'];
+  }
+  if([44,48].includes(old.n)){
+    e.imageEdited=true;e.sourceProvenance=base+'/'+old.file;e.sourceSha256=old.sha256;
+    delete e.editBounds;delete e.outsideRepairRegionChangedPixels;
+  }
+  if(old.n===50)e['接下一頁']='既然有可檢驗的接受標準，就可以讓AI產生候選Skill，再用測試結果決定是否接受。';
+  if(old.n===52)e['搭配講稿']='有了前面的測試與接受標準，就可以把Skill撰寫也交給AI協助。在我的系統裡，從第一版Skill到功能完成，我沒有手寫過一行Prompt。我讓協助開發的AI讀PRD、SOP和程式碼，產生第一版Skill，再跑Evaluation找出實際行為和目標的差距。這不是沒有人的要求，也不是AI自行定義成功；人仍然負責需求與接受標準。這裡的AI是協助開發的角色，不是正式執行任務的Agent。';
   if(old.n===45){
     e.title='輸出報告，格式與內容也要符合要求';
     e.sourceFile=added+'/report-format-title.png';
@@ -70,25 +95,25 @@ for(const [i,e] of entries.entries()){
   e.n=i+1;e.file=`slide-${String(e.n).padStart(2,'0')}.png`;
   e.sha256=hash(bytes);
   e.pixelSize={width:bytes.readUInt32BE(16),height:bytes.readUInt32BE(20)};
-  if(e.previousV39&&![42,45].includes(e.previousV39))assert.equal(e.sha256,source.entries[e.previousV39-1].sha256);
+  if(e.previousV39&&![42,44,45,48].includes(e.previousV39))assert.equal(e.sha256,source.entries[e.previousV39-1].sha256);
   fs.writeFileSync(path.join(root,dest,e.file),bytes);
   assert.equal(hash(read(dest+'/'+e.file)),e.sha256);
 }
 assert.equal(entries[36].previousV39,37);
 assert.equal(entries[37].title,bridge.title);
 assert.equal(entries[38].previousV39,38);
-assert.deepEqual(entries.slice(45,48).map(e=>e.previousV39),[46,47,45]);
-const notice='v40共59頁：原37與38頁之間新增執行與完成的轉場；原42頁（現43頁）移除底部說明。報告驗收頁由原58頁版45頁／上一版59頁版46頁，移到Builder呼叫與資料檢查後，成為現48頁，標題改為「輸出報告，格式與內容也要符合要求」。現46～48頁依序為Builder呼叫、傳入資料、報告驗收，45與47～48轉場同步。其餘56張v39原圖逐位元保留，本輪僅重畫報告頁標題；圖片無內嵌頁碼，歷史PDF未更新。';
+assert.deepEqual(entries.slice(44,50).map(e=>e.previousV39),[51,44,46,47,45,48]);
+const notice='v40共59頁：保留新增38頁的執行與完成轉場。45頁「修好一個問題，也可能弄壞其他情境」移至全面重測之前；46頁重畫，說明完整流程與其他情境都要重測。47～49頁依序核對Builder呼叫、傳入資料、報告交付；50頁重畫，Judge以輸出、準則與範例評審，而非預設驗證證據來源。52頁接受門檻直接銜接53頁AI協助撰寫Skill。相較v39保留54張原圖；本輪只重畫兩張，其他已確認圖像不變，圖片無內嵌頁碼，歷史PDF未更新。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
 write(story,'# 59頁分頁稿 v40｜執行與完成的轉場\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 59頁圖片與講稿 v40\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md) · [產圖提示](PROMPTS.json)\n\n'+entries.map(e=>section(e)).join(''));
-write(dest+'/PAGE-MAPPING.md','# v39至v40頁碼對照\n\n37：批准後重新檢查條件。38（新增）：可以執行不代表任務正確完成。39（原38）：出錯後回看執行。40（原39）：漏Builder案例。41、42（原40、41）：留下資訊並對照紀錄。\n\n報告驗收由原45頁移至原47頁之後。現行46：Builder呼叫；47：傳入資料；48：輸出報告格式與內容。59頁總數不變。\n\n| v40 | v39 | 標題 |\n|---|---|---|\n'+entries.map(e=>`| ${e.n} | ${e.previousV39??'新增'} | ${e.title} |`).join('\n'));
+write(dest+'/PAGE-MAPPING.md','# v39至v40頁碼對照\n\n37：批准後重新檢查條件。38（新增）：可以執行不代表任務正確完成。39（原38）：出錯後回看執行。40（原39）：漏Builder案例。41、42（原40、41）：留下資訊並對照紀錄。\n\n現45（原51）：修A壞B；46（原44）：完整流程與其他情境重測；47～49（原46、47、45）：Builder呼叫、傳入資料、報告交付；50（原48）：程式與Judge；51～52（原49、50）：回歸案例與接受門檻；53開始AI協助撰寫Skill。總數59頁不變。\n\n| v40 | v39 | 標題 |\n|---|---|---|\n'+entries.map(e=>`| ${e.n} | ${e.previousV39??'新增'} | ${e.title} |`).join('\n'));
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const head='<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>59頁執行轉場</title><style>body{margin:0;background:#181818;color:#182849;font:20px system-ui}main{max-width:1672px;margin:auto}figure{margin:0 0 20px}img{display:block;width:100%;height:auto;max-height:100vh;object-fit:contain}article{background:#fffdf7;margin:0 0 30px;padding-bottom:20px}h2,article p,article ul{margin:20px}header{background:#eee9df;padding:20px}@media print{figure{break-after:page;margin:0}}</style></head><body>';
 const img=e=>`<img loading="lazy" src="${e.file}?v=${e.sha256.slice(0,12)}" width="${e.pixelSize.width}" height="${e.pixelSize.height}" alt="${esc(e.title)}">`;
 write(dest+'/gallery-images-only.html',head+'<main>'+entries.map(e=>`<figure id="slide-${String(e.n).padStart(2,'0')}">${img(e)}</figure>`).join('')+'</main></body></html>');
 write(dest+'/gallery.html',head+'<header><h1>59頁執行轉場</h1><p>'+notice+'</p></header><main>'+entries.map(e=>`<article id="slide-${String(e.n).padStart(2,'0')}"><h2>${e.n}｜${esc(e.title)}</h2>${img(e)}<p>${esc(e['核心訊息'])}</p><p>${esc(e['搭配講稿'])}</p><p>接下一頁：${esc(e['接下一頁'])}</p></article>`).join('')+'</main></body></html>');
 write(dest+'/manifest.json',JSON.stringify({version:'v40',count:59,status:'pending_user_review',numberingNotice:notice,insertedPages:[38],entries},null,2));
-write(dest+'/PROMPTS.json',JSON.stringify({tool:'built-in image_gen',bridge:JSON.parse(read(added+'/PROMPT.json')),slide43:JSON.parse(read(added+'/SLIDE-43-REMOVE-FOOTER-PROMPT.json')),slide48:JSON.parse(read(added+'/REPORT-FORMAT-TITLE-PROMPT.json'))},null,2));
-write(dest+'/verification.json',JSON.stringify({count:59,insertedPages:[38],revisedOriginalImages:[43,48],preservedV39Images:56,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:false,originalSourceOrder:sourceOrder,reorderedV39Pages:[45,46,47],revisedNarration:[37,38,39,45,47,48],pdfUpdated:false,verification:'docs/verification/2026-10-13-v40-report-reordered.md'},null,2));
-console.log(JSON.stringify({count:59,dest,story,preservedV39Images:56,insertedPage:38,reportAt:48,validationOrder:['Builder呼叫','傳入資料','報告驗收']}));
+write(dest+'/PROMPTS.json',JSON.stringify({tool:'built-in image_gen',bridge:JSON.parse(read(added+'/PROMPT.json')),slide43:JSON.parse(read(added+'/SLIDE-43-REMOVE-FOOTER-PROMPT.json')),slide49:JSON.parse(read(added+'/REPORT-FORMAT-TITLE-PROMPT.json')),slides46and50:JSON.parse(read(added+'/REGRESSION-JUDGE-PROMPTS.json'))},null,2));
+write(dest+'/verification.json',JSON.stringify({count:59,insertedPages:[38],revisedOriginalImages:[43,46,49,50],preservedV39Images:54,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:false,originalSourceOrder:sourceOrder,reorderedV39Pages:[51,44,46,47,45,48,49,50],revisedNarration:[37,38,39,44,45,46,48,49,50,52,53],pdfUpdated:false,verification:'docs/verification/2026-10-13-v40-regression-judge.md'},null,2));
+console.log(JSON.stringify({count:59,dest,story,preservedV39Images:54,insertedPage:38,regressionRiskAt:45,fullRetestAt:46,judgeAt:50,reportAt:49,validationOrder:['Builder呼叫','傳入資料','報告驗收']}));

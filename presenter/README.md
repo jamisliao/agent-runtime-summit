@@ -2,13 +2,13 @@
 
 ## 現行版本：v40・59頁・圖內無頁碼
 
-原37與38頁之間新增「可以執行，不代表能正確完成任務」，再接出錯後回看執行。原42頁（現43頁）移除底部說明。報告驗收移到Builder呼叫及資料檢查之後：46頁Builder呼叫、47頁傳入資料、48頁「輸出報告，格式與內容也要符合要求」。相較v39保留56張原圖，59頁總數不變；講稿轉場與頁碼同步。
+原37與38頁之間保留「可以執行，不代表能正確完成任務」。現45頁修A壞B，46頁完整流程與其他情境重測，47～49頁Builder呼叫、傳入資料、報告交付；50頁Judge依準則與範例評審輸出；52頁接受門檻接53頁AI協助撰寫Skill。本輪重畫46與50兩張，相較v39保留54張原圖，總數59頁不變；講稿轉場與頁碼同步。
 
 - [59頁圖片與講稿](../images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/README.md)
 - [59頁純圖片HTML](../images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/gallery-images-only.html)
 - [59頁分頁稿](../storyboard/59-slide-storyboard-v40-execution-bridge.md)
 - [59頁講述重點](59-page-key-points-v40.md)
-- [發佈驗證](../docs/verification/2026-10-13-v40-execution-bridge.md)
+- [發佈驗證](../docs/verification/2026-10-13-v40-regression-judge.md)
 
 ## 上一版：v39・58頁
 
@@ -74,7 +74,7 @@ python3 presenter/tests/server_test.py
 node docs/verify-v39-live.mjs
 ```
 
-伺服器只提供播放器白名單檔案及58張具名PNG；第59頁起、git、歷史資料、來源講稿與任意repo檔案均不對外提供。投影視窗不請求完整deck講稿。
+伺服器只提供播放器白名單檔案及59張具名PNG；第60頁起、git、歷史資料、來源講稿與任意repo檔案均不對外提供。投影視窗不請求完整deck講稿。
 
 ## 限制
 

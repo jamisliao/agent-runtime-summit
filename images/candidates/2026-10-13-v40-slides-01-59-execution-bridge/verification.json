@@ -5,9 +5,11 @@
   ],
   "revisedOriginalImages": [
     43,
-    48
+    46,
+    49,
+    50
   ],
-  "preservedV39Images": 56,
+  "preservedV39Images": 54,
   "allUnmodifiedOriginalHashesMatch": true,
   "originalRelativeOrderPreserved": false,
   "originalSourceOrder": [
@@ -54,6 +56,7 @@
     41,
     42,
     43,
+    51,
     44,
     46,
     47,
@@ -61,7 +64,6 @@
     48,
     49,
     50,
-    51,
     52,
     53,
     54,
@@ -71,18 +73,28 @@
     58
   ],
   "reorderedV39Pages": [
-    45,
+    51,
+    44,
     46,
-    47
+    47,
+    45,
+    48,
+    49,
+    50
   ],
   "revisedNarration": [
     37,
     38,
     39,
+    44,
     45,
-    47,
-    48
+    46,
+    48,
+    49,
+    50,
+    52,
+    53
   ],
   "pdfUpdated": false,
-  "verification": "docs/verification/2026-10-13-v40-report-reordered.md"
+  "verification": "docs/verification/2026-10-13-v40-regression-judge.md"
 }
