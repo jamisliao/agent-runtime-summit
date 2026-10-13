@@ -1,9 +1,9 @@
 {
   "title": "自己刻 Agent 框架",
-  "id": "v38-58pages-evaluation-intro",
+  "id": "v39-58pages-evaluation-titles",
   "count": 58,
-  "imageVersion": "v38",
-  "notesVersion": "v38",
+  "imageVersion": "v39",
+  "notesVersion": "v39",
   "status": "pending_user_review",
   "slides": [
     {
@@ -325,11 +325,11 @@
     },
     {
       "n": 23,
-      "title": "測試跑完，怎麼確認達標？",
+      "title": "把實際執行，對回任務要求",
       "chapter": "Skill 與 Evaluation：說明如何變成測試",
-      "src": "/slides/slide-23.png?v=d0ad8b5d2be23ee3b50f45ba85983c8a3150d51ef6eb05f6cf5f3b576f838dca",
-      "notes": "測試跑完，我要找實際執行留下的依據。先看指定報告有沒有交付，這只能確認成果是否存在，不能憑報告外觀判斷它是Builder產生的。接著查看工具呼叫紀錄，確認Builder有沒有被呼叫、回傳了什麼，再把這個Tool結果與最後交付的報告或引用對照。只有呼叫過Builder，也不代表模型最後交付了它的輸出。這樣才有依據確認任務是否達標。圖上的問題是待核對的項目，不代表一組新增的實測結果。",
-      "transition": "依據找到了，接著把要評估的對象分清楚：最後交付的結果，以及實際執行的步驟。",
+      "src": "/slides/slide-23.png?v=f3882b688d104344b1a871b8d18f9517b1c1821637769768ba28fd15a19d5550",
+      "notes": "上一頁介紹實際執行與對照成功標準，現在用Builder案例核對一次。Skill要求呼叫Builder，並交付它產生的正式報告。我先看指定報告有沒有交付，但不能憑報告外觀判斷它來自Builder。接著查看工具呼叫紀錄，確認Builder有沒有被呼叫、回傳了什麼，再把Tool結果與最後交付的報告或引用對照。只有呼叫過Builder，也不代表最後交付用了它的輸出。這一頁就是把實際執行留下的依據，對回任務要求。圖中的問題是核對項目，不是新增實測結果。",
+      "transition": "從剛才的核對，可以分成兩個評估面向：最後交付得對不對，以及實際執行的過程有沒有符合要求。",
       "message": "從交付成果確認是否交付，從工具呼叫與回傳紀錄確認Builder操作及交付來源。",
       "points": [
         "交付成果：確認指定報告有沒有交出。",
@@ -340,11 +340,11 @@
     },
     {
       "n": 24,
-      "title": "結果完成了，流程也做對了嗎？",
+      "title": "Evaluation 要看結果，也要看執行過程",
       "chapter": "Skill 與 Evaluation：說明如何變成測試",
-      "src": "/slides/slide-24.png?v=30cec67af81330a6f08dd941846d3a4de5536021f488d26433086ffa8da18073",
+      "src": "/slides/slide-24.png?v=80e59f3b791f0a2a1c6530594447e9abe1b4586a4fdbae6f8ebf63fc77a46e87",
       "notes": "上一頁我們找了兩類依據：交付成果，以及工具呼叫與回傳紀錄。現在介紹要評估的對象。Outcome Evaluation，也就是結果評估，看最後的交付是否符合任務要求；若要求交付Builder產生的報告，確認來源時也需要對照工具回傳結果。Trajectory Evaluation，也就是執行軌跡評估，看實際發生的工具操作、順序與參數，例如Builder有沒有真的被呼叫。這些名稱指的是評估什麼，不是限定只能使用哪一份紀錄；同一份工具紀錄也可以支援結果來源的檢查。兩者可以一起評估。",
-      "transition": "結果和軌跡是要檢查的對象；下一頁介紹判斷的方法：程式檢查，以及LLM-as-a-Judge。",
+      "transition": "結果與執行過程是評估的面向；接著看判斷方法，可以用程式檢查，也可以請模型依準則評審。",
       "message": "Outcome Evaluation檢查交付結果是否符合任務要求；Trajectory Evaluation檢查實際執行的訊息與操作，包括必要工具、順序與參數。兩者是評估對象，不是評分者或必須二選一的方案。",
       "points": [
         "Outcome Evaluation：看最後的交付是否符合要求。",
@@ -358,8 +358,8 @@
       "title": "這些要求，要怎麼評估？",
       "chapter": "Skill 與 Evaluation：說明如何變成測試",
       "src": "/slides/slide-25.png?v=7d2df9ba044811f0d3fadfd2efcb97517f48e788e17ffc6949ed2998b81bd716",
-      "notes": "上一頁的Outcome和Trajectory，是我們要評估什麼；這一頁是怎麼評估。Code-based Evaluation，是把明確的條件寫成程式檢查，例如Builder有沒有呼叫、參數是否正確、輸出格式是否符合規格。若把實際工具步驟與預期軌跡比對，常用名稱是Trajectory Matching；哪些步驟必須做、順序是否重要，要依任務要求決定，不是所有合法執行都必須完全一樣。LLM-as-a-Judge，則是請模型依照評分準則擔任評審，判斷內容或執行方式是否合理。它不是只看結果或只給分數，也能評軌跡。兩種方法可以搭配；Judge的判定仍需用人工樣本校準。這裡講的是測試與評估，不是靠另一個模型保證執行一定正確。接著回到Builder案例，將任務要求變成實際檢查項目。",
-      "transition": "回到Builder案例，呼叫有沒有發生、交付是否對應它的回傳結果，都是可以明確核對的條件。接著把它們做成程式檢查。",
+      "notes": "上一頁的Outcome和Trajectory，是要評估什麼；這一頁是怎麼評估。Code-based Evaluation，是把明確條件寫成程式檢查，例如Builder有沒有呼叫、參數是否正確、交付是否對應工具回傳的結果。把實際工具步驟與預期軌跡比對，可以用Trajectory Matching；哪些步驟必須做、順序是否重要，要依任務要求決定。需要語意判斷時，可以讓模型依準則評審，這就是LLM-as-a-Judge。兩種方法能搭配，也不固定綁定結果或軌跡；Judge也可能判錯。這裡的Builder案例有明確條件，用程式核對即可，接著就看這個做法。",
+      "transition": "以Builder案例來說，呼叫有沒有發生、交付是否對應它的回傳結果，都能做成明確的程式檢查。",
       "message": "Code-based Evaluation與LLM-as-a-Judge是評估方法，均不固定綁定某一對象。Trajectory Matching是程式化比對預期軌跡的一種方式；Judge可評內容，也可評執行軌跡。評估不是執行時Guard，也不保證未來每次正確。",
       "points": [
         "Code-based Evaluation：以程式核對明確條件；Trajectory Matching可比對預期步驟。",

@@ -1,0 +1,4 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: text-localization. Image1 is edit target; image2 is solely original v19 slide43 style/handwriting reference. Change ONLY the top title of image1 to exact Traditional Chinese text「把實際執行，對回任務要求」. Put a light blue hand-drawn underline beneath「對回任務要求」. Preserve all other words, icons, arrows, positions, scale, two panels and pale paper grid. Keep original diagram intact: left交付成果 and指定報告有交付嗎？; right工具呼叫紀錄,呼叫 Builder,Tool 回傳結果,對照,最後交付,Builder 有呼叫嗎？,交付的是它的結果嗎？. Navy natural friendly pen handwriting, medium readable text weight, natural ink pressure, not extra bold brush nor thin monoline. Fine pen icon contours, sparse hatching and light blue pencil accents. Match title to original slide43 letterform and relative weight. Landscape 16:9 highest native quality. No page number, no watermarks, no black bars, no new words. Do not copy reference43 content. No other design changes."
+}

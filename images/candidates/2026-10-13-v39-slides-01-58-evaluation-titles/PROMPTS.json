@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "slide23": {
+    "tool": "built-in image_gen",
+    "prompt": "Use case: text-localization. Image1 is edit target; image2 is solely original v19 slide43 style/handwriting reference. Change ONLY the top title of image1 to exact Traditional Chinese text「把實際執行，對回任務要求」. Put a light blue hand-drawn underline beneath「對回任務要求」. Preserve all other words, icons, arrows, positions, scale, two panels and pale paper grid. Keep original diagram intact: left交付成果 and指定報告有交付嗎？; right工具呼叫紀錄,呼叫 Builder,Tool 回傳結果,對照,最後交付,Builder 有呼叫嗎？,交付的是它的結果嗎？. Navy natural friendly pen handwriting, medium readable text weight, natural ink pressure, not extra bold brush nor thin monoline. Fine pen icon contours, sparse hatching and light blue pencil accents. Match title to original slide43 letterform and relative weight. Landscape 16:9 highest native quality. No page number, no watermarks, no black bars, no new words. Do not copy reference43 content. No other design changes."
+  },
+  "slide24": {
+    "tool": "built-in image_gen",
+    "n": 24,
+    "refs": [
+      "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/slide-24.png",
+      "/Users/jamisliao/projects/agent-runtime-summit/images/candidates/2026-10-04-v19-slides-01-55/slide-43.png"
+    ],
+    "prompt": "Use case: text-localization. Image1 is edit target. Image2 style reference only. Change ONLY top title to exact text:「Evaluation 要看結果，也要看執行過程」. Underline「結果」and「執行過程」in light blue. Preserve ALL other text, paired comparison panels, icons and annotations exactly. Both Outcome Evaluation and Trajectory Evaluation labels must remain. Match the supplied v19 slide43 STYLE REFERENCE exactly in navy Chinese/English friendly natural pen handwriting, medium full text weight with pressure variation and ink texture, not monoline nor extra bold brush calligraphy. Fine navy icon contours, sparse slanted hatching, soft blue/teal/purple pencil fills with paper showing through, cream faint square grid. Red emphasis same handwriting weight as navy. Plenty of whitespace, large readable text. No page number, no badge, no watermark, no black bars. Landscape 16:9, highest native resolution. Never copy the reference43 content or number."
+  }
+}

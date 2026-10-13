@@ -2,7 +2,7 @@
 
 私人工作庫，保存講稿來源、最新58頁無頁碼圖片，以及歷史分頁版本。
 
-## 最新發佈：v38・58頁・圖內無頁碼（2026-10-13）
+## 最新發佈：v39・58頁・圖內無頁碼（2026-10-13）
 
 封面署名：JamisLiao（草寫英文）。
 
@@ -10,14 +10,14 @@
 
 第16頁改為「分析完 Log，還要交付正式報告」，先呈現自由撰寫的風險，再接Builder；圖示維持原第43頁母版的細鋼筆筆觸，文字與前後頁對照後採中等字重。
 
-保留v37順序，加入兩頁Evaluation介紹，共58頁。第21頁採任務驗收卡，第13頁標題為「資訊放在中間，也容易被 LLM 忽略」。第23頁說明驗收依據，第26頁將明確條件做成程式檢查；交付來源需用工具呼叫及Tool結果對照確認。完整主稿與投影站台同步。
+第23頁改為「把實際執行，對回任務要求」，第24頁改為「Evaluation 要看結果，也要看執行過程」。第25頁保留Judge方法概覽，不新增獨立示範頁；第26頁程式檢查接27頁重跑、28頁測試限制。其餘56張圖保留，完整主稿與投影站台同步，維持58頁。
 
-- [58頁完整圖片與講稿（GitHub直接瀏覽）](images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/README.md)
-- [58頁純圖片HTML](images/candidates/2026-10-13-v38-slides-01-58-evaluation-intro/gallery-images-only.html)
-- [58頁分頁稿](storyboard/58-slide-storyboard-v38-evaluation-intro.md)
+- [58頁完整圖片與講稿（GitHub直接瀏覽）](images/candidates/2026-10-13-v39-slides-01-58-evaluation-titles/README.md)
+- [58頁純圖片HTML](images/candidates/2026-10-13-v39-slides-01-58-evaluation-titles/gallery-images-only.html)
+- [58頁分頁稿](storyboard/58-slide-storyboard-v39-evaluation-titles.md)
 - [講述重點](presenter/58-page-key-points.md)
 - [啟動與雙螢幕操作](presenter/README.md)
-- [發佈驗證](docs/verification/2026-10-13-v38-evaluation-presenter-publish.md)
+- [發佈驗證](docs/verification/2026-10-13-v39-evaluation-judge.md)
 
 在專案根目錄執行：
 
@@ -26,9 +26,9 @@ node presenter/build-deck.mjs
 python3 presenter/serve.py --port 8767
 ```
 
-開啟 http://127.0.0.1:8767/ ，關閉舊投影後重新整理控制台，再開啟投影。GitHub只保存檔案，不會啟動本機服務；歷史PDF尚未更新為v38。
+開啟 http://127.0.0.1:8767/ ，關閉舊投影後重新整理控制台，再開啟投影。GitHub只保存檔案，不會啟動本機服務；歷史PDF尚未更新為v39。
 
-以下均為歷史版本當時的紀錄；其中本機試作不一定發佈至GitHub，現行內容以上方v38為準。
+以下均為歷史版本當時的紀錄；其中本機試作不一定發佈至GitHub，現行內容以上方v39為準。
 
 ## 本機最新：Builder案例合併 v35（2026-10-12）
 
