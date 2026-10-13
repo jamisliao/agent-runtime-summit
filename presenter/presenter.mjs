@@ -11,6 +11,21 @@ const save = (key,value) => { try { localStorage.setItem(key,String(value)); } c
 const restore = key => { try { return localStorage.getItem(key); } catch { return null; } };
 let notesSize = Math.max(18, Math.min(36, Number(restore('runtime-notes-size')) || 22));
 document.documentElement.style.setProperty('--notes-size', `${notesSize}px`);
+// Fit actual rendered content, not a fixed character-count estimate. Never clip cues.
+function fitCues() {
+  const panel=byId('speaker-cues');
+  let effective=notesSize;
+  document.documentElement.style.setProperty('--notes-size',`${effective}px`);
+  if(window.matchMedia('(min-width:1024px)').matches){
+    while(panel.scrollHeight>panel.clientHeight+1 && effective>18){
+      effective--;
+      document.documentElement.style.setProperty('--notes-size',`${effective}px`);
+    }
+  }
+  byId('notes-size-status').textContent=effective<notesSize ? `${effective}px · 適配畫面` : `${effective}px`;
+}
+const cueObserver=new ResizeObserver(()=>fitCues());
+cueObserver.observe(byId('speaker-cues'));
 
 function send(message) {
   if (popup && !popup.closed) popup.postMessage({...message,session},location.origin);
@@ -38,13 +53,11 @@ function goTo(next) {
   const slide = slides[index], upcoming = slides[index+1];
   byId('current-slide').src = slide.src;
   byId('current-slide').alt = `${slide.n}｜${slide.title}`;
-  byId('slide-title').textContent = slide.title;
   byId('chapter').textContent = `${String(slide.n).padStart(2,'0')} / ${slide.chapter}`;
   byId('slide-message').textContent = slide.displayMessage;
   byId('slide-key-points').replaceChildren(...slide.points.map(point => {
     const item = document.createElement('li'); item.textContent = point; return item;
   }));
-  byId('speaker-notes').textContent = slide.notes;
   byId('transition').textContent = slide.transition;
   byId('page-number').value = slide.n;
   byId('previous').disabled = index === 0;
@@ -55,8 +68,7 @@ function goTo(next) {
   document.querySelectorAll('.thumbnail').forEach((button,n) => {
     if (n === index) button.setAttribute('aria-current','page'); else button.removeAttribute('aria-current');
   });
-  byId('speaker-notes').scrollTop = 0;
-  byId('speaker-notes').closest('.notes').scrollTop = 0;
+  fitCues();
   save(slideStorageKey,index);
   syncProjection();
 }
@@ -70,7 +82,7 @@ function makeThumbnails() {
     const caption = document.createElement('span'); caption.className = 'thumbnail__caption';
     const number = document.createElement('span'); number.className = 'thumbnail__number'; number.textContent = String(slide.n).padStart(2,'0');
     const title = document.createElement('span'); title.className = 'thumbnail__title'; title.textContent = slide.title;
-    caption.append(number,title); button.append(image,caption); button.addEventListener('click',() => goTo(n)); fragment.append(button);
+    caption.append(number,title); button.append(image,caption); button.addEventListener('click',() => {goTo(n);byId('overview-dialog').close();}); fragment.append(button);
   });
   byId('thumbnails').replaceChildren(fragment);
 }
@@ -162,12 +174,15 @@ byId('page-number').addEventListener('keydown',event => {
   if (event.key === 'Enter') {event.preventDefault();commitPageInput();}
 });
 document.addEventListener('keydown',event => {
+  if(byId('overview-dialog').open)return;
   const next = navigationIndex(index,slides.length,event); if (next !== null) {event.preventDefault(); goTo(next);}
 });
 for (const [id,delta] of [['notes-smaller',-2],['notes-larger',2]]) {
   byId(id).addEventListener('click',() => { notesSize = Math.max(18,Math.min(36,notesSize+delta));
-    document.documentElement.style.setProperty('--notes-size',`${notesSize}px`); save('runtime-notes-size',notesSize); });
+    fitCues(); save('runtime-notes-size',notesSize); });
 }
+byId('open-overview').addEventListener('click',()=>byId('overview-dialog').showModal());
+byId('close-overview').addEventListener('click',()=>byId('overview-dialog').close());
 byId('current-slide').addEventListener('error',() => { byId('app-status').textContent = '預覽圖片讀取失敗，請確認本機服務仍在執行。'; });
 window.addEventListener('pagehide',() => { popup?.close(); clearInterval(popupCheck); });
 
@@ -181,9 +196,8 @@ try {
   byId('page-number').max = String(slides.length);
   byId('page-total').textContent = `/ ${slides.length}`;
   byId('deck-edition').textContent = `${slides.length} 頁 · 圖片 ${deck.imageVersion} / 講稿 ${deck.notesVersion}`;
-  byId('notes-source').textContent = `來源：${deck.notesVersion}分頁稿。逐頁重點、原講稿及轉場保留來源原文，僅講者可見。`;
   makeThumbnails(); goTo(Number.isInteger(stored) ? stored : 0);
-  byId('app-status').textContent = `${slides.length} 張圖片與講稿已載入 · 原圖不裁切`;
+  byId('app-status').textContent = `${slides.length} 頁 · 精簡提示已載入 · 原圖不裁切`;
 } catch {
   byId('app-status').textContent = '簡報載入失敗。請使用 README 的本機 HTTP 啟動方式，不要直接開啟 HTML 檔案。';
   byId('open-projection').disabled = true;

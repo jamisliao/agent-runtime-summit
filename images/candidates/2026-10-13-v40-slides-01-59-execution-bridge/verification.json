@@ -4,12 +4,18 @@
     38
   ],
   "revisedOriginalImages": [
+    34,
+    35,
+    36,
     43,
     46,
     49,
     50
   ],
-  "preservedV39Images": 54,
+  "revisedInsertedImages": [
+    38
+  ],
+  "preservedV39Images": 51,
   "allUnmodifiedOriginalHashesMatch": true,
   "originalRelativeOrderPreserved": false,
   "originalSourceOrder": [
@@ -83,6 +89,10 @@
     50
   ],
   "revisedNarration": [
+    33,
+    34,
+    35,
+    36,
     37,
     38,
     39,
@@ -96,5 +106,5 @@
     53
   ],
   "pdfUpdated": false,
-  "verification": "docs/verification/2026-10-13-v40-regression-judge.md"
+  "verification": "docs/verification/2026-10-13-v40-investigation-transition.md"
 }

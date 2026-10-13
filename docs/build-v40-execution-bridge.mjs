@@ -16,27 +16,52 @@ assert.equal(source.count,58);
 fs.mkdirSync(path.join(root,dest),{recursive:true});
 
 const bridge={
-  title:'可以執行，不代表能正確完成任務',
+  title:'除了防錯，也要能追查出錯原因',
   chapter:'從防錯，轉向出錯後的追查',
-  sourceFile:added+'/execution-bridge.png',
+  sourceFile:added+'/investigation-transition.png',
   embeddedPageNumber:null,
   status:'pending_user_review',
-  '核心訊息':'批准與條件檢查確認操作現在是否可以執行；任務是否正確完成，還要看後續實際執行與交付結果。',
-  '搭配講稿':'上一頁重新檢查的是：這次操作現在是否符合執行條件。批准與檢查通過，代表可以往下執行，但不等於整個任務已經正確完成。後面仍可能漏掉要求的步驟、工具執行失敗，或交付結果不符合要求。圖中是可能發生的問題，不是一組新增實測。除了執行前檢查，我們也要知道實際執行發生了什麼。若最後發現問題，就需要回看當時的過程，接著談這件事。',
-  '接下一頁':'如果任務真的出了問題，我們要怎麼回看當時的執行、找到需要追查的環節？',
-  points:['批准與條件檢查通過，確認的是操作可以執行。','任務是否正確完成，還要看實際步驟、工具執行與交付結果。']
+  '核心訊息':'明確從執行前防錯換到出錯後追查：看見結果不符合要求，只知道出了問題；原因需要對照當時留下的執行紀錄。',
+  '搭配講稿':'前面談的是怎麼防錯：需要時先讓人確認或批准，真正執行前再檢查條件。接下來換一個議題：如果實際執行後發現問題，我們怎麼查清楚它如何發生？左側是執行前的檢查與批准，右側是出錯後回看紀錄，兩者不是同一個判斷。看見結果錯了，只告訴我們出錯，不能直接確定原因在模型、Skill或工具。這裡的圖是方法示意，不是新增實測。我們需要執行當時留下的紀錄作為追查依據，不能事後只憑結果猜。接著說明怎麼回看當時的執行，再回到漏Builder的例子。',
+  '接下一頁':'要追查怎麼發生，就先把最後發現的問題放回當時的執行過程。',
+  points:['執行前防錯與出錯後追查，處理不同問題。','看見錯誤不等於知道原因；需要當時的執行紀錄來找線索。']
 };
 const entries=[];
 const sourceOrder=[...Array.from({length:43},(_,i)=>i+1),51,44,46,47,45,48,49,50,...Array.from({length:7},(_,i)=>i+52)];
 assert.equal(new Set(sourceOrder).size,58);
 for(const old of sourceOrder.map(n=>source.entries[n-1])){
   const e={...old,previousV39:old.n,sourceFile:base+'/'+old.file};
+  if(old.n===33)e['接下一頁']='剛才檢查的是Agent說了什麼、有沒有依據。接下來要確認的是：它準備做什麼，是不是我要的，以及我是否允許它執行。';
+  if(old.n===34){
+    e.title='Agent 要做什麼，有時需要人先確認';
+    e.sourceFile=added+'/hitl-34-direct-title.png';
+    e.imageEdited=true;e.sourceProvenance=base+'/'+old.file;e.sourceSha256=old.sha256;
+    delete e.editBounds;delete e.outsideRepairRegionChangedPixels;
+    e['核心訊息']='有證據的報告不等於任務理解符合使用者意圖，也不等於操作已獲批准；在需要的時機由人確認理解或批准操作。';
+    e['搭配講稿']='前面檢查的是Agent說了什麼、有沒有依據。接下來換一個問題：它準備做什麼，是不是我要它做的，以及我是否允許這個操作？報告有依據，不能回答這兩個問題。Human-in-the-Loop是在需要的時機把人的確認放進執行流程：任務開始前，先呈現理解的目標與範圍，由使用者確認或修正；特定操作執行前，先呈現操作與影響，由人批准或拒絕。這是在介紹兩種確認時機，不是在報告交付後才補做確認，也不是讓人替無證據的結論蓋章。每個任務不一定需要兩種確認；依需求與風險選擇。';
+    e['接下一頁']='先展開第一種確認：在任務開始前，確認Agent理解的目標與範圍是不是使用者要的。';
+    e.points=['先確認它準備做什麼：理解的任務是否符合使用者意圖？','再區分是否允許操作：需要批准時，先由人決定再執行。'];
+  }
+  if(old.n===35){
+    e.title='先確認目標與範圍，再開始任務';
+    e['搭配講稿']='先看第一種：確認它理解的目標與範圍，再開始任務。'+old['搭配講稿'];
+    e['接下一頁']='目標與範圍確認後，若接下來要寫入、扣款或對外通知，還需要另一種確認：先批准這次操作。';
+  }
+  if(old.n===36){
+    e.title='寫入、扣款或通知前，先取得批准';
+    e['搭配講稿']='另一種是批准操作：理解對了，也不代表可以直接寫入、扣款或通知。'+old['搭配講稿'];
+  }
+  if([35,36].includes(old.n)){
+    e.sourceFile=added+`/hitl-${old.n}-direct-title.png`;
+    e.imageEdited=true;e.sourceProvenance=base+'/'+old.file;e.sourceSha256=old.sha256;
+    delete e.editBounds;delete e.outsideRepairRegionChangedPixels;
+  }
   if(old.n===37){
-    e['搭配講稿']='Approval會把一次Agent Run切成提案與執行兩段，中間可能隔幾分鐘或幾小時。資料可能已被別人處理，任務可能已關閉，帳務或權限狀態也可能改變。因此批准不是永久通行證。Runtime在真正執行前仍要重新檢查Precondition，並留下批准內容與檢查結果。這裡確認的是這次操作現在能不能執行，接下來還要看整個任務能不能正確完成。';
-    e['接下一頁']='重新檢查通過，這次操作就可以繼續。但可以執行，是否代表整個任務一定能正確完成？';
+    e['搭配講稿']='Approval會把一次Agent Run切成提案與執行兩段，中間可能隔幾分鐘或幾小時。資料可能已被別人處理，任務可能已關閉，帳務或權限狀態也可能改變。因此批准不是永久通行證。Runtime在真正執行前仍要重新檢查Precondition，並留下批准內容與檢查結果。到這裡談的是執行前的確認與防錯。接下來換到另一個議題：出了問題，我們如何回看當時的執行、追查原因。';
+    e['接下一頁']='前面談的是怎麼防錯。接下來換一個問題：如果實際執行仍出了問題，我們要留下什麼，才能查清楚原因？';
   }
   if(old.n===38){
-    e['搭配講稿']='上一頁區分了可以執行與正確完成。現在若發現結果不符合要求，除了處理當下情況，也要能回看當時如何接收任務、模型回了什麼、工具怎麼執行，最後交付了什麼。圖中由結果往回看的箭頭，是對照當時留下的執行紀錄，不是重新跑一次就當成重現，也不是已經知道哪一步出了錯。接著回到前面漏Builder的案例，示範如何用紀錄找出需要追查的環節。';
+    e['搭配講稿']='上一頁從執行前防錯換到出錯後追查。現在若發現結果不符合要求，除了處理當下情況，也要能回看當時如何接收任務、模型回了什麼、工具怎麼執行，最後交付了什麼。圖中由結果往回看的箭頭，是對照當時留下的執行紀錄，不是重新跑一次就當成重現，也不是已經知道哪一步出了錯。接著回到前面漏Builder的案例，示範如何用紀錄找出需要追查的環節。';
   }
   if(old.n===42){
     e.sourceFile=added+'/slide-43-no-footer.png';
@@ -95,25 +120,26 @@ for(const [i,e] of entries.entries()){
   e.n=i+1;e.file=`slide-${String(e.n).padStart(2,'0')}.png`;
   e.sha256=hash(bytes);
   e.pixelSize={width:bytes.readUInt32BE(16),height:bytes.readUInt32BE(20)};
-  if(e.previousV39&&![42,44,45,48].includes(e.previousV39))assert.equal(e.sha256,source.entries[e.previousV39-1].sha256);
+  if(e.previousV39&&![34,35,36,42,44,45,48].includes(e.previousV39))assert.equal(e.sha256,source.entries[e.previousV39-1].sha256);
   fs.writeFileSync(path.join(root,dest,e.file),bytes);
   assert.equal(hash(read(dest+'/'+e.file)),e.sha256);
 }
 assert.equal(entries[36].previousV39,37);
 assert.equal(entries[37].title,bridge.title);
 assert.equal(entries[38].previousV39,38);
+assert.deepEqual(entries.slice(33,36).map(e=>e.title),['Agent 要做什麼，有時需要人先確認','先確認目標與範圍，再開始任務','寫入、扣款或通知前，先取得批准']);
 assert.deepEqual(entries.slice(44,50).map(e=>e.previousV39),[51,44,46,47,45,48]);
-const notice='v40共59頁：保留新增38頁的執行與完成轉場。45頁「修好一個問題，也可能弄壞其他情境」移至全面重測之前；46頁重畫，說明完整流程與其他情境都要重測。47～49頁依序核對Builder呼叫、傳入資料、報告交付；50頁重畫，Judge以輸出、準則與範例評審，而非預設驗證證據來源。52頁接受門檻直接銜接53頁AI協助撰寫Skill。相較v39保留54張原圖；本輪只重畫兩張，其他已確認圖像不變，圖片無內嵌頁碼，歷史PDF未更新。';
+const notice='v40共59頁：38頁改為「除了防錯，也要能追查出錯原因」，明確從執行前防錯換到出錯後追查；圖中補出看見錯誤不等於知道原因，37與39頁講稿銜接同步。本輪只重畫38頁，其他58張目前圖像不變。保留34～36頁具體標題、33頁輸出轉行動確認、45～52頁回歸風險與修改驗收順序；相較v39保留51張原圖，圖片無內嵌頁碼，歷史PDF未更新。';
 const section=(e,prefix='')=>`## ${String(e.n).padStart(2,'0')}｜${e.title}\n\n章節：${e.chapter}\n\n![${e.title}](${prefix}${e.file})\n\n### 核心訊息\n\n${e['核心訊息']}\n\n### 搭配講稿\n\n${e['搭配講稿']}\n\n### 接下一頁\n\n${e['接下一頁']}\n\n### 本頁重點\n\n${e.points.map(p=>'- '+p).join('\n')}\n\n`;
-write(story,'# 59頁分頁稿 v40｜執行與完成的轉場\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
+write(story,'# 59頁分頁稿 v40｜防錯與追查的轉場\n\n'+notice+'\n\n'+entries.map(e=>section(e,'../'+dest+'/')).join(''));
 write(dest+'/README.md','# 59頁圖片與講稿 v40\n\n'+notice+'\n\n[純圖片](gallery-images-only.html) · [圖片與講稿](gallery.html) · [頁碼對照](PAGE-MAPPING.md) · [產圖提示](PROMPTS.json)\n\n'+entries.map(e=>section(e)).join(''));
-write(dest+'/PAGE-MAPPING.md','# v39至v40頁碼對照\n\n37：批准後重新檢查條件。38（新增）：可以執行不代表任務正確完成。39（原38）：出錯後回看執行。40（原39）：漏Builder案例。41、42（原40、41）：留下資訊並對照紀錄。\n\n現45（原51）：修A壞B；46（原44）：完整流程與其他情境重測；47～49（原46、47、45）：Builder呼叫、傳入資料、報告交付；50（原48）：程式與Judge；51～52（原49、50）：回歸案例與接受門檻；53開始AI協助撰寫Skill。總數59頁不變。\n\n| v40 | v39 | 標題 |\n|---|---|---|\n'+entries.map(e=>`| ${e.n} | ${e.previousV39??'新增'} | ${e.title} |`).join('\n'));
+write(dest+'/PAGE-MAPPING.md','# v39至v40頁碼對照\n\n37：批准後重新檢查條件。38（新增，已重畫）：除了防錯，也要能追查出錯原因。39（原38）：出錯後回看執行。40（原39）：漏Builder案例。41、42（原40、41）：留下資訊並對照紀錄。\n\n現45（原51）：修A壞B；46（原44）：完整流程與其他情境重測；47～49（原46、47、45）：Builder呼叫、傳入資料、報告交付；50（原48）：程式與Judge；51～52（原49、50）：回歸案例與接受門檻；53開始AI協助撰寫Skill。總數59頁不變。\n\n| v40 | v39 | 標題 |\n|---|---|---|\n'+entries.map(e=>`| ${e.n} | ${e.previousV39??'新增'} | ${e.title} |`).join('\n'));
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const head='<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>59頁執行轉場</title><style>body{margin:0;background:#181818;color:#182849;font:20px system-ui}main{max-width:1672px;margin:auto}figure{margin:0 0 20px}img{display:block;width:100%;height:auto;max-height:100vh;object-fit:contain}article{background:#fffdf7;margin:0 0 30px;padding-bottom:20px}h2,article p,article ul{margin:20px}header{background:#eee9df;padding:20px}@media print{figure{break-after:page;margin:0}}</style></head><body>';
 const img=e=>`<img loading="lazy" src="${e.file}?v=${e.sha256.slice(0,12)}" width="${e.pixelSize.width}" height="${e.pixelSize.height}" alt="${esc(e.title)}">`;
 write(dest+'/gallery-images-only.html',head+'<main>'+entries.map(e=>`<figure id="slide-${String(e.n).padStart(2,'0')}">${img(e)}</figure>`).join('')+'</main></body></html>');
 write(dest+'/gallery.html',head+'<header><h1>59頁執行轉場</h1><p>'+notice+'</p></header><main>'+entries.map(e=>`<article id="slide-${String(e.n).padStart(2,'0')}"><h2>${e.n}｜${esc(e.title)}</h2>${img(e)}<p>${esc(e['核心訊息'])}</p><p>${esc(e['搭配講稿'])}</p><p>接下一頁：${esc(e['接下一頁'])}</p></article>`).join('')+'</main></body></html>');
 write(dest+'/manifest.json',JSON.stringify({version:'v40',count:59,status:'pending_user_review',numberingNotice:notice,insertedPages:[38],entries},null,2));
-write(dest+'/PROMPTS.json',JSON.stringify({tool:'built-in image_gen',bridge:JSON.parse(read(added+'/PROMPT.json')),slide43:JSON.parse(read(added+'/SLIDE-43-REMOVE-FOOTER-PROMPT.json')),slide49:JSON.parse(read(added+'/REPORT-FORMAT-TITLE-PROMPT.json')),slides46and50:JSON.parse(read(added+'/REGRESSION-JUDGE-PROMPTS.json'))},null,2));
-write(dest+'/verification.json',JSON.stringify({count:59,insertedPages:[38],revisedOriginalImages:[43,46,49,50],preservedV39Images:54,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:false,originalSourceOrder:sourceOrder,reorderedV39Pages:[51,44,46,47,45,48,49,50],revisedNarration:[37,38,39,44,45,46,48,49,50,52,53],pdfUpdated:false,verification:'docs/verification/2026-10-13-v40-regression-judge.md'},null,2));
-console.log(JSON.stringify({count:59,dest,story,preservedV39Images:54,insertedPage:38,regressionRiskAt:45,fullRetestAt:46,judgeAt:50,reportAt:49,validationOrder:['Builder呼叫','傳入資料','報告驗收']}));
+write(dest+'/PROMPTS.json',JSON.stringify({tool:'built-in image_gen',bridge:JSON.parse(read(added+'/INVESTIGATION-TRANSITION-PROMPT.json')),slides34to36:JSON.parse(read(added+'/HITL-DIRECT-TITLES-PROMPTS.json')),slide43:JSON.parse(read(added+'/SLIDE-43-REMOVE-FOOTER-PROMPT.json')),slide49:JSON.parse(read(added+'/REPORT-FORMAT-TITLE-PROMPT.json')),slides46and50:JSON.parse(read(added+'/REGRESSION-JUDGE-PROMPTS.json'))},null,2));
+write(dest+'/verification.json',JSON.stringify({count:59,insertedPages:[38],revisedOriginalImages:[34,35,36,43,46,49,50],revisedInsertedImages:[38],preservedV39Images:51,allUnmodifiedOriginalHashesMatch:true,originalRelativeOrderPreserved:false,originalSourceOrder:sourceOrder,reorderedV39Pages:[51,44,46,47,45,48,49,50],revisedNarration:[33,34,35,36,37,38,39,44,45,46,48,49,50,52,53],pdfUpdated:false,verification:'docs/verification/2026-10-13-v40-investigation-transition.md'},null,2));
+console.log(JSON.stringify({count:59,dest,story,preservedV39Images:51,insertedPage:38,hitlTitlesAt:[34,35,36],regressionRiskAt:45,fullRetestAt:46,judgeAt:50,reportAt:49,validationOrder:['Builder呼叫','傳入資料','報告驗收']}));

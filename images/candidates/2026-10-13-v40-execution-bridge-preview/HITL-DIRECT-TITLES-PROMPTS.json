@@ -1,0 +1,26 @@
+{
+  "tool": "built-in image_gen",
+  "edits": [
+    {
+      "n": 34,
+      "title": "Agent 要做什麼，有時需要人先確認",
+      "old": "符合規則，還有哪些事需要人確認？",
+      "keep": "Human-in-the-Loop (HITL) subtitle, central reviewer, both documents, blue and purple speech bubbles, Intent Validation and Execution Approval labels, and bottom「確認理解 ≠ 批准操作」",
+      "prompt": "Use case: text-localization. Asset: existing raster presentation slide, 16:9 landscape. Input image is edit target. Change ONLY the main top title from「符合規則，還有哪些事需要人確認？」to exactly「Agent 要做什麼，有時需要人先確認」. Render accurate Traditional Chinese and exact Agent spelling. Preserve title's natural navy handwritten pen style, medium-full strokes with subtle pressure variation, same visual scale as original. Fit centered title safely in top area, no clipping, avoid unnecessarily tiny text. Not printed font, not thin monoline type, not oversized brush calligraphy. Keep Human-in-the-Loop (HITL) subtitle, central reviewer, both documents, blue and purple speech bubbles, Intent Validation and Execution Approval labels, and bottom「確認理解 ≠ 批准操作」. Preserve every other icon, label, layout and content from target, same cream faint grid, fine navy pen outlines and sparse blue/purple/teal/coral colored-pencil hatching. No embedded page number, chapter badge, watermark, border or new text. Highest native resolution with crisp legible lettering. No redesigned content or added robot."
+    },
+    {
+      "n": 35,
+      "title": "先確認目標與範圍，再開始任務",
+      "old": "先確認理解，避免做完錯誤的任務",
+      "keep": "all task document words「Agent 理解的任務」「目標：A 類」「排除：B 類」「範圍：最近三天」「狀態：失敗項目」, red oval, bottom「確認／修改／退回」, bent teal arrow「再開始呼叫工具」, wrench document and coral「工具成功 ≠ 任務正確」",
+      "prompt": "Use case: text-localization. Asset: existing raster presentation slide, 16:9 landscape. Input image is edit target. Change ONLY the main top title from「先確認理解，避免做完錯誤的任務」to exactly「先確認目標與範圍，再開始任務」. Render accurate Traditional Chinese and exact Agent spelling. Preserve title's natural navy handwritten pen style, medium-full strokes with subtle pressure variation, same visual scale as original. Fit centered title safely in top area, no clipping, avoid unnecessarily tiny text. Not printed font, not thin monoline type, not oversized brush calligraphy. Keep all task document words「Agent 理解的任務」「目標：A 類」「排除：B 類」「範圍：最近三天」「狀態：失敗項目」, red oval, bottom「確認／修改／退回」, bent teal arrow「再開始呼叫工具」, wrench document and coral「工具成功 ≠ 任務正確」. Preserve every other icon, label, layout and content from target, same cream faint grid, fine navy pen outlines and sparse blue/purple/teal/coral colored-pencil hatching. No embedded page number, chapter badge, watermark, border or new text. Highest native resolution with crisp legible lettering. No redesigned content or added robot."
+    },
+    {
+      "n": 36,
+      "title": "寫入、扣款或通知前，先取得批准",
+      "old": "寫入、扣款或對外通知，執行前要先批准",
+      "keep": "reviewer figure, full operation proposal document「操作提案」with「做什麼」「影響範圍」「預覽」, approve/reject buttons, approval record, striped barrier, and blue database/document/mail panel",
+      "prompt": "Use case: text-localization. Asset: existing raster presentation slide, 16:9 landscape. Input image is edit target. Change ONLY the main top title from「寫入、扣款或對外通知，執行前要先批准」to exactly「寫入、扣款或通知前，先取得批准」. Render accurate Traditional Chinese and exact Agent spelling. Preserve title's natural navy handwritten pen style, medium-full strokes with subtle pressure variation, same visual scale as original. Fit centered title safely in top area, no clipping, avoid unnecessarily tiny text. Not printed font, not thin monoline type, not oversized brush calligraphy. Keep reviewer figure, full operation proposal document「操作提案」with「做什麼」「影響範圍」「預覽」, approve/reject buttons, approval record, striped barrier, and blue database/document/mail panel. Preserve every other icon, label, layout and content from target, same cream faint grid, fine navy pen outlines and sparse blue/purple/teal/coral colored-pencil hatching. No embedded page number, chapter badge, watermark, border or new text. Highest native resolution with crisp legible lettering. No redesigned content or added robot."
+    }
+  ]
+}

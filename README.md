@@ -1,19 +1,36 @@
 # Agent Runtime Summit
 
-私人工作庫，保存講稿來源、最新59頁無頁碼圖片，以及歷史分頁版本。
+私人工作庫，保存講稿來源、最新58頁無頁碼圖片，以及歷史分頁版本。
 
-## 最新發佈：v40・59頁・圖內無頁碼（2026-10-13）
+## 最新本機版本：v41・58頁・圖內無頁碼（2026-10-13）
 
-在原37與38頁之間新增「可以執行，不代表能正確完成任務」：先說明批准與條件檢查確認操作可以執行，再帶到任務仍可能漏步驟或執行失敗，最後接出錯後回看當時的過程。
+2026-10-14講者控制台已精簡：不重複顯示投影片標題、不顯示長講稿，只留主旨、2～3個重點與一句轉場。58頁提示均重新整理，圖片與頁序不變；原長講稿保留於分頁稿。上方控制列壓縮，目前頁／下一頁約65:35高度，總覽由按鈕開啟。[小螢幕版面驗證](docs/verification/2026-10-14-presenter-compact-cues.md)。重新整理站台即可載入。
 
-原42頁（現43頁）已移除底部說明。現45頁先說「修好一個問題，也可能弄壞其他情境」，46頁接完整流程與其他情境重測；47～49頁依序核對Builder呼叫、傳入資料、報告交付。50頁Judge改以輸出、準則與參考範例評審；52頁接受門檻接53頁AI協助撰寫Skill。本輪重畫46與50兩張，相較v39保留54張原圖，59頁總數不變，完整講稿、分頁稿與站台同步。
+2026-10-14已交換原50、51頁：49驗收方法 → 50接受門檻 → 51回歸測試累積 → 52 AI撰寫Skill。原圖片內容完全保留，講稿轉場、分頁稿、圖庫與站台同步。[順序更新驗證](docs/verification/2026-10-14-v41-swap-50-51.md)。重新整理站台可載入新順序；PDF未更新。
+
+原37～42頁整理為五頁：37保留執行前條件檢查；38重畫，只呈現看見錯誤不等於知道原因；39重畫，說明重跑不能取代出錯那次的紀錄；40沿用原41的四類資訊；41沿用原42的Builder逐段對照。原39泛用轉場不再列入播放，之後順延一頁；新42沿用原43的AI協助追查。只重畫兩張，其餘56張原圖SHA完全一致，舊v40完整保留。
+
+- [37～42頁連續圖片預覽](images/candidates/2026-10-13-v41-slides-01-58-investigation/gallery-review-37-42.html)
+- [58頁完整圖片與講稿](images/candidates/2026-10-13-v41-slides-01-58-investigation/README.md)
+- [58頁純圖片HTML](images/candidates/2026-10-13-v41-slides-01-58-investigation/gallery-images-only.html)
+- [58頁分頁稿](storyboard/58-slide-storyboard-v41-investigation.md)
+- [58頁講述重點](presenter/58-page-key-points-v41.md)
+- [本機更新驗證](docs/verification/2026-10-13-v41-investigation-sequence.md)
+
+執行`node docs/build-v41-investigation-sequence.mjs`與`node presenter/build-deck.mjs`可重建。站台仍是http://127.0.0.1:8767/，頁首應顯示58頁、圖片與講稿v41；來源或頁數變更需重新啟動服務，關閉舊投影並重新整理控制台。2026-10-14發佈範圍包含v41完整簡報、50／51互換與精簡講者介面，歷史PDF未更新；GitHub保存來源，不會啟動本機站台。
+
+## 上一版：v40・59頁・圖內無頁碼
+
+原新增38頁現已重畫為「除了防錯，也要能追查出錯原因」：37頁收束執行前重新檢查，38頁明確換到出錯後追查，39頁回看當時執行，再接40頁漏Builder案例。本輪只更換38頁圖片，其他58張目前圖片不變。
+
+34～36頁具體標題、33頁保留原圖及輸出轉行動確認的講稿、回歸風險與修改驗收順序都保留。相較v39保留51張原圖，總數59頁；原始講稿、分頁稿、逐頁重點與站台同步。
 
 - [59頁完整圖片與講稿](images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/README.md)
 - [59頁純圖片HTML](images/candidates/2026-10-13-v40-slides-01-59-execution-bridge/gallery-images-only.html)
 - [59頁分頁稿](storyboard/59-slide-storyboard-v40-execution-bridge.md)
 - [59頁講述重點](presenter/59-page-key-points-v40.md)
 - [啟動與雙螢幕操作](presenter/README.md)
-- [發佈驗證](docs/verification/2026-10-13-v40-regression-judge.md)
+- [本機更新驗證](docs/verification/2026-10-13-v40-investigation-transition.md)（最近圖片調整待使用者確認，尚未推送）
 
 執行`node docs/build-v40-execution-bridge.mjs`與`node presenter/build-deck.mjs`可重建。用`python3 presenter/serve.py --port 8767`啟動後，開啟http://127.0.0.1:8767/。換來源目錄或頁數須重新啟動服務，並關閉舊投影、重新整理控制台。歷史PDF未更新為59頁。
 
