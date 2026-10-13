@@ -2,7 +2,14 @@
   "count": 58,
   "insertedPages": [],
   "revisedImagesThisRevision": [
-    30
+    34,
+    38
+  ],
+  "revisedNarrationThisRevision": [
+    33,
+    34,
+    37,
+    38
   ],
   "v39RevisedImages": [
     23,
@@ -10,11 +17,13 @@
     25,
     26,
     28,
-    30
+    30,
+    34,
+    38
   ],
-  "preservedV38Images": 52,
+  "preservedV38Images": 50,
   "originalRelativeOrderPreserved": true,
   "allUnmodifiedOriginalHashesMatch": true,
   "pdfUpdated": false,
-  "verification": "docs/verification/2026-10-13-v39-slide30-wording.md"
+  "verification": "docs/verification/2026-10-13-v39-hitl-investigation.md"
 }
